@@ -1,0 +1,849 @@
+2026-08-18 18:35:41,227 === Reinartz TEP F0/F1 experiment started ===
+2026-08-18 18:35:41,227 config=..\Thesis-Orchestrator\configs\final_gate_exp1.yaml split_seed=42 model_seed=45 epochs=30 window=20 horizon=1 batch=128
+2026-08-18 18:35:41,227 [stage 1/4] preparing cache from C:\Users\FORYOUCOM\Desktop\master_degree\PhysicalAI_mini\data\external\fddbenchmark\reinartz_tep
+2026-08-18 18:35:41,227 cache={'rows': 5600000, 'runs': 2800, 'samples_per_run': 2000, 'features': 52, 'dtype': 'float32'}
+2026-08-18 18:35:41,227 [stage 2/4] creating leakage-safe train/validation/test split
+2026-08-18 18:35:41,330 split runs={'train': 1792, 'test': 560, 'validation': 448}
+2026-08-18 18:35:41,330 [stage 3/4] fitting scaler on training runs only
+2026-08-18 18:35:42,561 [stage 4/4] training and evaluating F0 then F1
+2026-08-18 18:35:42,755 [F0] training setup: device=cuda input_dim=41 parameters=23209
+2026-08-18 18:35:42,755 [F0] GPU ACTIVE: NVIDIA GeForce RTX 5060 Ti | CUDA 13.0 | VRAM 8.0 GB
+2026-08-18 18:35:42,755 [F0] data: train=1037568 windows/8106 batches, validation=259392 windows, test=1108800 windows
+2026-08-18 18:35:42,755 [F0] epoch 1/30 started
+2026-08-18 18:35:46,201 [F0] epoch 1/30: batch 810/8106 (10%) mse=0.670170 elapsed=3.4s ETA=31.0s
+2026-08-18 18:35:49,651 [F0] epoch 1/30: batch 1620/8106 (20%) mse=0.629937 elapsed=6.9s ETA=27.6s
+2026-08-18 18:35:53,320 [F0] epoch 1/30: batch 2430/8106 (30%) mse=0.612096 elapsed=10.6s ETA=24.7s
+2026-08-18 18:35:56,791 [F0] epoch 1/30: batch 3240/8106 (40%) mse=0.601222 elapsed=14.0s ETA=21.1s
+2026-08-18 18:36:00,504 [F0] epoch 1/30: batch 4050/8106 (50%) mse=0.594253 elapsed=17.7s ETA=17.8s
+2026-08-18 18:36:04,192 [F0] epoch 1/30: batch 4860/8106 (60%) mse=0.589578 elapsed=21.4s ETA=14.3s
+2026-08-18 18:36:07,393 [F0] epoch 1/30: batch 5670/8106 (70%) mse=0.585739 elapsed=24.6s ETA=10.6s
+2026-08-18 18:36:10,679 [F0] epoch 1/30: batch 6480/8106 (80%) mse=0.582837 elapsed=27.9s ETA=7.0s
+2026-08-18 18:36:14,344 [F0] epoch 1/30: batch 7290/8106 (90%) mse=0.580535 elapsed=31.6s ETA=3.5s
+2026-08-18 18:36:17,660 [F0] epoch 1/30: batch 8100/8106 (100%) mse=0.578473 elapsed=34.9s ETA=0.0s
+2026-08-18 18:36:17,698 [F0] epoch 1/30: batch 8106/8106 (100%) mse=0.578457 elapsed=34.9s ETA=0.0s
+2026-08-18 18:36:17,739 [F0] epoch 1/30 (3%): train_mse=0.578457 epoch=35.0s total=35.0s
+2026-08-18 18:36:17,739 [F0] epoch 2/30 started
+2026-08-18 18:36:21,127 [F0] epoch 2/30: batch 810/8106 (10%) mse=0.562605 elapsed=3.4s ETA=30.5s
+2026-08-18 18:36:24,393 [F0] epoch 2/30: batch 1620/8106 (20%) mse=0.562226 elapsed=6.7s ETA=26.7s
+2026-08-18 18:36:27,865 [F0] epoch 2/30: batch 2430/8106 (30%) mse=0.561327 elapsed=10.1s ETA=23.7s
+2026-08-18 18:36:31,031 [F0] epoch 2/30: batch 3240/8106 (40%) mse=0.561039 elapsed=13.3s ETA=20.0s
+2026-08-18 18:36:34,313 [F0] epoch 2/30: batch 4050/8106 (50%) mse=0.560373 elapsed=16.6s ETA=16.6s
+2026-08-18 18:36:37,799 [F0] epoch 2/30: batch 4860/8106 (60%) mse=0.560017 elapsed=20.1s ETA=13.4s
+2026-08-18 18:36:40,922 [F0] epoch 2/30: batch 5670/8106 (70%) mse=0.559866 elapsed=23.2s ETA=10.0s
+2026-08-18 18:36:44,172 [F0] epoch 2/30: batch 6480/8106 (80%) mse=0.559749 elapsed=26.4s ETA=6.6s
+2026-08-18 18:36:47,682 [F0] epoch 2/30: batch 7290/8106 (90%) mse=0.559572 elapsed=29.9s ETA=3.4s
+2026-08-18 18:36:50,831 [F0] epoch 2/30: batch 8100/8106 (100%) mse=0.559358 elapsed=33.1s ETA=0.0s
+2026-08-18 18:36:50,856 [F0] epoch 2/30: batch 8106/8106 (100%) mse=0.559357 elapsed=33.1s ETA=0.0s
+2026-08-18 18:36:50,901 [F0] epoch 2/30 (7%): train_mse=0.559357 epoch=33.2s total=68.1s
+2026-08-18 18:36:50,901 [F0] epoch 3/30 started
+2026-08-18 18:36:54,261 [F0] epoch 3/30: batch 810/8106 (10%) mse=0.558142 elapsed=3.4s ETA=30.3s
+2026-08-18 18:36:57,734 [F0] epoch 3/30: batch 1620/8106 (20%) mse=0.556623 elapsed=6.8s ETA=27.4s
+2026-08-18 18:37:00,878 [F0] epoch 3/30: batch 2430/8106 (30%) mse=0.556542 elapsed=10.0s ETA=23.3s
+2026-08-18 18:37:04,259 [F0] epoch 3/30: batch 3240/8106 (40%) mse=0.555599 elapsed=13.4s ETA=20.1s
+2026-08-18 18:37:07,947 [F0] epoch 3/30: batch 4050/8106 (50%) mse=0.555672 elapsed=17.0s ETA=17.1s
+2026-08-18 18:37:11,119 [F0] epoch 3/30: batch 4860/8106 (60%) mse=0.555371 elapsed=20.2s ETA=13.5s
+2026-08-18 18:37:14,482 [F0] epoch 3/30: batch 5670/8106 (70%) mse=0.555213 elapsed=23.6s ETA=10.1s
+2026-08-18 18:37:18,015 [F0] epoch 3/30: batch 6480/8106 (80%) mse=0.554873 elapsed=27.1s ETA=6.8s
+2026-08-18 18:37:21,052 [F0] epoch 3/30: batch 7290/8106 (90%) mse=0.554763 elapsed=30.2s ETA=3.4s
+2026-08-18 18:37:24,150 [F0] epoch 3/30: batch 8100/8106 (100%) mse=0.554662 elapsed=33.2s ETA=0.0s
+2026-08-18 18:37:24,167 [F0] epoch 3/30: batch 8106/8106 (100%) mse=0.554659 elapsed=33.3s ETA=0.0s
+2026-08-18 18:37:24,212 [F0] epoch 3/30 (10%): train_mse=0.554659 epoch=33.3s total=101.5s
+2026-08-18 18:37:24,215 [F0] epoch 4/30 started
+2026-08-18 18:37:27,308 [F0] epoch 4/30: batch 810/8106 (10%) mse=0.551780 elapsed=3.1s ETA=27.9s
+2026-08-18 18:37:30,412 [F0] epoch 4/30: batch 1620/8106 (20%) mse=0.552353 elapsed=6.2s ETA=24.8s
+2026-08-18 18:37:33,167 [F0] epoch 4/30: batch 2430/8106 (30%) mse=0.552571 elapsed=9.0s ETA=20.9s
+2026-08-18 18:37:36,219 [F0] epoch 4/30: batch 3240/8106 (40%) mse=0.552314 elapsed=12.0s ETA=18.0s
+2026-08-18 18:37:39,446 [F0] epoch 4/30: batch 4050/8106 (50%) mse=0.552271 elapsed=15.2s ETA=15.3s
+2026-08-18 18:37:42,179 [F0] epoch 4/30: batch 4860/8106 (60%) mse=0.551942 elapsed=18.0s ETA=12.0s
+2026-08-18 18:37:45,242 [F0] epoch 4/30: batch 5670/8106 (70%) mse=0.551588 elapsed=21.0s ETA=9.0s
+2026-08-18 18:37:48,597 [F0] epoch 4/30: batch 6480/8106 (80%) mse=0.551235 elapsed=24.4s ETA=6.1s
+2026-08-18 18:37:51,393 [F0] epoch 4/30: batch 7290/8106 (90%) mse=0.550795 elapsed=27.2s ETA=3.0s
+2026-08-18 18:37:54,380 [F0] epoch 4/30: batch 8100/8106 (100%) mse=0.550380 elapsed=30.2s ETA=0.0s
+2026-08-18 18:37:54,402 [F0] epoch 4/30: batch 8106/8106 (100%) mse=0.550375 elapsed=30.2s ETA=0.0s
+2026-08-18 18:37:54,441 [F0] epoch 4/30 (13%): train_mse=0.550375 epoch=30.2s total=131.7s
+2026-08-18 18:37:54,441 [F0] epoch 5/30 started
+2026-08-18 18:37:57,696 [F0] epoch 5/30: batch 810/8106 (10%) mse=0.546628 elapsed=3.3s ETA=29.4s
+2026-08-18 18:38:00,443 [F0] epoch 5/30: batch 1620/8106 (20%) mse=0.546753 elapsed=6.0s ETA=24.0s
+2026-08-18 18:38:03,377 [F0] epoch 5/30: batch 2430/8106 (30%) mse=0.546637 elapsed=8.9s ETA=20.9s
+2026-08-18 18:38:06,544 [F0] epoch 5/30: batch 3240/8106 (40%) mse=0.546241 elapsed=12.1s ETA=18.2s
+2026-08-18 18:38:09,551 [F0] epoch 5/30: batch 4050/8106 (50%) mse=0.545922 elapsed=15.1s ETA=15.1s
+2026-08-18 18:38:12,721 [F0] epoch 5/30: batch 4860/8106 (60%) mse=0.545507 elapsed=18.3s ETA=12.2s
+2026-08-18 18:38:16,065 [F0] epoch 5/30: batch 5670/8106 (70%) mse=0.545275 elapsed=21.6s ETA=9.3s
+2026-08-18 18:38:19,097 [F0] epoch 5/30: batch 6480/8106 (80%) mse=0.545112 elapsed=24.7s ETA=6.2s
+2026-08-18 18:38:21,851 [F0] epoch 5/30: batch 7290/8106 (90%) mse=0.545046 elapsed=27.4s ETA=3.1s
+2026-08-18 18:38:24,959 [F0] epoch 5/30: batch 8100/8106 (100%) mse=0.544858 elapsed=30.5s ETA=0.0s
+2026-08-18 18:38:24,980 [F0] epoch 5/30: batch 8106/8106 (100%) mse=0.544856 elapsed=30.5s ETA=0.0s
+2026-08-18 18:38:25,025 [F0] epoch 5/30 (17%): train_mse=0.544856 epoch=30.6s total=162.3s
+2026-08-18 18:38:25,025 [F0] epoch 6/30 started
+2026-08-18 18:38:28,113 [F0] epoch 6/30: batch 810/8106 (10%) mse=0.542543 elapsed=3.1s ETA=27.8s
+2026-08-18 18:38:31,034 [F0] epoch 6/30: batch 1620/8106 (20%) mse=0.542810 elapsed=6.0s ETA=24.1s
+2026-08-18 18:38:34,164 [F0] epoch 6/30: batch 2430/8106 (30%) mse=0.542892 elapsed=9.1s ETA=21.4s
+2026-08-18 18:38:37,298 [F0] epoch 6/30: batch 3240/8106 (40%) mse=0.542849 elapsed=12.3s ETA=18.4s
+2026-08-18 18:38:40,313 [F0] epoch 6/30: batch 4050/8106 (50%) mse=0.542910 elapsed=15.3s ETA=15.3s
+2026-08-18 18:38:43,321 [F0] epoch 6/30: batch 4860/8106 (60%) mse=0.542862 elapsed=18.3s ETA=12.2s
+2026-08-18 18:38:46,457 [F0] epoch 6/30: batch 5670/8106 (70%) mse=0.542848 elapsed=21.4s ETA=9.2s
+2026-08-18 18:38:49,441 [F0] epoch 6/30: batch 6480/8106 (80%) mse=0.542761 elapsed=24.4s ETA=6.1s
+2026-08-18 18:38:52,532 [F0] epoch 6/30: batch 7290/8106 (90%) mse=0.542758 elapsed=27.5s ETA=3.1s
+2026-08-18 18:38:55,798 [F0] epoch 6/30: batch 8100/8106 (100%) mse=0.542822 elapsed=30.8s ETA=0.0s
+2026-08-18 18:38:55,832 [F0] epoch 6/30: batch 8106/8106 (100%) mse=0.542832 elapsed=30.8s ETA=0.0s
+2026-08-18 18:38:55,865 [F0] epoch 6/30 (20%): train_mse=0.542832 epoch=30.8s total=193.1s
+2026-08-18 18:38:55,865 [F0] epoch 7/30 started
+2026-08-18 18:38:58,699 [F0] epoch 7/30: batch 810/8106 (10%) mse=0.541737 elapsed=2.8s ETA=25.6s
+2026-08-18 18:39:01,814 [F0] epoch 7/30: batch 1620/8106 (20%) mse=0.541777 elapsed=5.9s ETA=23.8s
+2026-08-18 18:39:05,033 [F0] epoch 7/30: batch 2430/8106 (30%) mse=0.542234 elapsed=9.2s ETA=21.4s
+2026-08-18 18:39:07,949 [F0] epoch 7/30: batch 3240/8106 (40%) mse=0.542153 elapsed=12.1s ETA=18.1s
+2026-08-18 18:39:11,053 [F0] epoch 7/30: batch 4050/8106 (50%) mse=0.541955 elapsed=15.2s ETA=15.2s
+2026-08-18 18:39:14,274 [F0] epoch 7/30: batch 4860/8106 (60%) mse=0.541753 elapsed=18.4s ETA=12.3s
+2026-08-18 18:39:17,089 [F0] epoch 7/30: batch 5670/8106 (70%) mse=0.541757 elapsed=21.2s ETA=9.1s
+2026-08-18 18:39:20,166 [F0] epoch 7/30: batch 6480/8106 (80%) mse=0.541739 elapsed=24.3s ETA=6.1s
+2026-08-18 18:39:23,481 [F0] epoch 7/30: batch 7290/8106 (90%) mse=0.541766 elapsed=27.6s ETA=3.1s
+2026-08-18 18:39:26,333 [F0] epoch 7/30: batch 8100/8106 (100%) mse=0.541798 elapsed=30.5s ETA=0.0s
+2026-08-18 18:39:26,362 [F0] epoch 7/30: batch 8106/8106 (100%) mse=0.541808 elapsed=30.5s ETA=0.0s
+2026-08-18 18:39:26,399 [F0] epoch 7/30 (23%): train_mse=0.541808 epoch=30.5s total=223.6s
+2026-08-18 18:39:26,399 [F0] epoch 8/30 started
+2026-08-18 18:39:29,611 [F0] epoch 8/30: batch 810/8106 (10%) mse=0.541942 elapsed=3.2s ETA=28.9s
+2026-08-18 18:39:32,866 [F0] epoch 8/30: batch 1620/8106 (20%) mse=0.541315 elapsed=6.5s ETA=25.9s
+2026-08-18 18:39:35,683 [F0] epoch 8/30: batch 2430/8106 (30%) mse=0.541525 elapsed=9.3s ETA=21.7s
+2026-08-18 18:39:38,741 [F0] epoch 8/30: batch 3240/8106 (40%) mse=0.541396 elapsed=12.3s ETA=18.5s
+2026-08-18 18:39:42,081 [F0] epoch 8/30: batch 4050/8106 (50%) mse=0.541364 elapsed=15.7s ETA=15.7s
+2026-08-18 18:39:44,935 [F0] epoch 8/30: batch 4860/8106 (60%) mse=0.541250 elapsed=18.5s ETA=12.4s
+2026-08-18 18:39:48,003 [F0] epoch 8/30: batch 5670/8106 (70%) mse=0.541280 elapsed=21.6s ETA=9.3s
+2026-08-18 18:39:51,183 [F0] epoch 8/30: batch 6480/8106 (80%) mse=0.541302 elapsed=24.8s ETA=6.2s
+2026-08-18 18:39:54,050 [F0] epoch 8/30: batch 7290/8106 (90%) mse=0.541348 elapsed=27.7s ETA=3.1s
+2026-08-18 18:39:57,001 [F0] epoch 8/30: batch 8100/8106 (100%) mse=0.541200 elapsed=30.6s ETA=0.0s
+2026-08-18 18:39:57,027 [F0] epoch 8/30: batch 8106/8106 (100%) mse=0.541212 elapsed=30.6s ETA=0.0s
+2026-08-18 18:39:57,068 [F0] epoch 8/30 (27%): train_mse=0.541212 epoch=30.7s total=254.3s
+2026-08-18 18:39:57,068 [F0] epoch 9/30 started
+2026-08-18 18:40:00,401 [F0] epoch 9/30: batch 810/8106 (10%) mse=0.540350 elapsed=3.3s ETA=30.1s
+2026-08-18 18:40:03,251 [F0] epoch 9/30: batch 1620/8106 (20%) mse=0.540536 elapsed=6.2s ETA=24.8s
+2026-08-18 18:40:06,237 [F0] epoch 9/30: batch 2430/8106 (30%) mse=0.540748 elapsed=9.2s ETA=21.4s
+2026-08-18 18:40:09,498 [F0] epoch 9/30: batch 3240/8106 (40%) mse=0.540977 elapsed=12.4s ETA=18.7s
+2026-08-18 18:40:12,602 [F0] epoch 9/30: batch 4050/8106 (50%) mse=0.540936 elapsed=15.5s ETA=15.6s
+2026-08-18 18:40:15,435 [F0] epoch 9/30: batch 4860/8106 (60%) mse=0.540903 elapsed=18.4s ETA=12.3s
+2026-08-18 18:40:18,539 [F0] epoch 9/30: batch 5670/8106 (70%) mse=0.540857 elapsed=21.5s ETA=9.2s
+2026-08-18 18:40:21,668 [F0] epoch 9/30: batch 6480/8106 (80%) mse=0.540808 elapsed=24.6s ETA=6.2s
+2026-08-18 18:40:24,552 [F0] epoch 9/30: batch 7290/8106 (90%) mse=0.540699 elapsed=27.5s ETA=3.1s
+2026-08-18 18:40:27,818 [F0] epoch 9/30: batch 8100/8106 (100%) mse=0.540781 elapsed=30.8s ETA=0.0s
+2026-08-18 18:40:27,846 [F0] epoch 9/30: batch 8106/8106 (100%) mse=0.540773 elapsed=30.8s ETA=0.0s
+2026-08-18 18:40:27,887 [F0] epoch 9/30 (30%): train_mse=0.540773 epoch=30.8s total=285.1s
+2026-08-18 18:40:27,887 [F0] epoch 10/30 started
+2026-08-18 18:40:31,562 [F0] epoch 10/30: batch 810/8106 (10%) mse=0.540535 elapsed=3.7s ETA=33.1s
+2026-08-18 18:40:34,876 [F0] epoch 10/30: batch 1620/8106 (20%) mse=0.540079 elapsed=7.0s ETA=28.0s
+2026-08-18 18:40:38,495 [F0] epoch 10/30: batch 2430/8106 (30%) mse=0.540536 elapsed=10.6s ETA=24.8s
+2026-08-18 18:40:42,044 [F0] epoch 10/30: batch 3240/8106 (40%) mse=0.540608 elapsed=14.2s ETA=21.3s
+2026-08-18 18:40:45,322 [F0] epoch 10/30: batch 4050/8106 (50%) mse=0.540371 elapsed=17.4s ETA=17.5s
+2026-08-18 18:40:48,665 [F0] epoch 10/30: batch 4860/8106 (60%) mse=0.540254 elapsed=20.8s ETA=13.9s
+2026-08-18 18:40:52,338 [F0] epoch 10/30: batch 5670/8106 (70%) mse=0.540376 elapsed=24.5s ETA=10.5s
+2026-08-18 18:40:55,616 [F0] epoch 10/30: batch 6480/8106 (80%) mse=0.540437 elapsed=27.7s ETA=7.0s
+2026-08-18 18:40:58,975 [F0] epoch 10/30: batch 7290/8106 (90%) mse=0.540456 elapsed=31.1s ETA=3.5s
+2026-08-18 18:41:02,496 [F0] epoch 10/30: batch 8100/8106 (100%) mse=0.540447 elapsed=34.6s ETA=0.0s
+2026-08-18 18:41:02,527 [F0] epoch 10/30: batch 8106/8106 (100%) mse=0.540452 elapsed=34.6s ETA=0.0s
+2026-08-18 18:41:02,577 [F0] epoch 10/30 (33%): train_mse=0.540452 epoch=34.7s total=319.8s
+2026-08-18 18:41:02,577 [F0] epoch 11/30 started
+2026-08-18 18:41:05,966 [F0] epoch 11/30: batch 810/8106 (10%) mse=0.540364 elapsed=3.4s ETA=30.5s
+2026-08-18 18:41:09,286 [F0] epoch 11/30: batch 1620/8106 (20%) mse=0.540292 elapsed=6.7s ETA=26.9s
+2026-08-18 18:41:12,694 [F0] epoch 11/30: batch 2430/8106 (30%) mse=0.540272 elapsed=10.1s ETA=23.6s
+2026-08-18 18:41:16,256 [F0] epoch 11/30: batch 3240/8106 (40%) mse=0.540490 elapsed=13.7s ETA=20.5s
+2026-08-18 18:41:19,413 [F0] epoch 11/30: batch 4050/8106 (50%) mse=0.540409 elapsed=16.8s ETA=16.9s
+2026-08-18 18:41:22,871 [F0] epoch 11/30: batch 4860/8106 (60%) mse=0.540369 elapsed=20.3s ETA=13.6s
+2026-08-18 18:41:26,388 [F0] epoch 11/30: batch 5670/8106 (70%) mse=0.540311 elapsed=23.8s ETA=10.2s
+2026-08-18 18:41:29,742 [F0] epoch 11/30: batch 6480/8106 (80%) mse=0.540277 elapsed=27.2s ETA=6.8s
+2026-08-18 18:41:33,093 [F0] epoch 11/30: batch 7290/8106 (90%) mse=0.540278 elapsed=30.5s ETA=3.4s
+2026-08-18 18:41:36,690 [F0] epoch 11/30: batch 8100/8106 (100%) mse=0.540221 elapsed=34.1s ETA=0.0s
+2026-08-18 18:41:36,727 [F0] epoch 11/30: batch 8106/8106 (100%) mse=0.540220 elapsed=34.2s ETA=0.0s
+2026-08-18 18:41:36,779 [F0] epoch 11/30 (37%): train_mse=0.540220 epoch=34.2s total=354.0s
+2026-08-18 18:41:36,779 [F0] epoch 12/30 started
+2026-08-18 18:41:39,889 [F0] epoch 12/30: batch 810/8106 (10%) mse=0.541017 elapsed=3.1s ETA=28.0s
+2026-08-18 18:41:43,027 [F0] epoch 12/30: batch 1620/8106 (20%) mse=0.541679 elapsed=6.2s ETA=25.0s
+2026-08-18 18:41:46,408 [F0] epoch 12/30: batch 2430/8106 (30%) mse=0.541764 elapsed=9.6s ETA=22.5s
+2026-08-18 18:41:49,678 [F0] epoch 12/30: batch 3240/8106 (40%) mse=0.541101 elapsed=12.9s ETA=19.4s
+2026-08-18 18:41:52,879 [F0] epoch 12/30: batch 4050/8106 (50%) mse=0.540900 elapsed=16.1s ETA=16.1s
+2026-08-18 18:41:56,435 [F0] epoch 12/30: batch 4860/8106 (60%) mse=0.540787 elapsed=19.7s ETA=13.1s
+2026-08-18 18:42:00,063 [F0] epoch 12/30: batch 5670/8106 (70%) mse=0.540472 elapsed=23.3s ETA=10.0s
+2026-08-18 18:42:03,168 [F0] epoch 12/30: batch 6480/8106 (80%) mse=0.540321 elapsed=26.4s ETA=6.6s
+2026-08-18 18:42:06,285 [F0] epoch 12/30: batch 7290/8106 (90%) mse=0.540223 elapsed=29.5s ETA=3.3s
+2026-08-18 18:42:09,815 [F0] epoch 12/30: batch 8100/8106 (100%) mse=0.540133 elapsed=33.0s ETA=0.0s
+2026-08-18 18:42:09,835 [F0] epoch 12/30: batch 8106/8106 (100%) mse=0.540128 elapsed=33.1s ETA=0.0s
+2026-08-18 18:42:09,875 [F0] epoch 12/30 (40%): train_mse=0.540128 epoch=33.1s total=387.1s
+2026-08-18 18:42:09,875 [F0] epoch 13/30 started
+2026-08-18 18:42:12,961 [F0] epoch 13/30: batch 810/8106 (10%) mse=0.540470 elapsed=3.1s ETA=27.8s
+2026-08-18 18:42:16,158 [F0] epoch 13/30: batch 1620/8106 (20%) mse=0.546972 elapsed=6.3s ETA=25.2s
+2026-08-18 18:42:19,524 [F0] epoch 13/30: batch 2430/8106 (30%) mse=0.545234 elapsed=9.6s ETA=22.5s
+2026-08-18 18:42:22,624 [F0] epoch 13/30: batch 3240/8106 (40%) mse=0.543957 elapsed=12.7s ETA=19.1s
+2026-08-18 18:42:25,793 [F0] epoch 13/30: batch 4050/8106 (50%) mse=0.543045 elapsed=15.9s ETA=15.9s
+2026-08-18 18:42:28,985 [F0] epoch 13/30: batch 4860/8106 (60%) mse=0.542558 elapsed=19.1s ETA=12.8s
+2026-08-18 18:42:32,298 [F0] epoch 13/30: batch 5670/8106 (70%) mse=0.542131 elapsed=22.4s ETA=9.6s
+2026-08-18 18:42:35,336 [F0] epoch 13/30: batch 6480/8106 (80%) mse=0.541960 elapsed=25.5s ETA=6.4s
+2026-08-18 18:42:38,502 [F0] epoch 13/30: batch 7290/8106 (90%) mse=0.541696 elapsed=28.6s ETA=3.2s
+2026-08-18 18:42:41,835 [F0] epoch 13/30: batch 8100/8106 (100%) mse=0.541555 elapsed=32.0s ETA=0.0s
+2026-08-18 18:42:41,872 [F0] epoch 13/30: batch 8106/8106 (100%) mse=0.541547 elapsed=32.0s ETA=0.0s
+2026-08-18 18:42:41,935 [F0] epoch 13/30 (43%): train_mse=0.541547 epoch=32.1s total=419.2s
+2026-08-18 18:42:41,937 [F0] epoch 14/30 started
+2026-08-18 18:42:44,996 [F0] epoch 14/30: batch 810/8106 (10%) mse=0.540044 elapsed=3.1s ETA=27.6s
+2026-08-18 18:42:48,246 [F0] epoch 14/30: batch 1620/8106 (20%) mse=0.539585 elapsed=6.3s ETA=25.3s
+2026-08-18 18:42:51,745 [F0] epoch 14/30: batch 2430/8106 (30%) mse=0.539829 elapsed=9.8s ETA=22.9s
+2026-08-18 18:42:54,827 [F0] epoch 14/30: batch 3240/8106 (40%) mse=0.539697 elapsed=12.9s ETA=19.4s
+2026-08-18 18:42:58,065 [F0] epoch 14/30: batch 4050/8106 (50%) mse=0.539681 elapsed=16.1s ETA=16.2s
+2026-08-18 18:43:01,557 [F0] epoch 14/30: batch 4860/8106 (60%) mse=0.539529 elapsed=19.6s ETA=13.1s
+2026-08-18 18:43:04,647 [F0] epoch 14/30: batch 5670/8106 (70%) mse=0.539594 elapsed=22.7s ETA=9.8s
+2026-08-18 18:43:07,798 [F0] epoch 14/30: batch 6480/8106 (80%) mse=0.539664 elapsed=25.9s ETA=6.5s
+2026-08-18 18:43:11,008 [F0] epoch 14/30: batch 7290/8106 (90%) mse=0.539770 elapsed=29.1s ETA=3.3s
+2026-08-18 18:43:14,362 [F0] epoch 14/30: batch 8100/8106 (100%) mse=0.540020 elapsed=32.4s ETA=0.0s
+2026-08-18 18:43:14,385 [F0] epoch 14/30: batch 8106/8106 (100%) mse=0.540015 elapsed=32.4s ETA=0.0s
+2026-08-18 18:43:14,428 [F0] epoch 14/30 (47%): train_mse=0.540015 epoch=32.5s total=451.7s
+2026-08-18 18:43:14,428 [F0] epoch 15/30 started
+2026-08-18 18:43:17,557 [F0] epoch 15/30: batch 810/8106 (10%) mse=0.540367 elapsed=3.1s ETA=28.2s
+2026-08-18 18:43:20,725 [F0] epoch 15/30: batch 1620/8106 (20%) mse=0.540072 elapsed=6.3s ETA=25.2s
+2026-08-18 18:43:24,135 [F0] epoch 15/30: batch 2430/8106 (30%) mse=0.539697 elapsed=9.7s ETA=22.7s
+2026-08-18 18:43:27,171 [F0] epoch 15/30: batch 3240/8106 (40%) mse=0.539272 elapsed=12.7s ETA=19.1s
+2026-08-18 18:43:30,357 [F0] epoch 15/30: batch 4050/8106 (50%) mse=0.539230 elapsed=15.9s ETA=16.0s
+2026-08-18 18:43:33,773 [F0] epoch 15/30: batch 4860/8106 (60%) mse=0.539365 elapsed=19.3s ETA=12.9s
+2026-08-18 18:43:36,815 [F0] epoch 15/30: batch 5670/8106 (70%) mse=0.539619 elapsed=22.4s ETA=9.6s
+2026-08-18 18:43:39,992 [F0] epoch 15/30: batch 6480/8106 (80%) mse=0.539537 elapsed=25.6s ETA=6.4s
+2026-08-18 18:43:43,330 [F0] epoch 15/30: batch 7290/8106 (90%) mse=0.539608 elapsed=28.9s ETA=3.2s
+2026-08-18 18:43:46,626 [F0] epoch 15/30: batch 8100/8106 (100%) mse=0.539681 elapsed=32.2s ETA=0.0s
+2026-08-18 18:43:46,647 [F0] epoch 15/30: batch 8106/8106 (100%) mse=0.539671 elapsed=32.2s ETA=0.0s
+2026-08-18 18:43:46,689 [F0] epoch 15/30 (50%): train_mse=0.539671 epoch=32.3s total=483.9s
+2026-08-18 18:43:46,689 [F0] epoch 16/30 started
+2026-08-18 18:43:49,942 [F0] epoch 16/30: batch 810/8106 (10%) mse=0.538093 elapsed=3.3s ETA=29.3s
+2026-08-18 18:43:53,254 [F0] epoch 16/30: batch 1620/8106 (20%) mse=0.538837 elapsed=6.6s ETA=26.3s
+2026-08-18 18:43:56,677 [F0] epoch 16/30: batch 2430/8106 (30%) mse=0.539282 elapsed=10.0s ETA=23.3s
+2026-08-18 18:43:59,753 [F0] epoch 16/30: batch 3240/8106 (40%) mse=0.539435 elapsed=13.1s ETA=19.6s
+2026-08-18 18:44:02,999 [F0] epoch 16/30: batch 4050/8106 (50%) mse=0.539722 elapsed=16.3s ETA=16.3s
+2026-08-18 18:44:06,326 [F0] epoch 16/30: batch 4860/8106 (60%) mse=0.539628 elapsed=19.6s ETA=13.1s
+2026-08-18 18:44:09,298 [F0] epoch 16/30: batch 5670/8106 (70%) mse=0.539933 elapsed=22.6s ETA=9.7s
+2026-08-18 18:44:12,348 [F0] epoch 16/30: batch 6480/8106 (80%) mse=0.540195 elapsed=25.7s ETA=6.4s
+2026-08-18 18:44:15,661 [F0] epoch 16/30: batch 7290/8106 (90%) mse=0.540086 elapsed=29.0s ETA=3.2s
+2026-08-18 18:44:18,496 [F0] epoch 16/30: batch 8100/8106 (100%) mse=0.539805 elapsed=31.8s ETA=0.0s
+2026-08-18 18:44:18,515 [F0] epoch 16/30: batch 8106/8106 (100%) mse=0.539811 elapsed=31.8s ETA=0.0s
+2026-08-18 18:44:18,546 [F0] epoch 16/30 (53%): train_mse=0.539811 epoch=31.9s total=515.8s
+2026-08-18 18:44:18,546 [F0] epoch 17/30 started
+2026-08-18 18:44:21,557 [F0] epoch 17/30: batch 810/8106 (10%) mse=0.539121 elapsed=3.0s ETA=27.0s
+2026-08-18 18:44:24,884 [F0] epoch 17/30: batch 1620/8106 (20%) mse=0.538987 elapsed=6.3s ETA=25.3s
+2026-08-18 18:44:27,755 [F0] epoch 17/30: batch 2430/8106 (30%) mse=0.538885 elapsed=9.2s ETA=21.5s
+2026-08-18 18:44:30,776 [F0] epoch 17/30: batch 3240/8106 (40%) mse=0.539498 elapsed=12.2s ETA=18.4s
+2026-08-18 18:44:33,963 [F0] epoch 17/30: batch 4050/8106 (50%) mse=0.539462 elapsed=15.4s ETA=15.4s
+2026-08-18 18:44:36,826 [F0] epoch 17/30: batch 4860/8106 (60%) mse=0.539399 elapsed=18.3s ETA=12.2s
+2026-08-18 18:44:39,835 [F0] epoch 17/30: batch 5670/8106 (70%) mse=0.539543 elapsed=21.3s ETA=9.1s
+2026-08-18 18:44:43,014 [F0] epoch 17/30: batch 6480/8106 (80%) mse=0.539439 elapsed=24.5s ETA=6.1s
+2026-08-18 18:44:45,960 [F0] epoch 17/30: batch 7290/8106 (90%) mse=0.539553 elapsed=27.4s ETA=3.1s
+2026-08-18 18:44:48,862 [F0] epoch 17/30: batch 8100/8106 (100%) mse=0.539369 elapsed=30.3s ETA=0.0s
+2026-08-18 18:44:48,896 [F0] epoch 17/30: batch 8106/8106 (100%) mse=0.539382 elapsed=30.3s ETA=0.0s
+2026-08-18 18:44:48,928 [F0] epoch 17/30 (57%): train_mse=0.539382 epoch=30.4s total=546.2s
+2026-08-18 18:44:48,928 [F0] epoch 18/30 started
+2026-08-18 18:44:52,059 [F0] epoch 18/30: batch 810/8106 (10%) mse=0.538994 elapsed=3.1s ETA=28.1s
+2026-08-18 18:44:55,077 [F0] epoch 18/30: batch 1620/8106 (20%) mse=0.538995 elapsed=6.1s ETA=24.6s
+2026-08-18 18:44:58,012 [F0] epoch 18/30: batch 2430/8106 (30%) mse=0.538851 elapsed=9.1s ETA=21.2s
+2026-08-18 18:45:01,193 [F0] epoch 18/30: batch 3240/8106 (40%) mse=0.539309 elapsed=12.3s ETA=18.4s
+2026-08-18 18:45:04,377 [F0] epoch 18/30: batch 4050/8106 (50%) mse=0.539207 elapsed=15.4s ETA=15.5s
+2026-08-18 18:45:07,235 [F0] epoch 18/30: batch 4860/8106 (60%) mse=0.539269 elapsed=18.3s ETA=12.2s
+2026-08-18 18:45:10,515 [F0] epoch 18/30: batch 5670/8106 (70%) mse=0.539375 elapsed=21.6s ETA=9.3s
+2026-08-18 18:45:13,800 [F0] epoch 18/30: batch 6480/8106 (80%) mse=0.539317 elapsed=24.9s ETA=6.2s
+2026-08-18 18:45:16,661 [F0] epoch 18/30: batch 7290/8106 (90%) mse=0.539738 elapsed=27.7s ETA=3.1s
+2026-08-18 18:45:19,784 [F0] epoch 18/30: batch 8100/8106 (100%) mse=0.540266 elapsed=30.8s ETA=0.0s
+2026-08-18 18:45:19,801 [F0] epoch 18/30: batch 8106/8106 (100%) mse=0.540267 elapsed=30.9s ETA=0.0s
+2026-08-18 18:45:19,847 [F0] epoch 18/30 (60%): train_mse=0.540267 epoch=30.9s total=577.1s
+2026-08-18 18:45:19,847 [F0] epoch 19/30 started
+2026-08-18 18:45:23,129 [F0] epoch 19/30: batch 810/8106 (10%) mse=0.541034 elapsed=3.3s ETA=29.6s
+2026-08-18 18:45:25,878 [F0] epoch 19/30: batch 1620/8106 (20%) mse=0.539492 elapsed=6.0s ETA=24.2s
+2026-08-18 18:45:28,879 [F0] epoch 19/30: batch 2430/8106 (30%) mse=0.538848 elapsed=9.0s ETA=21.1s
+2026-08-18 18:45:32,229 [F0] epoch 19/30: batch 3240/8106 (40%) mse=0.539216 elapsed=12.4s ETA=18.6s
+2026-08-18 18:45:35,012 [F0] epoch 19/30: batch 4050/8106 (50%) mse=0.539461 elapsed=15.2s ETA=15.2s
+2026-08-18 18:45:37,836 [F0] epoch 19/30: batch 4860/8106 (60%) mse=0.539525 elapsed=18.0s ETA=12.0s
+2026-08-18 18:45:41,047 [F0] epoch 19/30: batch 5670/8106 (70%) mse=0.539535 elapsed=21.2s ETA=9.1s
+2026-08-18 18:45:43,962 [F0] epoch 19/30: batch 6480/8106 (80%) mse=0.539395 elapsed=24.1s ETA=6.1s
+2026-08-18 18:45:46,862 [F0] epoch 19/30: batch 7290/8106 (90%) mse=0.539445 elapsed=27.0s ETA=3.0s
+2026-08-18 18:45:49,892 [F0] epoch 19/30: batch 8100/8106 (100%) mse=0.539424 elapsed=30.0s ETA=0.0s
+2026-08-18 18:45:49,923 [F0] epoch 19/30: batch 8106/8106 (100%) mse=0.539416 elapsed=30.1s ETA=0.0s
+2026-08-18 18:45:50,005 [F0] epoch 19/30 (63%): train_mse=0.539416 epoch=30.2s total=607.2s
+2026-08-18 18:45:50,007 [F0] epoch 20/30 started
+2026-08-18 18:45:53,162 [F0] epoch 20/30: batch 810/8106 (10%) mse=0.539422 elapsed=3.2s ETA=28.4s
+2026-08-18 18:45:55,862 [F0] epoch 20/30: batch 1620/8106 (20%) mse=0.538883 elapsed=5.9s ETA=23.5s
+2026-08-18 18:45:58,803 [F0] epoch 20/30: batch 2430/8106 (30%) mse=0.538972 elapsed=8.8s ETA=20.6s
+2026-08-18 18:46:02,063 [F0] epoch 20/30: batch 3240/8106 (40%) mse=0.538800 elapsed=12.1s ETA=18.1s
+2026-08-18 18:46:04,816 [F0] epoch 20/30: batch 4050/8106 (50%) mse=0.539021 elapsed=14.8s ETA=14.8s
+2026-08-18 18:46:07,703 [F0] epoch 20/30: batch 4860/8106 (60%) mse=0.538984 elapsed=17.7s ETA=11.8s
+2026-08-18 18:46:10,863 [F0] epoch 20/30: batch 5670/8106 (70%) mse=0.538995 elapsed=20.9s ETA=9.0s
+2026-08-18 18:46:13,685 [F0] epoch 20/30: batch 6480/8106 (80%) mse=0.546103 elapsed=23.7s ETA=5.9s
+2026-08-18 18:46:16,761 [F0] epoch 20/30: batch 7290/8106 (90%) mse=0.548941 elapsed=26.8s ETA=3.0s
+2026-08-18 18:46:19,997 [F0] epoch 20/30: batch 8100/8106 (100%) mse=0.549138 elapsed=30.0s ETA=0.0s
+2026-08-18 18:46:20,014 [F0] epoch 20/30: batch 8106/8106 (100%) mse=0.549143 elapsed=30.0s ETA=0.0s
+2026-08-18 18:46:20,064 [F0] epoch 20/30 (67%): train_mse=0.549143 epoch=30.1s total=637.3s
+2026-08-18 18:46:20,064 [F0] epoch 21/30 started
+2026-08-18 18:46:22,896 [F0] epoch 21/30: batch 810/8106 (10%) mse=0.544238 elapsed=2.8s ETA=25.5s
+2026-08-18 18:46:25,764 [F0] epoch 21/30: batch 1620/8106 (20%) mse=0.542752 elapsed=5.7s ETA=22.8s
+2026-08-18 18:46:28,963 [F0] epoch 21/30: batch 2430/8106 (30%) mse=0.542459 elapsed=8.9s ETA=20.8s
+2026-08-18 18:46:31,713 [F0] epoch 21/30: batch 3240/8106 (40%) mse=0.541974 elapsed=11.7s ETA=17.5s
+2026-08-18 18:46:34,714 [F0] epoch 21/30: batch 4050/8106 (50%) mse=0.541481 elapsed=14.7s ETA=14.7s
+2026-08-18 18:46:37,858 [F0] epoch 21/30: batch 4860/8106 (60%) mse=0.541119 elapsed=17.8s ETA=11.9s
+2026-08-18 18:46:40,837 [F0] epoch 21/30: batch 5670/8106 (70%) mse=0.540720 elapsed=20.8s ETA=8.9s
+2026-08-18 18:46:43,600 [F0] epoch 21/30: batch 6480/8106 (80%) mse=0.540559 elapsed=23.5s ETA=5.9s
+2026-08-18 18:46:46,745 [F0] epoch 21/30: batch 7290/8106 (90%) mse=0.540320 elapsed=26.7s ETA=3.0s
+2026-08-18 18:46:49,681 [F0] epoch 21/30: batch 8100/8106 (100%) mse=0.540198 elapsed=29.6s ETA=0.0s
+2026-08-18 18:46:49,714 [F0] epoch 21/30: batch 8106/8106 (100%) mse=0.540183 elapsed=29.7s ETA=0.0s
+2026-08-18 18:46:49,748 [F0] epoch 21/30 (70%): train_mse=0.540183 epoch=29.7s total=667.0s
+2026-08-18 18:46:49,748 [F0] epoch 22/30 started
+2026-08-18 18:46:52,633 [F0] epoch 22/30: batch 810/8106 (10%) mse=0.539256 elapsed=2.9s ETA=25.9s
+2026-08-18 18:46:55,781 [F0] epoch 22/30: batch 1620/8106 (20%) mse=0.539863 elapsed=6.0s ETA=24.1s
+2026-08-18 18:46:58,832 [F0] epoch 22/30: batch 2430/8106 (30%) mse=0.539843 elapsed=9.1s ETA=21.2s
+2026-08-18 18:47:01,548 [F0] epoch 22/30: batch 3240/8106 (40%) mse=0.539622 elapsed=11.8s ETA=17.7s
+2026-08-18 18:47:04,575 [F0] epoch 22/30: batch 4050/8106 (50%) mse=0.539559 elapsed=14.8s ETA=14.8s
+2026-08-18 18:47:07,665 [F0] epoch 22/30: batch 4860/8106 (60%) mse=0.539590 elapsed=17.9s ETA=12.0s
+2026-08-18 18:47:10,531 [F0] epoch 22/30: batch 5670/8106 (70%) mse=0.539699 elapsed=20.8s ETA=8.9s
+2026-08-18 18:47:13,525 [F0] epoch 22/30: batch 6480/8106 (80%) mse=0.539564 elapsed=23.8s ETA=6.0s
+2026-08-18 18:47:16,731 [F0] epoch 22/30: batch 7290/8106 (90%) mse=0.539469 elapsed=27.0s ETA=3.0s
+2026-08-18 18:47:19,515 [F0] epoch 22/30: batch 8100/8106 (100%) mse=0.541098 elapsed=29.8s ETA=0.0s
+2026-08-18 18:47:19,535 [F0] epoch 22/30: batch 8106/8106 (100%) mse=0.541181 elapsed=29.8s ETA=0.0s
+2026-08-18 18:47:19,565 [F0] epoch 22/30 (73%): train_mse=0.541181 epoch=29.8s total=696.8s
+2026-08-18 18:47:19,565 [F0] epoch 23/30 started
+2026-08-18 18:47:22,542 [F0] epoch 23/30: batch 810/8106 (10%) mse=0.614059 elapsed=3.0s ETA=26.7s
+2026-08-18 18:47:25,726 [F0] epoch 23/30: batch 1620/8106 (20%) mse=0.596101 elapsed=6.1s ETA=24.6s
+2026-08-18 18:47:28,451 [F0] epoch 23/30: batch 2430/8106 (30%) mse=0.581742 elapsed=8.9s ETA=20.7s
+2026-08-18 18:47:31,286 [F0] epoch 23/30: batch 3240/8106 (40%) mse=0.573249 elapsed=11.7s ETA=17.6s
+2026-08-18 18:47:34,521 [F0] epoch 23/30: batch 4050/8106 (50%) mse=0.567483 elapsed=14.9s ETA=15.0s
+2026-08-18 18:47:37,316 [F0] epoch 23/30: batch 4860/8106 (60%) mse=0.563223 elapsed=17.8s ETA=11.9s
+2026-08-18 18:47:40,066 [F0] epoch 23/30: batch 5670/8106 (70%) mse=0.560137 elapsed=20.5s ETA=8.8s
+2026-08-18 18:47:43,278 [F0] epoch 23/30: batch 6480/8106 (80%) mse=0.557591 elapsed=23.7s ETA=5.9s
+2026-08-18 18:47:46,232 [F0] epoch 23/30: batch 7290/8106 (90%) mse=0.555724 elapsed=26.7s ETA=3.0s
+2026-08-18 18:47:48,953 [F0] epoch 23/30: batch 8100/8106 (100%) mse=0.554135 elapsed=29.4s ETA=0.0s
+2026-08-18 18:47:48,983 [F0] epoch 23/30: batch 8106/8106 (100%) mse=0.554129 elapsed=29.4s ETA=0.0s
+2026-08-18 18:47:49,025 [F0] epoch 23/30 (77%): train_mse=0.554129 epoch=29.4s total=726.3s
+2026-08-18 18:47:49,025 [F0] epoch 24/30 started
+2026-08-18 18:47:52,089 [F0] epoch 24/30: batch 810/8106 (10%) mse=0.538701 elapsed=3.1s ETA=27.6s
+2026-08-18 18:47:55,216 [F0] epoch 24/30: batch 1620/8106 (20%) mse=0.538834 elapsed=6.2s ETA=24.8s
+2026-08-18 18:47:57,932 [F0] epoch 24/30: batch 2430/8106 (30%) mse=0.538878 elapsed=8.9s ETA=20.8s
+2026-08-18 18:48:00,982 [F0] epoch 24/30: batch 3240/8106 (40%) mse=0.538643 elapsed=12.0s ETA=18.0s
+2026-08-18 18:48:04,167 [F0] epoch 24/30: batch 4050/8106 (50%) mse=0.539185 elapsed=15.1s ETA=15.2s
+2026-08-18 18:48:06,900 [F0] epoch 24/30: batch 4860/8106 (60%) mse=0.539133 elapsed=17.9s ETA=11.9s
+2026-08-18 18:48:09,900 [F0] epoch 24/30: batch 5670/8106 (70%) mse=0.540748 elapsed=20.9s ETA=9.0s
+2026-08-18 18:48:13,100 [F0] epoch 24/30: batch 6480/8106 (80%) mse=0.541544 elapsed=24.1s ETA=6.0s
+2026-08-18 18:48:15,850 [F0] epoch 24/30: batch 7290/8106 (90%) mse=0.541616 elapsed=26.8s ETA=3.0s
+2026-08-18 18:48:18,887 [F0] epoch 24/30: batch 8100/8106 (100%) mse=0.541597 elapsed=29.9s ETA=0.0s
+2026-08-18 18:48:18,906 [F0] epoch 24/30: batch 8106/8106 (100%) mse=0.541595 elapsed=29.9s ETA=0.0s
+2026-08-18 18:48:18,956 [F0] epoch 24/30 (80%): train_mse=0.541595 epoch=29.9s total=756.2s
+2026-08-18 18:48:18,956 [F0] epoch 25/30 started
+2026-08-18 18:48:22,300 [F0] epoch 25/30: batch 810/8106 (10%) mse=0.539221 elapsed=3.3s ETA=30.1s
+2026-08-18 18:48:25,050 [F0] epoch 25/30: batch 1620/8106 (20%) mse=0.539374 elapsed=6.1s ETA=24.4s
+2026-08-18 18:48:28,001 [F0] epoch 25/30: batch 2430/8106 (30%) mse=0.539897 elapsed=9.0s ETA=21.1s
+2026-08-18 18:48:31,351 [F0] epoch 25/30: batch 3240/8106 (40%) mse=0.539704 elapsed=12.4s ETA=18.6s
+2026-08-18 18:48:34,190 [F0] epoch 25/30: batch 4050/8106 (50%) mse=0.539556 elapsed=15.2s ETA=15.3s
+2026-08-18 18:48:37,041 [F0] epoch 25/30: batch 4860/8106 (60%) mse=0.539700 elapsed=18.1s ETA=12.1s
+2026-08-18 18:48:40,207 [F0] epoch 25/30: batch 5670/8106 (70%) mse=0.539812 elapsed=21.2s ETA=9.1s
+2026-08-18 18:48:43,118 [F0] epoch 25/30: batch 6480/8106 (80%) mse=0.539714 elapsed=24.2s ETA=6.1s
+2026-08-18 18:48:45,851 [F0] epoch 25/30: batch 7290/8106 (90%) mse=0.539445 elapsed=26.9s ETA=3.0s
+2026-08-18 18:48:48,818 [F0] epoch 25/30: batch 8100/8106 (100%) mse=0.539495 elapsed=29.9s ETA=0.0s
+2026-08-18 18:48:48,838 [F0] epoch 25/30: batch 8106/8106 (100%) mse=0.539495 elapsed=29.9s ETA=0.0s
+2026-08-18 18:48:48,868 [F0] epoch 25/30 (83%): train_mse=0.539495 epoch=29.9s total=786.1s
+2026-08-18 18:48:48,868 [F0] epoch 26/30 started
+2026-08-18 18:48:51,941 [F0] epoch 26/30: batch 810/8106 (10%) mse=0.539618 elapsed=3.1s ETA=27.6s
+2026-08-18 18:48:54,756 [F0] epoch 26/30: batch 1620/8106 (20%) mse=0.539045 elapsed=5.9s ETA=23.5s
+2026-08-18 18:48:57,811 [F0] epoch 26/30: batch 2430/8106 (30%) mse=0.539475 elapsed=8.9s ETA=20.9s
+2026-08-18 18:49:00,979 [F0] epoch 26/30: batch 3240/8106 (40%) mse=0.539289 elapsed=12.1s ETA=18.2s
+2026-08-18 18:49:03,818 [F0] epoch 26/30: batch 4050/8106 (50%) mse=0.539197 elapsed=14.9s ETA=15.0s
+2026-08-18 18:49:06,814 [F0] epoch 26/30: batch 4860/8106 (60%) mse=0.541836 elapsed=17.9s ETA=12.0s
+2026-08-18 18:49:10,073 [F0] epoch 26/30: batch 5670/8106 (70%) mse=0.545808 elapsed=21.2s ETA=9.1s
+2026-08-18 18:49:13,052 [F0] epoch 26/30: batch 6480/8106 (80%) mse=0.547845 elapsed=24.2s ETA=6.1s
+2026-08-18 18:49:16,069 [F0] epoch 26/30: batch 7290/8106 (90%) mse=0.548448 elapsed=27.2s ETA=3.0s
+2026-08-18 18:49:19,319 [F0] epoch 26/30: batch 8100/8106 (100%) mse=0.548323 elapsed=30.4s ETA=0.0s
+2026-08-18 18:49:19,338 [F0] epoch 26/30: batch 8106/8106 (100%) mse=0.548321 elapsed=30.5s ETA=0.0s
+2026-08-18 18:49:19,394 [F0] epoch 26/30 (87%): train_mse=0.548321 epoch=30.5s total=816.6s
+2026-08-18 18:49:19,394 [F0] epoch 27/30 started
+2026-08-18 18:49:22,305 [F0] epoch 27/30: batch 810/8106 (10%) mse=0.544161 elapsed=2.9s ETA=26.2s
+2026-08-18 18:49:25,319 [F0] epoch 27/30: batch 1620/8106 (20%) mse=0.543749 elapsed=5.9s ETA=23.7s
+2026-08-18 18:49:28,709 [F0] epoch 27/30: batch 2430/8106 (30%) mse=0.543291 elapsed=9.3s ETA=21.8s
+2026-08-18 18:49:31,774 [F0] epoch 27/30: batch 3240/8106 (40%) mse=0.542618 elapsed=12.4s ETA=18.6s
+2026-08-18 18:49:34,600 [F0] epoch 27/30: batch 4050/8106 (50%) mse=0.542191 elapsed=15.2s ETA=15.2s
+2026-08-18 18:49:37,560 [F0] epoch 27/30: batch 4860/8106 (60%) mse=0.541504 elapsed=18.2s ETA=12.1s
+2026-08-18 18:49:40,492 [F0] epoch 27/30: batch 5670/8106 (70%) mse=0.541304 elapsed=21.1s ETA=9.1s
+2026-08-18 18:49:43,207 [F0] epoch 27/30: batch 6480/8106 (80%) mse=0.540992 elapsed=23.8s ETA=6.0s
+2026-08-18 18:49:46,171 [F0] epoch 27/30: batch 7290/8106 (90%) mse=0.540780 elapsed=26.8s ETA=3.0s
+2026-08-18 18:49:49,209 [F0] epoch 27/30: batch 8100/8106 (100%) mse=0.540656 elapsed=29.8s ETA=0.0s
+2026-08-18 18:49:49,231 [F0] epoch 27/30: batch 8106/8106 (100%) mse=0.540661 elapsed=29.8s ETA=0.0s
+2026-08-18 18:49:49,256 [F0] epoch 27/30 (90%): train_mse=0.540661 epoch=29.9s total=846.5s
+2026-08-18 18:49:49,256 [F0] epoch 28/30 started
+2026-08-18 18:49:51,938 [F0] epoch 28/30: batch 810/8106 (10%) mse=0.539080 elapsed=2.7s ETA=24.1s
+2026-08-18 18:49:54,825 [F0] epoch 28/30: batch 1620/8106 (20%) mse=0.539328 elapsed=5.6s ETA=22.3s
+2026-08-18 18:49:57,824 [F0] epoch 28/30: batch 2430/8106 (30%) mse=0.539239 elapsed=8.6s ETA=20.0s
+2026-08-18 18:50:00,472 [F0] epoch 28/30: batch 3240/8106 (40%) mse=0.539261 elapsed=11.2s ETA=16.8s
+2026-08-18 18:50:03,393 [F0] epoch 28/30: batch 4050/8106 (50%) mse=0.538969 elapsed=14.1s ETA=14.2s
+2026-08-18 18:50:06,519 [F0] epoch 28/30: batch 4860/8106 (60%) mse=0.538981 elapsed=17.3s ETA=11.5s
+2026-08-18 18:50:09,185 [F0] epoch 28/30: batch 5670/8106 (70%) mse=0.539289 elapsed=19.9s ETA=8.6s
+2026-08-18 18:50:11,939 [F0] epoch 28/30: batch 6480/8106 (80%) mse=0.539335 elapsed=22.7s ETA=5.7s
+2026-08-18 18:50:15,058 [F0] epoch 28/30: batch 7290/8106 (90%) mse=0.539349 elapsed=25.8s ETA=2.9s
+2026-08-18 18:50:17,765 [F0] epoch 28/30: batch 8100/8106 (100%) mse=0.539313 elapsed=28.5s ETA=0.0s
+2026-08-18 18:50:17,793 [F0] epoch 28/30: batch 8106/8106 (100%) mse=0.539317 elapsed=28.5s ETA=0.0s
+2026-08-18 18:50:17,832 [F0] epoch 28/30 (93%): train_mse=0.539317 epoch=28.6s total=875.1s
+2026-08-18 18:50:17,832 [F0] epoch 29/30 started
+2026-08-18 18:50:20,682 [F0] epoch 29/30: batch 810/8106 (10%) mse=0.539309 elapsed=2.9s ETA=25.7s
+2026-08-18 18:50:23,755 [F0] epoch 29/30: batch 1620/8106 (20%) mse=0.541450 elapsed=5.9s ETA=23.7s
+2026-08-18 18:50:26,562 [F0] epoch 29/30: batch 2430/8106 (30%) mse=0.541724 elapsed=8.7s ETA=20.4s
+2026-08-18 18:50:29,282 [F0] epoch 29/30: batch 3240/8106 (40%) mse=0.540955 elapsed=11.4s ETA=17.2s
+2026-08-18 18:50:32,222 [F0] epoch 29/30: batch 4050/8106 (50%) mse=0.540699 elapsed=14.4s ETA=14.4s
+2026-08-18 18:50:35,200 [F0] epoch 29/30: batch 4860/8106 (60%) mse=0.543121 elapsed=17.4s ETA=11.6s
+2026-08-18 18:50:37,898 [F0] epoch 29/30: batch 5670/8106 (70%) mse=0.543670 elapsed=20.1s ETA=8.6s
+2026-08-18 18:50:40,883 [F0] epoch 29/30: batch 6480/8106 (80%) mse=0.543581 elapsed=23.1s ETA=5.8s
+2026-08-18 18:50:43,905 [F0] epoch 29/30: batch 7290/8106 (90%) mse=0.543140 elapsed=26.1s ETA=2.9s
+2026-08-18 18:50:46,542 [F0] epoch 29/30: batch 8100/8106 (100%) mse=0.542951 elapsed=28.7s ETA=0.0s
+2026-08-18 18:50:46,559 [F0] epoch 29/30: batch 8106/8106 (100%) mse=0.542939 elapsed=28.7s ETA=0.0s
+2026-08-18 18:50:46,606 [F0] epoch 29/30 (97%): train_mse=0.542939 epoch=28.8s total=903.9s
+2026-08-18 18:50:46,606 [F0] epoch 30/30 started
+2026-08-18 18:50:49,502 [F0] epoch 30/30: batch 810/8106 (10%) mse=0.540054 elapsed=2.9s ETA=26.1s
+2026-08-18 18:50:52,577 [F0] epoch 30/30: batch 1620/8106 (20%) mse=0.539777 elapsed=6.0s ETA=23.9s
+2026-08-18 18:50:55,201 [F0] epoch 30/30: batch 2430/8106 (30%) mse=0.539027 elapsed=8.6s ETA=20.1s
+2026-08-18 18:50:58,037 [F0] epoch 30/30: batch 3240/8106 (40%) mse=0.538982 elapsed=11.4s ETA=17.2s
+2026-08-18 18:51:01,140 [F0] epoch 30/30: batch 4050/8106 (50%) mse=0.538984 elapsed=14.5s ETA=14.6s
+2026-08-18 18:51:03,850 [F0] epoch 30/30: batch 4860/8106 (60%) mse=0.539215 elapsed=17.2s ETA=11.5s
+2026-08-18 18:51:06,605 [F0] epoch 30/30: batch 5670/8106 (70%) mse=0.539179 elapsed=20.0s ETA=8.6s
+2026-08-18 18:51:09,705 [F0] epoch 30/30: batch 6480/8106 (80%) mse=0.539299 elapsed=23.1s ETA=5.8s
+2026-08-18 18:51:12,575 [F0] epoch 30/30: batch 7290/8106 (90%) mse=0.539240 elapsed=26.0s ETA=2.9s
+2026-08-18 18:51:15,267 [F0] epoch 30/30: batch 8100/8106 (100%) mse=0.539125 elapsed=28.7s ETA=0.0s
+2026-08-18 18:51:15,291 [F0] epoch 30/30: batch 8106/8106 (100%) mse=0.539132 elapsed=28.7s ETA=0.0s
+2026-08-18 18:51:15,331 [F0] epoch 30/30 (100%): train_mse=0.539132 epoch=28.7s total=932.6s
+2026-08-18 18:51:15,331 [F0] validation scoring started: batches=507 samples=259392
+2026-08-18 18:51:15,789 [F0] validation scoring: 50/507 batches (10%) elapsed=0.5s ETA=4.2s
+2026-08-18 18:51:16,178 [F0] validation scoring: 100/507 batches (20%) elapsed=0.8s ETA=3.5s
+2026-08-18 18:51:16,685 [F0] validation scoring: 150/507 batches (30%) elapsed=1.4s ETA=3.2s
+2026-08-18 18:51:17,079 [F0] validation scoring: 200/507 batches (39%) elapsed=1.7s ETA=2.7s
+2026-08-18 18:51:17,466 [F0] validation scoring: 250/507 batches (49%) elapsed=2.1s ETA=2.2s
+2026-08-18 18:51:17,869 [F0] validation scoring: 300/507 batches (59%) elapsed=2.5s ETA=1.8s
+2026-08-18 18:51:18,417 [F0] validation scoring: 350/507 batches (69%) elapsed=3.1s ETA=1.4s
+2026-08-18 18:51:18,880 [F0] validation scoring: 400/507 batches (79%) elapsed=3.5s ETA=0.9s
+2026-08-18 18:51:19,281 [F0] validation scoring: 450/507 batches (89%) elapsed=4.0s ETA=0.5s
+2026-08-18 18:51:19,640 [F0] validation scoring: 500/507 batches (99%) elapsed=4.3s ETA=0.1s
+2026-08-18 18:51:19,690 [F0] validation scoring: 507/507 batches (100%) elapsed=4.4s ETA=0.0s
+2026-08-18 18:51:19,703 [F0] anomaly threshold: percentile=99.00 value=0.819142 (validation normal only)
+2026-08-18 18:51:19,703 [F0] test scoring started: batches=2166 samples=1108800
+2026-08-18 18:51:21,301 [F0] test scoring: 216/2166 batches (10%) elapsed=1.6s ETA=14.4s
+2026-08-18 18:51:22,832 [F0] test scoring: 432/2166 batches (20%) elapsed=3.1s ETA=12.5s
+2026-08-18 18:51:24,613 [F0] test scoring: 648/2166 batches (30%) elapsed=4.9s ETA=11.5s
+2026-08-18 18:51:26,402 [F0] test scoring: 864/2166 batches (40%) elapsed=6.7s ETA=10.1s
+2026-08-18 18:51:28,297 [F0] test scoring: 1080/2166 batches (50%) elapsed=8.6s ETA=8.6s
+2026-08-18 18:51:29,946 [F0] test scoring: 1296/2166 batches (60%) elapsed=10.2s ETA=6.9s
+2026-08-18 18:51:31,585 [F0] test scoring: 1512/2166 batches (70%) elapsed=11.9s ETA=5.1s
+2026-08-18 18:51:33,242 [F0] test scoring: 1728/2166 batches (80%) elapsed=13.5s ETA=3.4s
+2026-08-18 18:51:35,023 [F0] test scoring: 1944/2166 batches (90%) elapsed=15.3s ETA=1.7s
+2026-08-18 18:51:37,064 [F0] test scoring: 2160/2166 batches (100%) elapsed=17.4s ETA=0.0s
+2026-08-18 18:51:37,112 [F0] test scoring: 2166/2166 batches (100%) elapsed=17.4s ETA=0.0s
+2026-08-18 18:51:37,895 [F0] complete: AUROC=0.7473 AUPRC=0.8978 delay=51.84 checkpoint=C:\Users\FORYOUCOM\Desktop\master_degree\Thesis-Orchestrator\outputs\final_gate_exp1\checkpoints\reinartz_f0_seed_45.pt
+2026-08-18 18:51:37,895 result={"variant": "F0", "seed": 45, "split_seed": 42, "epochs": 30, "input_dim": 41, "hidden_dim": 64, "parameters": 23209, "mae_z": 0.49074825644493103, "rmse_z": 0.7343297600746155, "auroc": 0.7472866865210505, "auprc": 0.8978097223683217, "detected_run_ratio": 0.6482142857142857, "detection_delay": 51.837465564738295, "prefault_sample_fpr": 0.010189982728842832, "prefault_run_alarm_rate": 0.0, "threshold": 0.8191421627998352, "elapsed_seconds": 954.9066967000253}
+2026-08-18 18:51:37,895 [F1] training setup: device=cuda input_dim=52 parameters=25321
+2026-08-18 18:51:37,895 [F1] GPU ACTIVE: NVIDIA GeForce RTX 5060 Ti | CUDA 13.0 | VRAM 8.0 GB
+2026-08-18 18:51:37,895 [F1] data: train=1037568 windows/8106 batches, validation=259392 windows, test=1108800 windows
+2026-08-18 18:51:37,895 [F1] epoch 1/30 started
+2026-08-18 18:51:40,671 [F1] epoch 1/30: batch 810/8106 (10%) mse=0.666776 elapsed=2.8s ETA=25.0s
+2026-08-18 18:51:43,715 [F1] epoch 1/30: batch 1620/8106 (20%) mse=0.626685 elapsed=5.8s ETA=23.3s
+2026-08-18 18:51:46,848 [F1] epoch 1/30: batch 2430/8106 (30%) mse=0.608950 elapsed=9.0s ETA=20.9s
+2026-08-18 18:51:49,670 [F1] epoch 1/30: batch 3240/8106 (40%) mse=0.597797 elapsed=11.8s ETA=17.7s
+2026-08-18 18:51:52,829 [F1] epoch 1/30: batch 4050/8106 (50%) mse=0.590680 elapsed=14.9s ETA=15.0s
+2026-08-18 18:51:56,006 [F1] epoch 1/30: batch 4860/8106 (60%) mse=0.585924 elapsed=18.1s ETA=12.1s
+2026-08-18 18:51:58,968 [F1] epoch 1/30: batch 5670/8106 (70%) mse=0.582059 elapsed=21.1s ETA=9.1s
+2026-08-18 18:52:01,609 [F1] epoch 1/30: batch 6480/8106 (80%) mse=0.579144 elapsed=23.7s ETA=6.0s
+2026-08-18 18:52:04,475 [F1] epoch 1/30: batch 7290/8106 (90%) mse=0.576850 elapsed=26.6s ETA=3.0s
+2026-08-18 18:52:07,436 [F1] epoch 1/30: batch 8100/8106 (100%) mse=0.574784 elapsed=29.5s ETA=0.0s
+2026-08-18 18:52:07,468 [F1] epoch 1/30: batch 8106/8106 (100%) mse=0.574767 elapsed=29.6s ETA=0.0s
+2026-08-18 18:52:07,504 [F1] epoch 1/30 (3%): train_mse=0.574767 epoch=29.6s total=29.6s
+2026-08-18 18:52:07,504 [F1] epoch 2/30 started
+2026-08-18 18:52:10,177 [F1] epoch 2/30: batch 810/8106 (10%) mse=0.558793 elapsed=2.7s ETA=24.0s
+2026-08-18 18:52:13,023 [F1] epoch 2/30: batch 1620/8106 (20%) mse=0.558340 elapsed=5.5s ETA=22.1s
+2026-08-18 18:52:16,031 [F1] epoch 2/30: batch 2430/8106 (30%) mse=0.557410 elapsed=8.5s ETA=19.9s
+2026-08-18 18:52:18,649 [F1] epoch 2/30: batch 3240/8106 (40%) mse=0.557069 elapsed=11.1s ETA=16.7s
+2026-08-18 18:52:21,510 [F1] epoch 2/30: batch 4050/8106 (50%) mse=0.556296 elapsed=14.0s ETA=14.0s
+2026-08-18 18:52:24,624 [F1] epoch 2/30: batch 4860/8106 (60%) mse=0.555891 elapsed=17.1s ETA=11.4s
+2026-08-18 18:52:27,275 [F1] epoch 2/30: batch 5670/8106 (70%) mse=0.555688 elapsed=19.8s ETA=8.5s
+2026-08-18 18:52:30,068 [F1] epoch 2/30: batch 6480/8106 (80%) mse=0.555555 elapsed=22.6s ETA=5.7s
+2026-08-18 18:52:33,165 [F1] epoch 2/30: batch 7290/8106 (90%) mse=0.555371 elapsed=25.7s ETA=2.9s
+2026-08-18 18:52:35,886 [F1] epoch 2/30: batch 8100/8106 (100%) mse=0.555151 elapsed=28.4s ETA=0.0s
+2026-08-18 18:52:35,915 [F1] epoch 2/30: batch 8106/8106 (100%) mse=0.555151 elapsed=28.4s ETA=0.0s
+2026-08-18 18:52:35,953 [F1] epoch 2/30 (7%): train_mse=0.555151 epoch=28.4s total=58.1s
+2026-08-18 18:52:35,953 [F1] epoch 3/30 started
+2026-08-18 18:52:38,704 [F1] epoch 3/30: batch 810/8106 (10%) mse=0.554118 elapsed=2.8s ETA=24.9s
+2026-08-18 18:52:41,749 [F1] epoch 3/30: batch 1620/8106 (20%) mse=0.552649 elapsed=5.8s ETA=23.2s
+2026-08-18 18:52:44,553 [F1] epoch 3/30: batch 2430/8106 (30%) mse=0.552536 elapsed=8.6s ETA=20.1s
+2026-08-18 18:52:47,257 [F1] epoch 3/30: batch 3240/8106 (40%) mse=0.551586 elapsed=11.3s ETA=17.0s
+2026-08-18 18:52:50,202 [F1] epoch 3/30: batch 4050/8106 (50%) mse=0.551620 elapsed=14.3s ETA=14.3s
+2026-08-18 18:52:53,163 [F1] epoch 3/30: batch 4860/8106 (60%) mse=0.551311 elapsed=17.2s ETA=11.5s
+2026-08-18 18:52:55,813 [F1] epoch 3/30: batch 5670/8106 (70%) mse=0.551148 elapsed=19.9s ETA=8.5s
+2026-08-18 18:52:58,784 [F1] epoch 3/30: batch 6480/8106 (80%) mse=0.550804 elapsed=22.8s ETA=5.7s
+2026-08-18 18:53:01,836 [F1] epoch 3/30: batch 7290/8106 (90%) mse=0.550665 elapsed=25.9s ETA=2.9s
+2026-08-18 18:53:04,549 [F1] epoch 3/30: batch 8100/8106 (100%) mse=0.550527 elapsed=28.6s ETA=0.0s
+2026-08-18 18:53:04,569 [F1] epoch 3/30: batch 8106/8106 (100%) mse=0.550524 elapsed=28.6s ETA=0.0s
+2026-08-18 18:53:04,592 [F1] epoch 3/30 (10%): train_mse=0.550524 epoch=28.7s total=86.7s
+2026-08-18 18:53:04,592 [F1] epoch 4/30 started
+2026-08-18 18:53:07,568 [F1] epoch 4/30: batch 810/8106 (10%) mse=0.547350 elapsed=3.0s ETA=26.7s
+2026-08-18 18:53:10,710 [F1] epoch 4/30: batch 1620/8106 (20%) mse=0.547853 elapsed=6.1s ETA=24.4s
+2026-08-18 18:53:13,421 [F1] epoch 4/30: batch 2430/8106 (30%) mse=0.548074 elapsed=8.8s ETA=20.6s
+2026-08-18 18:53:16,122 [F1] epoch 4/30: batch 3240/8106 (40%) mse=0.547866 elapsed=11.5s ETA=17.3s
+2026-08-18 18:53:19,187 [F1] epoch 4/30: batch 4050/8106 (50%) mse=0.547879 elapsed=14.6s ETA=14.6s
+2026-08-18 18:53:21,875 [F1] epoch 4/30: batch 4860/8106 (60%) mse=0.547599 elapsed=17.3s ETA=11.5s
+2026-08-18 18:53:24,694 [F1] epoch 4/30: batch 5670/8106 (70%) mse=0.547295 elapsed=20.1s ETA=8.6s
+2026-08-18 18:53:27,726 [F1] epoch 4/30: batch 6480/8106 (80%) mse=0.546998 elapsed=23.1s ETA=5.8s
+2026-08-18 18:53:30,484 [F1] epoch 4/30: batch 7290/8106 (90%) mse=0.546613 elapsed=25.9s ETA=2.9s
+2026-08-18 18:53:33,210 [F1] epoch 4/30: batch 8100/8106 (100%) mse=0.546269 elapsed=28.6s ETA=0.0s
+2026-08-18 18:53:33,226 [F1] epoch 4/30: batch 8106/8106 (100%) mse=0.546266 elapsed=28.6s ETA=0.0s
+2026-08-18 18:53:33,275 [F1] epoch 4/30 (13%): train_mse=0.546266 epoch=28.7s total=115.4s
+2026-08-18 18:53:33,275 [F1] epoch 5/30 started
+2026-08-18 18:53:36,259 [F1] epoch 5/30: batch 810/8106 (10%) mse=0.543010 elapsed=3.0s ETA=26.9s
+2026-08-18 18:53:39,329 [F1] epoch 5/30: batch 1620/8106 (20%) mse=0.543237 elapsed=6.1s ETA=24.3s
+2026-08-18 18:53:41,962 [F1] epoch 5/30: batch 2430/8106 (30%) mse=0.543163 elapsed=8.7s ETA=20.3s
+2026-08-18 18:53:44,694 [F1] epoch 5/30: batch 3240/8106 (40%) mse=0.542813 elapsed=11.4s ETA=17.2s
+2026-08-18 18:53:47,781 [F1] epoch 5/30: batch 4050/8106 (50%) mse=0.542573 elapsed=14.5s ETA=14.5s
+2026-08-18 18:53:50,404 [F1] epoch 5/30: batch 4860/8106 (60%) mse=0.542212 elapsed=17.1s ETA=11.4s
+2026-08-18 18:53:53,191 [F1] epoch 5/30: batch 5670/8106 (70%) mse=0.541991 elapsed=19.9s ETA=8.6s
+2026-08-18 18:53:56,314 [F1] epoch 5/30: batch 6480/8106 (80%) mse=0.541848 elapsed=23.0s ETA=5.8s
+2026-08-18 18:53:58,975 [F1] epoch 5/30: batch 7290/8106 (90%) mse=0.541759 elapsed=25.7s ETA=2.9s
+2026-08-18 18:54:01,768 [F1] epoch 5/30: batch 8100/8106 (100%) mse=0.541574 elapsed=28.5s ETA=0.0s
+2026-08-18 18:54:01,788 [F1] epoch 5/30: batch 8106/8106 (100%) mse=0.541573 elapsed=28.5s ETA=0.0s
+2026-08-18 18:54:01,812 [F1] epoch 5/30 (17%): train_mse=0.541573 epoch=28.5s total=143.9s
+2026-08-18 18:54:01,812 [F1] epoch 6/30 started
+2026-08-18 18:54:04,984 [F1] epoch 6/30: batch 810/8106 (10%) mse=0.539249 elapsed=3.2s ETA=28.5s
+2026-08-18 18:54:07,740 [F1] epoch 6/30: batch 1620/8106 (20%) mse=0.539558 elapsed=5.9s ETA=23.7s
+2026-08-18 18:54:10,412 [F1] epoch 6/30: batch 2430/8106 (30%) mse=0.539626 elapsed=8.6s ETA=20.1s
+2026-08-18 18:54:13,403 [F1] epoch 6/30: batch 3240/8106 (40%) mse=0.539597 elapsed=11.6s ETA=17.4s
+2026-08-18 18:54:16,508 [F1] epoch 6/30: batch 4050/8106 (50%) mse=0.539639 elapsed=14.7s ETA=14.7s
+2026-08-18 18:54:19,158 [F1] epoch 6/30: batch 4860/8106 (60%) mse=0.539591 elapsed=17.4s ETA=11.6s
+2026-08-18 18:54:21,979 [F1] epoch 6/30: batch 5670/8106 (70%) mse=0.539579 elapsed=20.2s ETA=8.7s
+2026-08-18 18:54:25,011 [F1] epoch 6/30: batch 6480/8106 (80%) mse=0.539489 elapsed=23.2s ETA=5.8s
+2026-08-18 18:54:27,739 [F1] epoch 6/30: batch 7290/8106 (90%) mse=0.539489 elapsed=25.9s ETA=2.9s
+2026-08-18 18:54:30,619 [F1] epoch 6/30: batch 8100/8106 (100%) mse=0.539543 elapsed=28.8s ETA=0.0s
+2026-08-18 18:54:30,634 [F1] epoch 6/30: batch 8106/8106 (100%) mse=0.539552 elapsed=28.8s ETA=0.0s
+2026-08-18 18:54:30,681 [F1] epoch 6/30 (20%): train_mse=0.539552 epoch=28.9s total=172.8s
+2026-08-18 18:54:30,681 [F1] epoch 7/30 started
+2026-08-18 18:54:33,866 [F1] epoch 7/30: batch 810/8106 (10%) mse=0.538466 elapsed=3.2s ETA=28.7s
+2026-08-18 18:54:36,546 [F1] epoch 7/30: batch 1620/8106 (20%) mse=0.538504 elapsed=5.9s ETA=23.5s
+2026-08-18 18:54:39,377 [F1] epoch 7/30: batch 2430/8106 (30%) mse=0.538945 elapsed=8.7s ETA=20.3s
+2026-08-18 18:54:42,519 [F1] epoch 7/30: batch 3240/8106 (40%) mse=0.538855 elapsed=11.8s ETA=17.8s
+2026-08-18 18:54:45,174 [F1] epoch 7/30: batch 4050/8106 (50%) mse=0.538686 elapsed=14.5s ETA=14.5s
+2026-08-18 18:54:47,923 [F1] epoch 7/30: batch 4860/8106 (60%) mse=0.538493 elapsed=17.2s ETA=11.5s
+2026-08-18 18:54:50,873 [F1] epoch 7/30: batch 5670/8106 (70%) mse=0.538492 elapsed=20.2s ETA=8.7s
+2026-08-18 18:54:53,810 [F1] epoch 7/30: batch 6480/8106 (80%) mse=0.538479 elapsed=23.1s ETA=5.8s
+2026-08-18 18:54:56,412 [F1] epoch 7/30: batch 7290/8106 (90%) mse=0.538487 elapsed=25.7s ETA=2.9s
+2026-08-18 18:54:59,279 [F1] epoch 7/30: batch 8100/8106 (100%) mse=0.538500 elapsed=28.6s ETA=0.0s
+2026-08-18 18:54:59,291 [F1] epoch 7/30: batch 8106/8106 (100%) mse=0.538510 elapsed=28.6s ETA=0.0s
+2026-08-18 18:54:59,335 [F1] epoch 7/30 (23%): train_mse=0.538510 epoch=28.7s total=201.4s
+2026-08-18 18:54:59,335 [F1] epoch 8/30 started
+2026-08-18 18:55:02,368 [F1] epoch 8/30: batch 810/8106 (10%) mse=0.538610 elapsed=3.0s ETA=27.3s
+2026-08-18 18:55:05,027 [F1] epoch 8/30: batch 1620/8106 (20%) mse=0.537847 elapsed=5.7s ETA=22.8s
+2026-08-18 18:55:07,911 [F1] epoch 8/30: batch 2430/8106 (30%) mse=0.538111 elapsed=8.6s ETA=20.1s
+2026-08-18 18:55:11,077 [F1] epoch 8/30: batch 3240/8106 (40%) mse=0.537978 elapsed=11.7s ETA=17.6s
+2026-08-18 18:55:13,728 [F1] epoch 8/30: batch 4050/8106 (50%) mse=0.537993 elapsed=14.4s ETA=14.4s
+2026-08-18 18:55:16,611 [F1] epoch 8/30: batch 4860/8106 (60%) mse=0.537864 elapsed=17.3s ETA=11.5s
+2026-08-18 18:55:19,720 [F1] epoch 8/30: batch 5670/8106 (70%) mse=0.537888 elapsed=20.4s ETA=8.8s
+2026-08-18 18:55:22,412 [F1] epoch 8/30: batch 6480/8106 (80%) mse=0.537883 elapsed=23.1s ETA=5.8s
+2026-08-18 18:55:25,206 [F1] epoch 8/30: batch 7290/8106 (90%) mse=0.537935 elapsed=25.9s ETA=2.9s
+2026-08-18 18:55:28,208 [F1] epoch 8/30: batch 8100/8106 (100%) mse=0.537785 elapsed=28.9s ETA=0.0s
+2026-08-18 18:55:28,230 [F1] epoch 8/30: batch 8106/8106 (100%) mse=0.537797 elapsed=28.9s ETA=0.0s
+2026-08-18 18:55:28,269 [F1] epoch 8/30 (27%): train_mse=0.537797 epoch=28.9s total=230.4s
+2026-08-18 18:55:28,269 [F1] epoch 9/30 started
+2026-08-18 18:55:31,351 [F1] epoch 9/30: batch 810/8106 (10%) mse=0.537056 elapsed=3.1s ETA=27.7s
+2026-08-18 18:55:34,106 [F1] epoch 9/30: batch 1620/8106 (20%) mse=0.537215 elapsed=5.8s ETA=23.4s
+2026-08-18 18:55:37,452 [F1] epoch 9/30: batch 2430/8106 (30%) mse=0.537509 elapsed=9.2s ETA=21.4s
+2026-08-18 18:55:40,719 [F1] epoch 9/30: batch 3240/8106 (40%) mse=0.537634 elapsed=12.5s ETA=18.7s
+2026-08-18 18:55:43,461 [F1] epoch 9/30: batch 4050/8106 (50%) mse=0.537591 elapsed=15.2s ETA=15.2s
+2026-08-18 18:55:46,324 [F1] epoch 9/30: batch 4860/8106 (60%) mse=0.537538 elapsed=18.1s ETA=12.1s
+2026-08-18 18:55:49,544 [F1] epoch 9/30: batch 5670/8106 (70%) mse=0.537500 elapsed=21.3s ETA=9.1s
+2026-08-18 18:55:52,732 [F1] epoch 9/30: batch 6480/8106 (80%) mse=0.537430 elapsed=24.5s ETA=6.1s
+2026-08-18 18:55:56,000 [F1] epoch 9/30: batch 7290/8106 (90%) mse=0.537321 elapsed=27.7s ETA=3.1s
+2026-08-18 18:55:59,395 [F1] epoch 9/30: batch 8100/8106 (100%) mse=0.537382 elapsed=31.1s ETA=0.0s
+2026-08-18 18:55:59,444 [F1] epoch 9/30: batch 8106/8106 (100%) mse=0.537374 elapsed=31.2s ETA=0.0s
+2026-08-18 18:55:59,514 [F1] epoch 9/30 (30%): train_mse=0.537374 epoch=31.2s total=261.6s
+2026-08-18 18:55:59,514 [F1] epoch 10/30 started
+2026-08-18 18:56:02,835 [F1] epoch 10/30: batch 810/8106 (10%) mse=0.537052 elapsed=3.3s ETA=29.9s
+2026-08-18 18:56:06,019 [F1] epoch 10/30: batch 1620/8106 (20%) mse=0.536645 elapsed=6.5s ETA=26.0s
+2026-08-18 18:56:09,291 [F1] epoch 10/30: batch 2430/8106 (30%) mse=0.537137 elapsed=9.8s ETA=22.8s
+2026-08-18 18:56:12,711 [F1] epoch 10/30: batch 3240/8106 (40%) mse=0.537206 elapsed=13.2s ETA=19.8s
+2026-08-18 18:56:15,932 [F1] epoch 10/30: batch 4050/8106 (50%) mse=0.536973 elapsed=16.4s ETA=16.4s
+2026-08-18 18:56:19,182 [F1] epoch 10/30: batch 4860/8106 (60%) mse=0.536865 elapsed=19.7s ETA=13.1s
+2026-08-18 18:56:22,637 [F1] epoch 10/30: batch 5670/8106 (70%) mse=0.536962 elapsed=23.1s ETA=9.9s
+2026-08-18 18:56:25,854 [F1] epoch 10/30: batch 6480/8106 (80%) mse=0.536997 elapsed=26.3s ETA=6.6s
+2026-08-18 18:56:28,988 [F1] epoch 10/30: batch 7290/8106 (90%) mse=0.537023 elapsed=29.5s ETA=3.3s
+2026-08-18 18:56:32,253 [F1] epoch 10/30: batch 8100/8106 (100%) mse=0.537058 elapsed=32.7s ETA=0.0s
+2026-08-18 18:56:32,279 [F1] epoch 10/30: batch 8106/8106 (100%) mse=0.537063 elapsed=32.8s ETA=0.0s
+2026-08-18 18:56:32,323 [F1] epoch 10/30 (33%): train_mse=0.537063 epoch=32.8s total=294.4s
+2026-08-18 18:56:32,323 [F1] epoch 11/30 started
+2026-08-18 18:56:35,885 [F1] epoch 11/30: batch 810/8106 (10%) mse=0.536900 elapsed=3.6s ETA=32.1s
+2026-08-18 18:56:39,114 [F1] epoch 11/30: batch 1620/8106 (20%) mse=0.536854 elapsed=6.8s ETA=27.2s
+2026-08-18 18:56:42,387 [F1] epoch 11/30: batch 2430/8106 (30%) mse=0.536836 elapsed=10.1s ETA=23.5s
+2026-08-18 18:56:46,015 [F1] epoch 11/30: batch 3240/8106 (40%) mse=0.537104 elapsed=13.7s ETA=20.6s
+2026-08-18 18:56:49,215 [F1] epoch 11/30: batch 4050/8106 (50%) mse=0.536968 elapsed=16.9s ETA=16.9s
+2026-08-18 18:56:52,400 [F1] epoch 11/30: batch 4860/8106 (60%) mse=0.536941 elapsed=20.1s ETA=13.4s
+2026-08-18 18:56:55,772 [F1] epoch 11/30: batch 5670/8106 (70%) mse=0.536878 elapsed=23.4s ETA=10.1s
+2026-08-18 18:56:59,300 [F1] epoch 11/30: batch 6480/8106 (80%) mse=0.536831 elapsed=27.0s ETA=6.8s
+2026-08-18 18:57:02,378 [F1] epoch 11/30: batch 7290/8106 (90%) mse=0.536874 elapsed=30.1s ETA=3.4s
+2026-08-18 18:57:05,614 [F1] epoch 11/30: batch 8100/8106 (100%) mse=0.536832 elapsed=33.3s ETA=0.0s
+2026-08-18 18:57:05,638 [F1] epoch 11/30: batch 8106/8106 (100%) mse=0.536831 elapsed=33.3s ETA=0.0s
+2026-08-18 18:57:05,678 [F1] epoch 11/30 (37%): train_mse=0.536831 epoch=33.4s total=327.8s
+2026-08-18 18:57:05,682 [F1] epoch 12/30 started
+2026-08-18 18:57:09,283 [F1] epoch 12/30: batch 810/8106 (10%) mse=0.537383 elapsed=3.6s ETA=32.4s
+2026-08-18 18:57:12,285 [F1] epoch 12/30: batch 1620/8106 (20%) mse=0.537478 elapsed=6.6s ETA=26.4s
+2026-08-18 18:57:15,474 [F1] epoch 12/30: batch 2430/8106 (30%) mse=0.537803 elapsed=9.8s ETA=22.9s
+2026-08-18 18:57:18,818 [F1] epoch 12/30: batch 3240/8106 (40%) mse=0.537280 elapsed=13.1s ETA=19.7s
+2026-08-18 18:57:22,344 [F1] epoch 12/30: batch 4050/8106 (50%) mse=0.537178 elapsed=16.7s ETA=16.7s
+2026-08-18 18:57:25,474 [F1] epoch 12/30: batch 4860/8106 (60%) mse=0.537126 elapsed=19.8s ETA=13.2s
+2026-08-18 18:57:28,765 [F1] epoch 12/30: batch 5670/8106 (70%) mse=0.536838 elapsed=23.1s ETA=9.9s
+2026-08-18 18:57:32,302 [F1] epoch 12/30: batch 6480/8106 (80%) mse=0.536751 elapsed=26.6s ETA=6.7s
+2026-08-18 18:57:35,412 [F1] epoch 12/30: batch 7290/8106 (90%) mse=0.536758 elapsed=29.7s ETA=3.3s
+2026-08-18 18:57:38,765 [F1] epoch 12/30: batch 8100/8106 (100%) mse=0.536674 elapsed=33.1s ETA=0.0s
+2026-08-18 18:57:38,788 [F1] epoch 12/30: batch 8106/8106 (100%) mse=0.536669 elapsed=33.1s ETA=0.0s
+2026-08-18 18:57:38,835 [F1] epoch 12/30 (40%): train_mse=0.536669 epoch=33.2s total=360.9s
+2026-08-18 18:57:38,835 [F1] epoch 13/30 started
+2026-08-18 18:57:42,259 [F1] epoch 13/30: batch 810/8106 (10%) mse=0.535472 elapsed=3.4s ETA=30.8s
+2026-08-18 18:57:45,623 [F1] epoch 13/30: batch 1620/8106 (20%) mse=0.535350 elapsed=6.8s ETA=27.2s
+2026-08-18 18:57:48,776 [F1] epoch 13/30: batch 2430/8106 (30%) mse=0.536931 elapsed=9.9s ETA=23.2s
+2026-08-18 18:57:52,022 [F1] epoch 13/30: batch 3240/8106 (40%) mse=0.536928 elapsed=13.2s ETA=19.8s
+2026-08-18 18:57:55,512 [F1] epoch 13/30: batch 4050/8106 (50%) mse=0.536658 elapsed=16.7s ETA=16.7s
+2026-08-18 18:57:58,679 [F1] epoch 13/30: batch 4860/8106 (60%) mse=0.536637 elapsed=19.8s ETA=13.3s
+2026-08-18 18:58:01,904 [F1] epoch 13/30: batch 5670/8106 (70%) mse=0.536552 elapsed=23.1s ETA=9.9s
+2026-08-18 18:58:05,449 [F1] epoch 13/30: batch 6480/8106 (80%) mse=0.536633 elapsed=26.6s ETA=6.7s
+2026-08-18 18:58:08,535 [F1] epoch 13/30: batch 7290/8106 (90%) mse=0.536576 elapsed=29.7s ETA=3.3s
+2026-08-18 18:58:11,780 [F1] epoch 13/30: batch 8100/8106 (100%) mse=0.536660 elapsed=32.9s ETA=0.0s
+2026-08-18 18:58:11,803 [F1] epoch 13/30: batch 8106/8106 (100%) mse=0.536652 elapsed=33.0s ETA=0.0s
+2026-08-18 18:58:11,846 [F1] epoch 13/30 (43%): train_mse=0.536652 epoch=33.0s total=393.9s
+2026-08-18 18:58:11,846 [F1] epoch 14/30 started
+2026-08-18 18:58:15,168 [F1] epoch 14/30: batch 810/8106 (10%) mse=0.536545 elapsed=3.3s ETA=29.9s
+2026-08-18 18:58:18,586 [F1] epoch 14/30: batch 1620/8106 (20%) mse=0.536427 elapsed=6.7s ETA=27.0s
+2026-08-18 18:58:21,802 [F1] epoch 14/30: batch 2430/8106 (30%) mse=0.536500 elapsed=10.0s ETA=23.3s
+2026-08-18 18:58:25,139 [F1] epoch 14/30: batch 3240/8106 (40%) mse=0.536238 elapsed=13.3s ETA=20.0s
+2026-08-18 18:58:28,721 [F1] epoch 14/30: batch 4050/8106 (50%) mse=0.536221 elapsed=16.9s ETA=16.9s
+2026-08-18 18:58:31,774 [F1] epoch 14/30: batch 4860/8106 (60%) mse=0.536115 elapsed=19.9s ETA=13.3s
+2026-08-18 18:58:34,959 [F1] epoch 14/30: batch 5670/8106 (70%) mse=0.536158 elapsed=23.1s ETA=9.9s
+2026-08-18 18:58:38,448 [F1] epoch 14/30: batch 6480/8106 (80%) mse=0.536211 elapsed=26.6s ETA=6.7s
+2026-08-18 18:58:41,777 [F1] epoch 14/30: batch 7290/8106 (90%) mse=0.536318 elapsed=29.9s ETA=3.4s
+2026-08-18 18:58:45,053 [F1] epoch 14/30: batch 8100/8106 (100%) mse=0.536462 elapsed=33.2s ETA=0.0s
+2026-08-18 18:58:45,081 [F1] epoch 14/30: batch 8106/8106 (100%) mse=0.536457 elapsed=33.2s ETA=0.0s
+2026-08-18 18:58:45,125 [F1] epoch 14/30 (47%): train_mse=0.536457 epoch=33.3s total=427.2s
+2026-08-18 18:58:45,125 [F1] epoch 15/30 started
+2026-08-18 18:58:48,549 [F1] epoch 15/30: batch 810/8106 (10%) mse=0.537080 elapsed=3.4s ETA=30.8s
+2026-08-18 18:58:52,104 [F1] epoch 15/30: batch 1620/8106 (20%) mse=0.536706 elapsed=7.0s ETA=28.0s
+2026-08-18 18:58:55,183 [F1] epoch 15/30: batch 2430/8106 (30%) mse=0.536258 elapsed=10.1s ETA=23.5s
+2026-08-18 18:58:58,410 [F1] epoch 15/30: batch 3240/8106 (40%) mse=0.536705 elapsed=13.3s ETA=20.0s
+2026-08-18 18:59:01,896 [F1] epoch 15/30: batch 4050/8106 (50%) mse=0.536510 elapsed=16.8s ETA=16.8s
+2026-08-18 18:59:04,909 [F1] epoch 15/30: batch 4860/8106 (60%) mse=0.536206 elapsed=19.8s ETA=13.2s
+2026-08-18 18:59:08,530 [F1] epoch 15/30: batch 5670/8106 (70%) mse=0.536350 elapsed=23.4s ETA=10.1s
+2026-08-18 18:59:12,043 [F1] epoch 15/30: batch 6480/8106 (80%) mse=0.536221 elapsed=26.9s ETA=6.8s
+2026-08-18 18:59:15,622 [F1] epoch 15/30: batch 7290/8106 (90%) mse=0.536328 elapsed=30.5s ETA=3.4s
+2026-08-18 18:59:18,974 [F1] epoch 15/30: batch 8100/8106 (100%) mse=0.536398 elapsed=33.8s ETA=0.0s
+2026-08-18 18:59:19,000 [F1] epoch 15/30: batch 8106/8106 (100%) mse=0.536387 elapsed=33.9s ETA=0.0s
+2026-08-18 18:59:19,050 [F1] epoch 15/30 (50%): train_mse=0.536387 epoch=33.9s total=461.1s
+2026-08-18 18:59:19,050 [F1] epoch 16/30 started
+2026-08-18 18:59:22,564 [F1] epoch 16/30: batch 810/8106 (10%) mse=0.534510 elapsed=3.5s ETA=31.7s
+2026-08-18 18:59:26,220 [F1] epoch 16/30: batch 1620/8106 (20%) mse=0.535193 elapsed=7.2s ETA=28.7s
+2026-08-18 18:59:29,445 [F1] epoch 16/30: batch 2430/8106 (30%) mse=0.535649 elapsed=10.4s ETA=24.3s
+2026-08-18 18:59:32,887 [F1] epoch 16/30: batch 3240/8106 (40%) mse=0.536121 elapsed=13.8s ETA=20.8s
+2026-08-18 18:59:36,410 [F1] epoch 16/30: batch 4050/8106 (50%) mse=0.536352 elapsed=17.4s ETA=17.4s
+2026-08-18 18:59:39,954 [F1] epoch 16/30: batch 4860/8106 (60%) mse=0.536195 elapsed=20.9s ETA=14.0s
+2026-08-18 18:59:43,308 [F1] epoch 16/30: batch 5670/8106 (70%) mse=0.536313 elapsed=24.3s ETA=10.4s
+2026-08-18 18:59:46,849 [F1] epoch 16/30: batch 6480/8106 (80%) mse=0.536304 elapsed=27.8s ETA=7.0s
+2026-08-18 18:59:50,502 [F1] epoch 16/30: batch 7290/8106 (90%) mse=0.536222 elapsed=31.5s ETA=3.5s
+2026-08-18 18:59:53,729 [F1] epoch 16/30: batch 8100/8106 (100%) mse=0.536029 elapsed=34.7s ETA=0.0s
+2026-08-18 18:59:53,753 [F1] epoch 16/30: batch 8106/8106 (100%) mse=0.536034 elapsed=34.7s ETA=0.0s
+2026-08-18 18:59:53,797 [F1] epoch 16/30 (53%): train_mse=0.536034 epoch=34.7s total=495.9s
+2026-08-18 18:59:53,797 [F1] epoch 17/30 started
+2026-08-18 18:59:57,273 [F1] epoch 17/30: batch 810/8106 (10%) mse=0.535850 elapsed=3.5s ETA=31.3s
+2026-08-18 19:00:00,750 [F1] epoch 17/30: batch 1620/8106 (20%) mse=0.535636 elapsed=7.0s ETA=27.8s
+2026-08-18 19:00:04,234 [F1] epoch 17/30: batch 2430/8106 (30%) mse=0.536306 elapsed=10.4s ETA=24.4s
+2026-08-18 19:00:07,598 [F1] epoch 17/30: batch 3240/8106 (40%) mse=0.538518 elapsed=13.8s ETA=20.7s
+2026-08-18 19:00:11,041 [F1] epoch 17/30: batch 4050/8106 (50%) mse=0.537948 elapsed=17.2s ETA=17.3s
+2026-08-18 19:00:14,628 [F1] epoch 17/30: batch 4860/8106 (60%) mse=0.537558 elapsed=20.8s ETA=13.9s
+2026-08-18 19:00:17,850 [F1] epoch 17/30: batch 5670/8106 (70%) mse=0.537450 elapsed=24.1s ETA=10.3s
+2026-08-18 19:00:21,306 [F1] epoch 17/30: batch 6480/8106 (80%) mse=0.537147 elapsed=27.5s ETA=6.9s
+2026-08-18 19:00:24,767 [F1] epoch 17/30: batch 7290/8106 (90%) mse=0.537139 elapsed=31.0s ETA=3.5s
+2026-08-18 19:00:28,193 [F1] epoch 17/30: batch 8100/8106 (100%) mse=0.536839 elapsed=34.4s ETA=0.0s
+2026-08-18 19:00:28,217 [F1] epoch 17/30: batch 8106/8106 (100%) mse=0.536851 elapsed=34.4s ETA=0.0s
+2026-08-18 19:00:28,266 [F1] epoch 17/30 (57%): train_mse=0.536851 epoch=34.5s total=530.4s
+2026-08-18 19:00:28,267 [F1] epoch 18/30 started
+2026-08-18 19:00:31,649 [F1] epoch 18/30: batch 810/8106 (10%) mse=0.534950 elapsed=3.4s ETA=30.5s
+2026-08-18 19:00:35,116 [F1] epoch 18/30: batch 1620/8106 (20%) mse=0.535193 elapsed=6.8s ETA=27.4s
+2026-08-18 19:00:38,741 [F1] epoch 18/30: batch 2430/8106 (30%) mse=0.535232 elapsed=10.5s ETA=24.5s
+2026-08-18 19:00:41,983 [F1] epoch 18/30: batch 3240/8106 (40%) mse=0.535726 elapsed=13.7s ETA=20.6s
+2026-08-18 19:00:45,535 [F1] epoch 18/30: batch 4050/8106 (50%) mse=0.536070 elapsed=17.3s ETA=17.3s
+2026-08-18 19:00:49,160 [F1] epoch 18/30: batch 4860/8106 (60%) mse=0.536118 elapsed=20.9s ETA=14.0s
+2026-08-18 19:00:52,528 [F1] epoch 18/30: batch 5670/8106 (70%) mse=0.536169 elapsed=24.3s ETA=10.4s
+2026-08-18 19:00:55,870 [F1] epoch 18/30: batch 6480/8106 (80%) mse=0.536081 elapsed=27.6s ETA=6.9s
+2026-08-18 19:00:59,317 [F1] epoch 18/30: batch 7290/8106 (90%) mse=0.536510 elapsed=31.1s ETA=3.5s
+2026-08-18 19:01:02,913 [F1] epoch 18/30: batch 8100/8106 (100%) mse=0.536714 elapsed=34.6s ETA=0.0s
+2026-08-18 19:01:02,939 [F1] epoch 18/30: batch 8106/8106 (100%) mse=0.536717 elapsed=34.7s ETA=0.0s
+2026-08-18 19:01:02,984 [F1] epoch 18/30 (60%): train_mse=0.536717 epoch=34.7s total=565.1s
+2026-08-18 19:01:02,984 [F1] epoch 19/30 started
+2026-08-18 19:01:06,209 [F1] epoch 19/30: batch 810/8106 (10%) mse=0.537595 elapsed=3.2s ETA=29.1s
+2026-08-18 19:01:09,394 [F1] epoch 19/30: batch 1620/8106 (20%) mse=0.536032 elapsed=6.4s ETA=25.7s
+2026-08-18 19:01:12,842 [F1] epoch 19/30: batch 2430/8106 (30%) mse=0.535319 elapsed=9.9s ETA=23.0s
+2026-08-18 19:01:15,968 [F1] epoch 19/30: batch 3240/8106 (40%) mse=0.535685 elapsed=13.0s ETA=19.5s
+2026-08-18 19:01:18,993 [F1] epoch 19/30: batch 4050/8106 (50%) mse=0.535443 elapsed=16.0s ETA=16.0s
+2026-08-18 19:01:22,237 [F1] epoch 19/30: batch 4860/8106 (60%) mse=0.535568 elapsed=19.3s ETA=12.9s
+2026-08-18 19:01:25,693 [F1] epoch 19/30: batch 5670/8106 (70%) mse=0.535595 elapsed=22.7s ETA=9.8s
+2026-08-18 19:01:28,750 [F1] epoch 19/30: batch 6480/8106 (80%) mse=0.535829 elapsed=25.8s ETA=6.5s
+2026-08-18 19:01:32,117 [F1] epoch 19/30: batch 7290/8106 (90%) mse=0.535895 elapsed=29.1s ETA=3.3s
+2026-08-18 19:01:35,736 [F1] epoch 19/30: batch 8100/8106 (100%) mse=0.535872 elapsed=32.8s ETA=0.0s
+2026-08-18 19:01:35,774 [F1] epoch 19/30: batch 8106/8106 (100%) mse=0.535863 elapsed=32.8s ETA=0.0s
+2026-08-18 19:01:35,821 [F1] epoch 19/30 (63%): train_mse=0.535863 epoch=32.8s total=597.9s
+2026-08-18 19:01:35,821 [F1] epoch 20/30 started
+2026-08-18 19:01:39,043 [F1] epoch 20/30: batch 810/8106 (10%) mse=0.535843 elapsed=3.2s ETA=29.0s
+2026-08-18 19:01:42,268 [F1] epoch 20/30: batch 1620/8106 (20%) mse=0.535174 elapsed=6.4s ETA=25.8s
+2026-08-18 19:01:45,448 [F1] epoch 20/30: batch 2430/8106 (30%) mse=0.535289 elapsed=9.6s ETA=22.5s
+2026-08-18 19:01:48,874 [F1] epoch 20/30: batch 3240/8106 (40%) mse=0.535146 elapsed=13.1s ETA=19.6s
+2026-08-18 19:01:51,860 [F1] epoch 20/30: batch 4050/8106 (50%) mse=0.535431 elapsed=16.0s ETA=16.1s
+2026-08-18 19:01:55,011 [F1] epoch 20/30: batch 4860/8106 (60%) mse=0.535452 elapsed=19.2s ETA=12.8s
+2026-08-18 19:01:58,426 [F1] epoch 20/30: batch 5670/8106 (70%) mse=0.535454 elapsed=22.6s ETA=9.7s
+2026-08-18 19:02:01,515 [F1] epoch 20/30: batch 6480/8106 (80%) mse=0.535531 elapsed=25.7s ETA=6.4s
+2026-08-18 19:02:04,702 [F1] epoch 20/30: batch 7290/8106 (90%) mse=0.535386 elapsed=28.9s ETA=3.2s
+2026-08-18 19:02:07,911 [F1] epoch 20/30: batch 8100/8106 (100%) mse=0.546024 elapsed=32.1s ETA=0.0s
+2026-08-18 19:02:07,927 [F1] epoch 20/30: batch 8106/8106 (100%) mse=0.546114 elapsed=32.1s ETA=0.0s
+2026-08-18 19:02:07,977 [F1] epoch 20/30 (67%): train_mse=0.546114 epoch=32.2s total=630.1s
+2026-08-18 19:02:07,977 [F1] epoch 21/30 started
+2026-08-18 19:02:11,508 [F1] epoch 21/30: batch 810/8106 (10%) mse=0.620594 elapsed=3.5s ETA=31.8s
+2026-08-18 19:02:14,757 [F1] epoch 21/30: batch 1620/8106 (20%) mse=0.596321 elapsed=6.8s ETA=27.1s
+2026-08-18 19:02:18,012 [F1] epoch 21/30: batch 2430/8106 (30%) mse=0.580172 elapsed=10.0s ETA=23.4s
+2026-08-18 19:02:21,454 [F1] epoch 21/30: batch 3240/8106 (40%) mse=0.570912 elapsed=13.5s ETA=20.2s
+2026-08-18 19:02:24,518 [F1] epoch 21/30: batch 4050/8106 (50%) mse=0.564596 elapsed=16.5s ETA=16.6s
+2026-08-18 19:02:27,744 [F1] epoch 21/30: batch 4860/8106 (60%) mse=0.560158 elapsed=19.8s ETA=13.2s
+2026-08-18 19:02:31,151 [F1] epoch 21/30: batch 5670/8106 (70%) mse=0.556702 elapsed=23.2s ETA=10.0s
+2026-08-18 19:02:34,301 [F1] epoch 21/30: batch 6480/8106 (80%) mse=0.554274 elapsed=26.3s ETA=6.6s
+2026-08-18 19:02:37,395 [F1] epoch 21/30: batch 7290/8106 (90%) mse=0.552178 elapsed=29.4s ETA=3.3s
+2026-08-18 19:02:40,664 [F1] epoch 21/30: batch 8100/8106 (100%) mse=0.550547 elapsed=32.7s ETA=0.0s
+2026-08-18 19:02:40,692 [F1] epoch 21/30: batch 8106/8106 (100%) mse=0.550521 elapsed=32.7s ETA=0.0s
+2026-08-18 19:02:40,732 [F1] epoch 21/30 (70%): train_mse=0.550521 epoch=32.8s total=662.8s
+2026-08-18 19:02:40,734 [F1] epoch 22/30 started
+2026-08-18 19:02:44,172 [F1] epoch 22/30: batch 810/8106 (10%) mse=0.535951 elapsed=3.4s ETA=31.0s
+2026-08-18 19:02:47,220 [F1] epoch 22/30: batch 1620/8106 (20%) mse=0.535597 elapsed=6.5s ETA=26.0s
+2026-08-18 19:02:50,477 [F1] epoch 22/30: batch 2430/8106 (30%) mse=0.535569 elapsed=9.7s ETA=22.8s
+2026-08-18 19:02:54,010 [F1] epoch 22/30: batch 3240/8106 (40%) mse=0.535546 elapsed=13.3s ETA=19.9s
+2026-08-18 19:02:57,119 [F1] epoch 22/30: batch 4050/8106 (50%) mse=0.535939 elapsed=16.4s ETA=16.4s
+2026-08-18 19:03:00,341 [F1] epoch 22/30: batch 4860/8106 (60%) mse=0.536840 elapsed=19.6s ETA=13.1s
+2026-08-18 19:03:03,621 [F1] epoch 22/30: batch 5670/8106 (70%) mse=0.537068 elapsed=22.9s ETA=9.8s
+2026-08-18 19:03:06,971 [F1] epoch 22/30: batch 6480/8106 (80%) mse=0.536866 elapsed=26.2s ETA=6.6s
+2026-08-18 19:03:10,082 [F1] epoch 22/30: batch 7290/8106 (90%) mse=0.536938 elapsed=29.4s ETA=3.3s
+2026-08-18 19:03:13,308 [F1] epoch 22/30: batch 8100/8106 (100%) mse=0.536779 elapsed=32.6s ETA=0.0s
+2026-08-18 19:03:13,333 [F1] epoch 22/30: batch 8106/8106 (100%) mse=0.536791 elapsed=32.6s ETA=0.0s
+2026-08-18 19:03:13,376 [F1] epoch 22/30 (73%): train_mse=0.536791 epoch=32.6s total=695.5s
+2026-08-18 19:03:13,376 [F1] epoch 23/30 started
+2026-08-18 19:03:16,908 [F1] epoch 23/30: batch 810/8106 (10%) mse=0.534515 elapsed=3.5s ETA=31.8s
+2026-08-18 19:03:19,946 [F1] epoch 23/30: batch 1620/8106 (20%) mse=0.535304 elapsed=6.6s ETA=26.3s
+2026-08-18 19:03:23,092 [F1] epoch 23/30: batch 2430/8106 (30%) mse=0.535242 elapsed=9.7s ETA=22.7s
+2026-08-18 19:03:26,339 [F1] epoch 23/30: batch 3240/8106 (40%) mse=0.535596 elapsed=13.0s ETA=19.5s
+2026-08-18 19:03:29,721 [F1] epoch 23/30: batch 4050/8106 (50%) mse=0.535809 elapsed=16.3s ETA=16.4s
+2026-08-18 19:03:32,719 [F1] epoch 23/30: batch 4860/8106 (60%) mse=0.541304 elapsed=19.3s ETA=12.9s
+2026-08-18 19:03:35,955 [F1] epoch 23/30: batch 5670/8106 (70%) mse=0.554645 elapsed=22.6s ETA=9.7s
+2026-08-18 19:03:39,491 [F1] epoch 23/30: batch 6480/8106 (80%) mse=0.562925 elapsed=26.1s ETA=6.6s
+2026-08-18 19:03:42,651 [F1] epoch 23/30: batch 7290/8106 (90%) mse=0.568250 elapsed=29.3s ETA=3.3s
+2026-08-18 19:03:45,867 [F1] epoch 23/30: batch 8100/8106 (100%) mse=0.569980 elapsed=32.5s ETA=0.0s
+2026-08-18 19:03:45,893 [F1] epoch 23/30: batch 8106/8106 (100%) mse=0.569998 elapsed=32.5s ETA=0.0s
+2026-08-18 19:03:45,933 [F1] epoch 23/30 (77%): train_mse=0.569998 epoch=32.6s total=728.0s
+2026-08-18 19:03:45,933 [F1] epoch 24/30 started
+2026-08-18 19:03:49,456 [F1] epoch 24/30: batch 810/8106 (10%) mse=0.569254 elapsed=3.5s ETA=31.7s
+2026-08-18 19:03:52,587 [F1] epoch 24/30: batch 1620/8106 (20%) mse=0.560069 elapsed=6.7s ETA=26.6s
+2026-08-18 19:03:55,781 [F1] epoch 24/30: batch 2430/8106 (30%) mse=0.554634 elapsed=9.8s ETA=23.0s
+2026-08-18 19:03:58,992 [F1] epoch 24/30: batch 3240/8106 (40%) mse=0.550969 elapsed=13.1s ETA=19.6s
+2026-08-18 19:04:02,354 [F1] epoch 24/30: batch 4050/8106 (50%) mse=0.548659 elapsed=16.4s ETA=16.4s
+2026-08-18 19:04:05,507 [F1] epoch 24/30: batch 4860/8106 (60%) mse=0.546792 elapsed=19.6s ETA=13.1s
+2026-08-18 19:04:08,738 [F1] epoch 24/30: batch 5670/8106 (70%) mse=0.545510 elapsed=22.8s ETA=9.8s
+2026-08-18 19:04:12,150 [F1] epoch 24/30: batch 6480/8106 (80%) mse=0.544601 elapsed=26.2s ETA=6.6s
+2026-08-18 19:04:15,175 [F1] epoch 24/30: batch 7290/8106 (90%) mse=0.543694 elapsed=29.2s ETA=3.3s
+2026-08-18 19:04:18,448 [F1] epoch 24/30: batch 8100/8106 (100%) mse=0.543070 elapsed=32.5s ETA=0.0s
+2026-08-18 19:04:18,474 [F1] epoch 24/30: batch 8106/8106 (100%) mse=0.543064 elapsed=32.5s ETA=0.0s
+2026-08-18 19:04:18,519 [F1] epoch 24/30 (80%): train_mse=0.543064 epoch=32.6s total=760.6s
+2026-08-18 19:04:18,519 [F1] epoch 25/30 started
+2026-08-18 19:04:21,974 [F1] epoch 25/30: batch 810/8106 (10%) mse=0.535044 elapsed=3.5s ETA=31.1s
+2026-08-18 19:04:25,224 [F1] epoch 25/30: batch 1620/8106 (20%) mse=0.535674 elapsed=6.7s ETA=26.8s
+2026-08-18 19:04:28,393 [F1] epoch 25/30: batch 2430/8106 (30%) mse=0.536155 elapsed=9.9s ETA=23.1s
+2026-08-18 19:04:31,592 [F1] epoch 25/30: batch 3240/8106 (40%) mse=0.536034 elapsed=13.1s ETA=19.6s
+2026-08-18 19:04:35,024 [F1] epoch 25/30: batch 4050/8106 (50%) mse=0.535898 elapsed=16.5s ETA=16.5s
+2026-08-18 19:04:37,983 [F1] epoch 25/30: batch 4860/8106 (60%) mse=0.536068 elapsed=19.5s ETA=13.0s
+2026-08-18 19:04:41,056 [F1] epoch 25/30: batch 5670/8106 (70%) mse=0.536206 elapsed=22.5s ETA=9.7s
+2026-08-18 19:04:44,224 [F1] epoch 25/30: batch 6480/8106 (80%) mse=0.536209 elapsed=25.7s ETA=6.5s
+2026-08-18 19:04:47,540 [F1] epoch 25/30: batch 7290/8106 (90%) mse=0.536300 elapsed=29.0s ETA=3.2s
+2026-08-18 19:04:50,499 [F1] epoch 25/30: batch 8100/8106 (100%) mse=0.536496 elapsed=32.0s ETA=0.0s
+2026-08-18 19:04:50,523 [F1] epoch 25/30: batch 8106/8106 (100%) mse=0.536496 elapsed=32.0s ETA=0.0s
+2026-08-18 19:04:50,563 [F1] epoch 25/30 (83%): train_mse=0.536496 epoch=32.0s total=792.7s
+2026-08-18 19:04:50,563 [F1] epoch 26/30 started
+2026-08-18 19:04:53,768 [F1] epoch 26/30: batch 810/8106 (10%) mse=0.536136 elapsed=3.2s ETA=28.9s
+2026-08-18 19:04:57,177 [F1] epoch 26/30: batch 1620/8106 (20%) mse=0.535529 elapsed=6.6s ETA=26.5s
+2026-08-18 19:05:00,126 [F1] epoch 26/30: batch 2430/8106 (30%) mse=0.535993 elapsed=9.6s ETA=22.3s
+2026-08-18 19:05:03,251 [F1] epoch 26/30: batch 3240/8106 (40%) mse=0.535829 elapsed=12.7s ETA=19.1s
+2026-08-18 19:05:06,540 [F1] epoch 26/30: batch 4050/8106 (50%) mse=0.535754 elapsed=16.0s ETA=16.0s
+2026-08-18 19:05:09,714 [F1] epoch 26/30: batch 4860/8106 (60%) mse=0.535674 elapsed=19.2s ETA=12.8s
+2026-08-18 19:05:12,781 [F1] epoch 26/30: batch 5670/8106 (70%) mse=0.535701 elapsed=22.2s ETA=9.5s
+2026-08-18 19:05:15,996 [F1] epoch 26/30: batch 6480/8106 (80%) mse=0.536603 elapsed=25.4s ETA=6.4s
+2026-08-18 19:05:19,400 [F1] epoch 26/30: batch 7290/8106 (90%) mse=0.536540 elapsed=28.9s ETA=3.2s
+2026-08-18 19:05:22,534 [F1] epoch 26/30: batch 8100/8106 (100%) mse=0.536486 elapsed=32.0s ETA=0.0s
+2026-08-18 19:05:22,567 [F1] epoch 26/30: batch 8106/8106 (100%) mse=0.536486 elapsed=32.0s ETA=0.0s
+2026-08-18 19:05:22,607 [F1] epoch 26/30 (87%): train_mse=0.536486 epoch=32.0s total=824.7s
+2026-08-18 19:05:22,607 [F1] epoch 27/30 started
+2026-08-18 19:05:25,951 [F1] epoch 27/30: batch 810/8106 (10%) mse=0.535400 elapsed=3.3s ETA=30.1s
+2026-08-18 19:05:29,271 [F1] epoch 27/30: batch 1620/8106 (20%) mse=0.535674 elapsed=6.7s ETA=26.7s
+2026-08-18 19:05:32,634 [F1] epoch 27/30: batch 2430/8106 (30%) mse=0.535836 elapsed=10.0s ETA=23.4s
+2026-08-18 19:05:35,617 [F1] epoch 27/30: batch 3240/8106 (40%) mse=0.535672 elapsed=13.0s ETA=19.5s
+2026-08-18 19:05:38,976 [F1] epoch 27/30: batch 4050/8106 (50%) mse=0.535698 elapsed=16.4s ETA=16.4s
+2026-08-18 19:05:42,885 [F1] epoch 27/30: batch 4860/8106 (60%) mse=0.535380 elapsed=20.3s ETA=13.5s
+2026-08-18 19:05:46,106 [F1] epoch 27/30: batch 5670/8106 (70%) mse=0.535562 elapsed=23.5s ETA=10.1s
+2026-08-18 19:05:49,308 [F1] epoch 27/30: batch 6480/8106 (80%) mse=0.535507 elapsed=26.7s ETA=6.7s
+2026-08-18 19:05:52,606 [F1] epoch 27/30: batch 7290/8106 (90%) mse=0.535491 elapsed=30.0s ETA=3.4s
+2026-08-18 19:05:56,021 [F1] epoch 27/30: batch 8100/8106 (100%) mse=0.535523 elapsed=33.4s ETA=0.0s
+2026-08-18 19:05:56,045 [F1] epoch 27/30: batch 8106/8106 (100%) mse=0.535531 elapsed=33.4s ETA=0.0s
+2026-08-18 19:05:56,087 [F1] epoch 27/30 (90%): train_mse=0.535531 epoch=33.5s total=858.2s
+2026-08-18 19:05:56,087 [F1] epoch 28/30 started
+2026-08-18 19:05:59,124 [F1] epoch 28/30: batch 810/8106 (10%) mse=0.534657 elapsed=3.0s ETA=27.4s
+2026-08-18 19:06:02,276 [F1] epoch 28/30: batch 1620/8106 (20%) mse=0.535187 elapsed=6.2s ETA=24.8s
+2026-08-18 19:06:05,760 [F1] epoch 28/30: batch 2430/8106 (30%) mse=0.535266 elapsed=9.7s ETA=22.6s
+2026-08-18 19:06:08,901 [F1] epoch 28/30: batch 3240/8106 (40%) mse=0.535344 elapsed=12.8s ETA=19.2s
+2026-08-18 19:06:12,058 [F1] epoch 28/30: batch 4050/8106 (50%) mse=0.535120 elapsed=16.0s ETA=16.0s
+2026-08-18 19:06:15,291 [F1] epoch 28/30: batch 4860/8106 (60%) mse=0.535121 elapsed=19.2s ETA=12.8s
+2026-08-18 19:06:18,596 [F1] epoch 28/30: batch 5670/8106 (70%) mse=0.535488 elapsed=22.5s ETA=9.7s
+2026-08-18 19:06:21,903 [F1] epoch 28/30: batch 6480/8106 (80%) mse=0.535577 elapsed=25.8s ETA=6.5s
+2026-08-18 19:06:24,998 [F1] epoch 28/30: batch 7290/8106 (90%) mse=0.535602 elapsed=28.9s ETA=3.2s
+2026-08-18 19:06:28,219 [F1] epoch 28/30: batch 8100/8106 (100%) mse=0.537799 elapsed=32.1s ETA=0.0s
+2026-08-18 19:06:28,251 [F1] epoch 28/30: batch 8106/8106 (100%) mse=0.537809 elapsed=32.2s ETA=0.0s
+2026-08-18 19:06:28,286 [F1] epoch 28/30 (93%): train_mse=0.537809 epoch=32.2s total=890.4s
+2026-08-18 19:06:28,286 [F1] epoch 29/30 started
+2026-08-18 19:06:31,212 [F1] epoch 29/30: batch 810/8106 (10%) mse=0.539296 elapsed=2.9s ETA=26.3s
+2026-08-18 19:06:34,319 [F1] epoch 29/30: batch 1620/8106 (20%) mse=0.537969 elapsed=6.0s ETA=24.1s
+2026-08-18 19:06:37,619 [F1] epoch 29/30: batch 2430/8106 (30%) mse=0.537086 elapsed=9.3s ETA=21.8s
+2026-08-18 19:06:40,620 [F1] epoch 29/30: batch 3240/8106 (40%) mse=0.536423 elapsed=12.3s ETA=18.5s
+2026-08-18 19:06:43,675 [F1] epoch 29/30: batch 4050/8106 (50%) mse=0.536606 elapsed=15.4s ETA=15.4s
+2026-08-18 19:06:46,877 [F1] epoch 29/30: batch 4860/8106 (60%) mse=0.536472 elapsed=18.6s ETA=12.4s
+2026-08-18 19:06:50,056 [F1] epoch 29/30: batch 5670/8106 (70%) mse=0.536140 elapsed=21.8s ETA=9.4s
+2026-08-18 19:06:52,995 [F1] epoch 29/30: batch 6480/8106 (80%) mse=0.536130 elapsed=24.7s ETA=6.2s
+2026-08-18 19:06:56,109 [F1] epoch 29/30: batch 7290/8106 (90%) mse=0.535956 elapsed=27.8s ETA=3.1s
+2026-08-18 19:06:59,337 [F1] epoch 29/30: batch 8100/8106 (100%) mse=0.535980 elapsed=31.0s ETA=0.0s
+2026-08-18 19:06:59,362 [F1] epoch 29/30: batch 8106/8106 (100%) mse=0.535970 elapsed=31.1s ETA=0.0s
+2026-08-18 19:06:59,416 [F1] epoch 29/30 (97%): train_mse=0.535970 epoch=31.1s total=921.5s
+2026-08-18 19:06:59,416 [F1] epoch 30/30 started
+2026-08-18 19:07:02,186 [F1] epoch 30/30: batch 810/8106 (10%) mse=0.535725 elapsed=2.8s ETA=25.0s
+2026-08-18 19:07:05,045 [F1] epoch 30/30: batch 1620/8106 (20%) mse=0.535664 elapsed=5.6s ETA=22.5s
+2026-08-18 19:07:08,111 [F1] epoch 30/30: batch 2430/8106 (30%) mse=0.535013 elapsed=8.7s ETA=20.3s
+2026-08-18 19:07:11,287 [F1] epoch 30/30: batch 3240/8106 (40%) mse=0.535060 elapsed=11.9s ETA=17.8s
+2026-08-18 19:07:14,206 [F1] epoch 30/30: batch 4050/8106 (50%) mse=0.535124 elapsed=14.8s ETA=14.8s
+2026-08-18 19:07:17,187 [F1] epoch 30/30: batch 4860/8106 (60%) mse=0.535351 elapsed=17.8s ETA=11.9s
+2026-08-18 19:07:20,270 [F1] epoch 30/30: batch 5670/8106 (70%) mse=0.535342 elapsed=20.9s ETA=9.0s
+2026-08-18 19:07:23,029 [F1] epoch 30/30: batch 6480/8106 (80%) mse=0.538705 elapsed=23.6s ETA=5.9s
+2026-08-18 19:07:26,083 [F1] epoch 30/30: batch 7290/8106 (90%) mse=0.541977 elapsed=26.7s ETA=3.0s
+2026-08-18 19:07:29,350 [F1] epoch 30/30: batch 8100/8106 (100%) mse=0.544048 elapsed=29.9s ETA=0.0s
+2026-08-18 19:07:29,382 [F1] epoch 30/30: batch 8106/8106 (100%) mse=0.544069 elapsed=30.0s ETA=0.0s
+2026-08-18 19:07:29,436 [F1] epoch 30/30 (100%): train_mse=0.544069 epoch=30.0s total=951.5s
+2026-08-18 19:07:29,437 [F1] validation scoring started: batches=507 samples=259392
+2026-08-18 19:07:29,876 [F1] validation scoring: 50/507 batches (10%) elapsed=0.4s ETA=4.0s
+2026-08-18 19:07:30,271 [F1] validation scoring: 100/507 batches (20%) elapsed=0.8s ETA=3.4s
+2026-08-18 19:07:30,651 [F1] validation scoring: 150/507 batches (30%) elapsed=1.2s ETA=2.9s
+2026-08-18 19:07:31,116 [F1] validation scoring: 200/507 batches (39%) elapsed=1.7s ETA=2.6s
+2026-08-18 19:07:31,538 [F1] validation scoring: 250/507 batches (49%) elapsed=2.1s ETA=2.2s
+2026-08-18 19:07:31,954 [F1] validation scoring: 300/507 batches (59%) elapsed=2.5s ETA=1.7s
+2026-08-18 19:07:32,337 [F1] validation scoring: 350/507 batches (69%) elapsed=2.9s ETA=1.3s
+2026-08-18 19:07:32,837 [F1] validation scoring: 400/507 batches (79%) elapsed=3.4s ETA=0.9s
+2026-08-18 19:07:33,237 [F1] validation scoring: 450/507 batches (89%) elapsed=3.8s ETA=0.5s
+2026-08-18 19:07:33,664 [F1] validation scoring: 500/507 batches (99%) elapsed=4.2s ETA=0.1s
+2026-08-18 19:07:33,720 [F1] validation scoring: 507/507 batches (100%) elapsed=4.3s ETA=0.0s
+2026-08-18 19:07:33,721 [F1] anomaly threshold: percentile=99.00 value=0.845568 (validation normal only)
+2026-08-18 19:07:33,721 [F1] test scoring started: batches=2166 samples=1108800
+2026-08-18 19:07:35,718 [F1] test scoring: 216/2166 batches (10%) elapsed=2.0s ETA=18.0s
+2026-08-18 19:07:37,757 [F1] test scoring: 432/2166 batches (20%) elapsed=4.0s ETA=16.2s
+2026-08-18 19:07:39,835 [F1] test scoring: 648/2166 batches (30%) elapsed=6.1s ETA=14.3s
+2026-08-18 19:07:41,738 [F1] test scoring: 864/2166 batches (40%) elapsed=8.0s ETA=12.1s
+2026-08-18 19:07:43,444 [F1] test scoring: 1080/2166 batches (50%) elapsed=9.7s ETA=9.8s
+2026-08-18 19:07:45,272 [F1] test scoring: 1296/2166 batches (60%) elapsed=11.5s ETA=7.8s
+2026-08-18 19:07:47,110 [F1] test scoring: 1512/2166 batches (70%) elapsed=13.4s ETA=5.8s
+2026-08-18 19:07:49,022 [F1] test scoring: 1728/2166 batches (80%) elapsed=15.3s ETA=3.9s
+2026-08-18 19:07:51,171 [F1] test scoring: 1944/2166 batches (90%) elapsed=17.4s ETA=2.0s
+2026-08-18 19:07:52,821 [F1] test scoring: 2160/2166 batches (100%) elapsed=19.1s ETA=0.1s
+2026-08-18 19:07:52,862 [F1] test scoring: 2166/2166 batches (100%) elapsed=19.1s ETA=0.0s
+2026-08-18 19:07:53,672 [F1] complete: AUROC=0.8244 AUPRC=0.9335 delay=29.79 checkpoint=C:\Users\FORYOUCOM\Desktop\master_degree\Thesis-Orchestrator\outputs\final_gate_exp1\checkpoints\reinartz_f1_seed_45.pt
+2026-08-18 19:07:53,672 result={"variant": "F1", "seed": 45, "split_seed": 42, "epochs": 30, "input_dim": 52, "hidden_dim": 64, "parameters": 25321, "mae_z": 0.5252872109413147, "rmse_z": 0.7494025826454163, "auroc": 0.8244307799950279, "auprc": 0.9334924798482823, "detected_run_ratio": 0.6821428571428572, "detection_delay": 29.787958115183248, "prefault_sample_fpr": 0.009678016284233901, "prefault_run_alarm_rate": 0.0, "threshold": 0.8455680012702942, "elapsed_seconds": 975.5426260000095}
+2026-08-18 19:07:53,672 === experiment finished: results saved under C:\Users\FORYOUCOM\Desktop\master_degree\Thesis-Orchestrator\outputs\final_gate_exp1\artifacts ===

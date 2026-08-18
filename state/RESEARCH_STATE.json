@@ -1,0 +1,51 @@
+{
+  "stage": "G0_SCIENTIFIC_GATE_COMPLETE",
+  "status": "WAITING_FOR_USER_APPROVAL",
+  "locked_topic": null,
+  "locked_research_question": null,
+  "candidate_topics": [
+    "Control-Aware Predictive Anomaly Detection",
+    "FAVE-TS / Applicability-Aware Retrieval for Industrial Time Series"
+  ],
+  "confirmed_findings": [
+    "PhysicalAI F1 improved pooled fault-detection metrics across seeds 42-44, but effects were fault-specific and normal prediction improvement was inconsistent.",
+    "FAVE-RAG's real 10-item pilot detected many invalid evidence items but did not establish a robustness advantage over Vanilla RAG."
+  ],
+  "open_hypotheses": [
+    "Historical windows that are similar but differ in operating/control context may be inapplicable references for current industrial diagnosis."
+  ],
+  "rejected_hypotheses": [],
+  "required_experiments": [
+    "G0 full-text novelty and non-circular applicability-construct gate",
+    "Candidate A fault-variable-lag mechanism audit",
+    "Similarity-matched applicable/inapplicable case pilot with agreement audit",
+    "Oracle applicability downstream-headroom experiment",
+    "Contamination benchmark with strong retrieval and adaptation baselines",
+    "Multi-seed, ablation, robustness, and run-level statistical validation"
+  ],
+  "pending_human_approval": true,
+  "last_mission": "mission_002_g0_executed",
+  "active_quality_policy": "RESEARCH_QUALITY_OVERRIDE",
+  "recommended_gate": "G0 complete; await user choice among A mechanism gate, richer-dataset reformulation, or topic reset",
+  "candidate_judgments": {
+    "A_simple_feature_comparison": "KILL",
+    "A_mechanism_level": "MODIFY",
+    "B_covariate_aware_retrieval": "KILL",
+    "B_post_retrieval_applicability": "KILL_CURRENT_REINARTZ_FORMULATION",
+    "C_emergent_combined_direction": "KILL_CURRENT_FORMULATION_NOT_REPROPOSED"
+  },
+  "g0_decision": {
+    "A_simple": "KILL",
+    "A_mechanism_level": "MODIFY_NOT_LOCKED",
+    "B_current_reinartz_formulation": "KILL",
+    "C_current_formulation": "KILL_NOT_REPROPOSED"
+  },
+  "g0_gate_results": {
+    "rag4cts_equation_audit": "COMPLETE",
+    "non_circular_full_applicability": "FAIL_DATA_VARIABLES_MISSING",
+    "observable_proxy": "EXECUTED",
+    "discordant_pairs": "CONFIRMED_FOR_CONTROL_PROXY",
+    "labeling_reproducibility": "FAIL_SEMANTIC_GROUND_TRUTH",
+    "oracle_downstream_headroom": "FAIL"
+  }
+}

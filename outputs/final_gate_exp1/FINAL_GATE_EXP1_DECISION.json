@@ -1,0 +1,74 @@
+{
+  "experiment": "PHYSICALAI FINAL GATE — EXPERIMENT 1",
+  "judgment": "PASS_TO_MECHANISM_EXPERIMENT",
+  "thesis_topic_locked": false,
+  "gain_faults": [
+    3,
+    4,
+    7,
+    19,
+    24,
+    25,
+    26
+  ],
+  "neutral_faults": [
+    1,
+    2,
+    5,
+    6,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    20,
+    21,
+    22,
+    23,
+    27,
+    28
+  ],
+  "degraded_faults": [],
+  "rationale": "Seven materially non-trivial, seed-stable GAIN faults survive capacity matching, comparable pre-fault FPR, and hierarchical paired run-level uncertainty, while 21 faults remain no-gain; this supports only a falsifiable mechanism experiment.",
+  "kill_criteria": [
+    {
+      "criterion": "effects reverse substantially across seeds",
+      "status": "NOT_TRIGGERED",
+      "evidence": "7 materially non-trivial faults retain a positive direction in at least 4/5 seeds against both controls."
+    },
+    {
+      "criterion": "F0-C explains most F1 gains",
+      "status": "NOT_TRIGGERED",
+      "evidence": "7/8 (87.5%) material F1-v-F0 gains retain material and statistically supported headroom over F0-C."
+    },
+    {
+      "criterion": "no stable fault-specific structure exists",
+      "status": "NOT_TRIGGERED",
+      "evidence": "GAIN faults=[3, 4, 7, 19, 24, 25, 26]; no-gain faults=[1, 2, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21, 22, 23, 27, 28]."
+    },
+    {
+      "criterion": "apparent gains disappear after run-level uncertainty analysis",
+      "status": "NOT_TRIGGERED",
+      "evidence": "7 material faults retain positive hierarchical paired-bootstrap AUROC intervals against both controls."
+    }
+  ],
+  "next_step": "Run only a separately approved, prespecified mechanism experiment on the stable GAIN and no-gain groups. Do not lock the thesis topic from Experiment 1 alone.",
+  "artifacts": [
+    "FINAL_GATE_EXP1_RESULTS.csv",
+    "FINAL_GATE_EXP1_FAULT_SUMMARY.csv",
+    "FINAL_GATE_EXP1_REPORT.md",
+    "FINAL_GATE_EXP1_DECISION.json"
+  ],
+  "status": "WAITING_FOR_USER_APPROVAL",
+  "classification_rule": {
+    "gain": "Mean ?AUROC >= 0.02 and mean ?AUPRC >= 0.01 against both F0 and F0-C; AUROC positive in >=4/5 seeds; seed-level and hierarchical paired-run AUROC 95% CIs above zero against both; pre-fault-FPR paired bootstrap CI within +/-0.005.",
+    "degraded": "Seed-level AUROC 95% CIs below zero against both controls and paired-run AUROC CI below zero against F0.",
+    "neutral": "All other faults."
+  }
+}

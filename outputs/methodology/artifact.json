@@ -1,0 +1,235 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "Rigorous Scientific Thesis Gate",
+    "description": "Scientific gate for Candidate A, Candidate B, and one evidence-emergent combined direction.",
+    "generatedAt": "2026-08-18T12:00:00+09:00",
+    "filters": [],
+    "cards": [],
+    "charts": [
+      {
+        "id": "physical_evidence_chart",
+        "title": "Seed-42 F1 change relative to F0",
+        "subtitle": "Relative percentage change; delay is shown as reduction. This is preliminary evidence, not a thesis contribution.",
+        "type": "bar",
+        "dataset": "physical_seed42_relative_change",
+        "valueFormat": "number",
+        "palette": {
+          "kind": "single-root",
+          "root": "blue"
+        },
+        "encodings": {
+          "x": {
+            "field": "metric",
+            "type": "nominal",
+            "label": "Metric"
+          },
+          "y": {
+            "field": "relative_change_pct",
+            "type": "quantitative",
+            "label": "Relative change (%)"
+          },
+          "tooltip": [
+            {
+              "field": "f0",
+              "type": "quantitative",
+              "label": "F0"
+            },
+            {
+              "field": "f1",
+              "type": "quantitative",
+              "label": "F1"
+            },
+            {
+              "field": "interpretation",
+              "type": "nominal",
+              "label": "Interpretation"
+            }
+          ]
+        },
+        "source": {
+          "query": {
+            "engine": "duckdb",
+            "language": "sql",
+            "sql": "WITH r AS (SELECT * FROM read_csv_auto('PhysicalAI_mini/artifacts/tables/reinartz_f0_f1_results.csv')), p AS (SELECT max(CASE WHEN variant='F0' THEN auroc END) f0_auroc, max(CASE WHEN variant='F1' THEN auroc END) f1_auroc, max(CASE WHEN variant='F0' THEN auprc END) f0_auprc, max(CASE WHEN variant='F1' THEN auprc END) f1_auprc, max(CASE WHEN variant='F0' THEN detected_run_ratio END) f0_detect, max(CASE WHEN variant='F1' THEN detected_run_ratio END) f1_detect, max(CASE WHEN variant='F0' THEN detection_delay END) f0_delay, max(CASE WHEN variant='F1' THEN detection_delay END) f1_delay FROM r WHERE seed=42) SELECT 'AUROC' metric, 100*(f1_auroc-f0_auroc)/f0_auroc relative_change_pct FROM p UNION ALL SELECT 'AUPRC',100*(f1_auprc-f0_auprc)/f0_auprc FROM p UNION ALL SELECT 'Detected-run ratio',100*(f1_detect-f0_detect)/f0_detect FROM p UNION ALL SELECT 'Detection-delay reduction',100*(f0_delay-f1_delay)/f0_delay FROM p",
+            "description": "Computes F1 relative change from reviewed Seed-42 F0/F1 rows; delay is expressed as reduction.",
+            "tables_used": [
+              "PhysicalAI_mini/artifacts/tables/reinartz_f0_f1_results.csv"
+            ],
+            "filters": {
+              "seed": 42
+            },
+            "executed_at": "2026-08-18T12:00:00+09:00",
+            "metric_definitions": {
+              "relative_change_pct": "100*(F1-F0)/F0; detection delay uses 100*(F0-F1)/F0"
+            }
+          }
+        }
+      }
+    ],
+    "tables": [],
+    "sources": [
+      {
+        "id": "physical_seed42_results",
+        "label": "PhysicalAI Seed-42 F0/F1 results",
+        "path": "PhysicalAI_mini/artifacts/tables/reinartz_f0_f1_results.csv"
+      },
+      {
+        "id": "research_gate_synthesis",
+        "label": "Rigorous research gate synthesis",
+        "path": "Thesis-Orchestrator/outputs/methodology/RIGOROUS_RESEARCH_GATE.md"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "section_00",
+        "type": "markdown",
+        "body": "# Rigorous Scientific Thesis Gate\n\n> Decision status: **WAITING_FOR_USER_APPROVAL**  \n> Evidence cutoff: 2026-08-18  \n> Decision basis: scientific strength first; 4–6 week intensive execution second."
+      },
+      {
+        "id": "section_01",
+        "type": "markdown",
+        "body": "## Technical summary\n\nCandidate A is scientifically insufficient as an XMEAS-versus-XMEAS+XMV comparison. It remains viable only if upgraded into a mechanism-level, statistically reliable account of *why* control history changes detection for particular faults, variables, and lags.\n\nCandidate B has the stronger potential contribution, but its novelty is not established by the slogan `Similarity != Applicability`. Case-based reasoning already distinguishes similarity from adaptability, and recent time-series methods already retrieve historical examples. Candidate B earns a scientific GO only if applicability is defined independently of the downstream prediction, labeled objectively, and shown to add value beyond strong context-aware retrieval and adaptation baselines.\n\nAn emergent combined direction is scientifically coherent: **applicability-verified historical evidence for control-aware early fault detection**. Candidate A would provide preliminary heterogeneity evidence and the control/lag ablations inside Candidate B, not a separate topic. This direction is not locked."
+      },
+      {
+        "id": "physical_evidence_chart_block",
+        "type": "chart",
+        "chartId": "physical_evidence_chart"
+      },
+      {
+        "id": "section_02",
+        "type": "markdown",
+        "body": "## 1. Recent prior-work matrix\n\n| Work | Year | Area | What it already covers | Direct threat / remaining gap | Verification |\n|---|---:|---|---|---|---|\n| Hsu, Frusque & Fink, *A Comparison of Residual-based Methods on Fault Detection* | 2023 | Input-output residual FD | Conditions sensor prediction on operating inputs; sensor-wise residual interpretation and delay | Strong threat to A if A is only input-conditioned residual detection; does not test a separate retrieval-applicability verifier | Primary arXiv abstract inspected |\n| Jiang et al., nonlinear FD with modeling errors | 2022/2023 | Data-driven residual FD | Nonlinear input-output residual generator and quantile thresholding | Threatens generic residual/threshold novelty; A needs mechanism and controlled comparative inference | IEEE record inspected |\n| Continuous Test-time Domain Adaptation for Efficient Fault Detection | 2024 | Changing operating conditions | Adapts FD under evolving operating conditions | Threatens claims that handling operating context is itself novel | Primary arXiv record identified; full method audit required |\n| TimeRAG | 2024/2025 | TS retrieval forecasting | DTW retrieval of similar historical sequences for LLM forecasting | Direct similarity-retrieval baseline for B | IEEE/arXiv records inspected |\n| RAF, *Retrieval Augmented Time Series Forecasting* | 2024/2025 | TS foundation models | Retrieves related examples and integrates them into forecasts; includes mechanistic studies | Strong direct retrieval baseline; B must isolate post-retrieval verification | arXiv/OpenReview records inspected |\n| TimeRAF | 2024/2025 | Learned TS retrieval | End-to-end learned retriever and channel prompting | Threatens novelty based on learnable/contextual retrieval alone | arXiv metadata identified; full text required |\n| RATFM | 2025 | Retrieval-augmented TS anomaly detection | Uses retrieved normal target-domain examples for anomaly detection adaptation | Direct downstream anomaly-detection baseline for B | Primary arXiv abstract inspected |\n| Forecast2Anomaly | 2025 | Retrieval-augmented anomaly prediction | Retrieves historical horizons and conditions anomaly prediction across 16 datasets | Very strong overlap threat; exact contamination handling and retrieval constraints require full-text audit | Primary arXiv abstract inspected |\n| CRAG | 2024 | Corrective RAG | Retrieval quality evaluator with corrective actions | Baseline for post-retrieval filtering, but targets document relevance/quality rather than industrial case transfer validity | Primary arXiv record inspected |\n| ASTUTE RAG | 2024/2025 | Imperfect retrieval/conflict | Source-aware consolidation of internal and external evidence under conflict | Strong robustness baseline concept; does not itself establish industrial time-series applicability labels | ACL/arXiv records inspected |\n| Karray et al., adaptation-guided industrial diagnostic CBR | 2013 | Case adaptation | Explicitly states the most similar case need not be most adaptable; retrieves using similarity and adaptation measures | Major conceptual novelty threat to B; B must differ via measurable temporal sensor-control-mechanism validity and controlled robustness | Publisher abstract inspected |\n\n**Novelty conclusion:** neither A nor B currently passes a novelty gate. A overlaps input-conditioned residual monitoring. B overlaps adaptation-guided CBR and rapidly emerging retrieval-augmented time-series models. The plausible gap is a *separately supervised or rule-auditable post-retrieval applicability verifier* for industrial temporal evidence, evaluated with sensor-similar hard negatives and early-detection outcomes. This remains a hypothesis until full-text comparison is complete."
+      },
+      {
+        "id": "section_03",
+        "type": "markdown",
+        "body": "## 2. Formal problem formulation\n\nLet a query window be\n\n```text\nq_t = (X[t-L+1:t], U[t-L+1:t], r_t, metadata_t)\n```\n\nand a historical case be\n\n```text\nc_i = (X_i, U_i, regime_i, mechanism_i, outcome_i, provenance_i).\n```\n\nA retriever returns `R_k(q)` by a similarity score `s(q,c)`. Applicability must not be defined as similarity or as “the downstream model predicted correctly.” Define an independently auditable eligibility vector:\n\n```text\nv(q,c) = [\n  regime_compatible,\n  control_response_compatible,\n  temporal_lag_compatible,\n  variable_support_compatible,\n  mechanism_transfer_compatible,\n  provenance_acceptable\n].\n```\n\nFor a preregistered policy `P`, gold applicability is:\n\n```text\nA*(q,c) = P(v(q,c)) in {APPLICABLE, INAPPLICABLE, CONTESTED}.\n```\n\nThe learned or rule-based verifier estimates `g(q,c) -> A`. It operates **after retrieval**. The testable distinction is:\n\n```text\ns(q,c) is high  does not imply  A*(q,c) = APPLICABLE.\n```\n\nThe downstream detector `h(q, accepted_cases)` must be evaluated at a matched pre-fault false-alarm rate. The verifier contributes only if it improves robustness or detection outcomes beyond retrievers that already use regime, controls, and learned covariates."
+      },
+      {
+        "id": "section_04",
+        "type": "markdown",
+        "body": "## 3. Objective case and ground-truth construction\n\n1. Split by run before building the case bank; never retrieve from the query run or a duplicated trajectory.\n2. Build query/case pairs only after freezing train/validation/test and normal-only preprocessing.\n3. Construct `APPLICABLE` cases from independently known simulator/run metadata and preregistered compatibility predicates.\n4. Construct hard `INAPPLICABLE` cases by matching sensor similarity distributions while violating exactly one controlled factor: regime, XMV response direction/magnitude, lag, variable support, or known fault mechanism.\n5. Use `CONTESTED` when metadata cannot determine transfer eligibility; exclude these from primary binary claims and report them separately.\n6. Prevent circularity: fault labels and post-onset outcomes may define gold evaluation strata, but cannot be exposed to the online retriever/verifier unless the operational scenario genuinely provides them.\n7. Double-label a stratified subset using a written protocol; report agreement and adjudication. Simulator-derived labels and human labels must be reported separately."
+      },
+      {
+        "id": "section_05",
+        "type": "markdown",
+        "body": "## 4. Candidate hypotheses\n\n### A hypotheses\n\n- **A-H1:** At matched pre-fault FPR, XMV history changes detection performance heterogeneously across fault mechanisms rather than uniformly.\n- **A-H2:** The faults with reproducible F1 gains have identifiable variable-level XMV contributions and lead/lag structure that precede sensor residual separation.\n- **A-H3:** Detection gains can occur without material average prediction-error gains because XMV conditioning changes the *distribution and ranking* of fault residuals, not global normal MSE.\n- **A-H0 kill condition:** multi-seed effects lack stable fault/variable/lag structure after multiplicity and capacity controls.\n\n### B hypotheses\n\n- **B-H1:** Under matched sensor similarity, objectively inapplicable cases cause larger detection degradation than applicable cases.\n- **B-H2:** A post-retrieval applicability verifier reduces contamination-induced AUROC/AUPRC loss and delay inflation relative to similarity-only and context-aware retrieval.\n- **B-H3:** The verifier retains incremental value after the retriever already uses regime and control covariates.\n- **B-H4:** Each applicability component has a distinct failure signature; no single metadata filter explains the complete gain.\n- **B-H0 kill condition:** applicability cannot be labeled without downstream outcomes, or verifier gains vanish against adaptation-/context-aware baselines.\n\n### Single coherent combined hypothesis\n\n> Historical evidence improves early fault detection only when sensor-control-mechanism compatibility is verified; explicit post-retrieval applicability verification therefore improves robustness to sensor-similar but transfer-invalid cases at a controlled false-alarm rate.\n\nCandidate A supplies evidence for choosing compatibility factors and becomes a mechanism/ablation layer inside this question."
+      },
+      {
+        "id": "section_06",
+        "type": "markdown",
+        "body": "## 5. Experimental design\n\n### Phase G0 — novelty and construct gate\n\n- Complete equation/algorithm-level full-text comparison for all high-overlap works.\n- Freeze applicability schema, observable inputs, label policy, and non-circularity audit.\n- Produce at least 100–200 pilot pairs spanning all applicability conflict types.\n- **Pass:** two blinded annotators or deterministic simulator metadata can reproduce labels with acceptable agreement, and high-similarity inapplicable pairs actually exist.\n\n### Phase G1 — Candidate A mechanism audit\n\n- Reuse frozen F0/F1 checkpoints for no-training fault-, run-, variable-, and lag-level analysis.\n- Repeat only preregistered necessary training across at least five model seeds if existing checkpoints are insufficient.\n- Decompose residual mean, tail, rank separation, persistence crossing, and delay.\n- Use permutation/occlusion or grouped feature ablation on XMV histories; validate against correlated-variable artifacts.\n- Output a stable map `fault × XMV × lag × residual channel`.\n\n### Phase G2 — retrieval contamination benchmark\n\n- Query units: pre-onset and early post-onset windows from held-out runs.\n- Case bank: training runs only, with strict run and provenance isolation.\n- Contamination ratios: 0%, 25%, 50%, 75%, 100% among top-k evidence.\n- Conflict types: regime, control response, lag, variable support, mechanism, mixed.\n- Match similarity-score distributions between applicable and inapplicable cases.\n- Evaluate clean context and mixed context separately.\n\n### Phase G3 — applicability verifier\n\n- Start with an interpretable rule/logistic verifier over preregistered compatibility features.\n- Add a learned verifier only if it improves held-out calibration and cross-regime generalization.\n- Keep retriever and verifier separately scoreable: retrieval recall/precision, applicability precision/recall/F1/calibration, then downstream detection.\n\n### Phase G4 — downstream detection\n\n- Compare no retrieval, contaminated retrieval, oracle applicability, and predicted applicability.\n- Lock false-alarm calibration on validation normal data.\n- Primary endpoints: per-run AUROC/AUPRC, detected-run ratio, time-to-detection with censoring, and pre-fault FPR.\n- Evaluate whether oracle applicability has useful headroom before attributing failure to the learned verifier."
+      },
+      {
+        "id": "section_07",
+        "type": "markdown",
+        "body": "## 6. Required baselines\n\n| Layer | Required baseline |\n|---|---|\n| Detection | F0; F1; capacity-matched F0-C; simple residual threshold; competitive reconstruction/prediction baseline |\n| Retrieval-free | Detector without historical evidence |\n| Similarity | Euclidean/cosine on standardized windows; DTW; learned embedding kNN |\n| Context-aware retrieval | Regime filter; XMV/control-conditioned distance; joint XMEAS+XMV embedding |\n| Adaptation-aware | CBR-style adaptation cost or eligibility-weighted retrieval |\n| Time-series RAG | Reproducible analogue of TimeRAG/RAF/RATFM appropriate to available compute |\n| Post-retrieval filter | relevance/quality classifier; CRAG-style ternary evaluator |\n| Applicability | oracle applicability; rule-based verifier; learned verifier |\n| Robustness bounds | clean applicable-only context; random contamination; similarity-matched hard contamination |"
+      },
+      {
+        "id": "section_08",
+        "type": "markdown",
+        "body": "## 7. Ablation plan\n\n- Remove regime compatibility.\n- Remove control-response compatibility.\n- Remove temporal-lag compatibility.\n- Remove variable-support compatibility.\n- Remove mechanism compatibility.\n- XMEAS-only versus XMEAS+XMV retrieval features.\n- Retriever-only versus verifier-only gating versus joint score.\n- Hard reject versus soft weighting versus contested-case abstention.\n- Top-k and contamination ratio sensitivity.\n- Rule-based versus learned verifier.\n- Oracle applicability gap decomposition: retrieval miss, verifier error, downstream integration error.\n- Fault-wise leave-one-mechanism-out generalization."
+      },
+      {
+        "id": "section_09",
+        "type": "markdown",
+        "body": "## 8. Robustness and reproducibility\n\n- Minimum five training seeds for any newly trained neural component; preserve identical data splits.\n- Run-level and fault-level reporting; never rely only on pooled samples.\n- Independent second dataset or a paired pure-Python TEP simulator study if labels/metadata permit; otherwise explicitly limit external validity.\n- Leakage tests for run identity, overlap, scaling, threshold tuning, future XMV, onset alignment, and retrieval duplicates.\n- Stress tests for missing XMV, noisy control signals, regime metadata errors, case-bank imbalance, and unseen fault mechanisms.\n- Freeze configs, code commit, environment, split manifest, case-bank manifest, label protocol, random seeds, and raw-to-result lineage."
+      },
+      {
+        "id": "section_10",
+        "type": "markdown",
+        "body": "## 9. Statistical validation\n\n- Predeclare one primary endpoint and a small family of secondary endpoints.\n- Use run-level stratified bootstrap confidence intervals; resample runs, not overlapping windows.\n- Compare paired detectors using run-level paired bootstrap/permutation tests; McNemar for paired detected/not-detected outcomes where applicable.\n- Analyze delay as time-to-event with undetected runs censored; supplement medians and restricted mean time-to-detection rather than averaging detected runs only.\n- Use hierarchical or mixed-effects models for repeated run/fault/seed structure when assumptions are defensible.\n- Report effect sizes and confidence intervals, not p-values alone.\n- Control multiple fault/variable/lag comparisons with Benjamini-Hochberg FDR; label exploratory analyses explicitly.\n- Calibrate and compare at matched validation-derived pre-fault FPR. Report calibration error/Brier score for verifier probabilities.\n- Conduct sensitivity analyses across top-k, contamination ratios, thresholds, and label-policy variants."
+      },
+      {
+        "id": "section_11",
+        "type": "markdown",
+        "body": "## 10. Expected failure modes\n\n| Failure | Diagnostic | Consequence |\n|---|---|---|\n| Applicability is circular | Labels change when downstream model changes | Kill B formulation |\n| Verifier is only a regime filter | Regime-only baseline matches it | Downgrade novelty; reformulate or kill |\n| Hard negatives are unrealistic | Easy separation or metadata shortcut | Rebuild benchmark; no robustness claim |\n| Retrieval has no oracle headroom | Oracle applicability fails to help | Kill retrieval contribution |\n| XMV effect is controller reaction only | Gains start after sensor evidence or lack stable lead | Retain association language; reject causal mechanism |\n| Pooled delay artifact | Effect disappears with censored run-level analysis | Retract early-detection claim |\n| Fault-specific overfitting | Leave-one-mechanism-out collapse | Limit scope or kill general claim |\n| Dataset identity leakage | Randomized identifiers preserve performance | Invalidate experiment and repair split |\n| Similarity and applicability collapse | High correlation and no discordant pairs | B has no identifiable research variable |"
+      },
+      {
+        "id": "section_12",
+        "type": "markdown",
+        "body": "## 11. Implementation workload: 4–6 intensive weeks\n\n| Week | Primary deliverable | Exit criterion |\n|---:|---|---|\n| 1 | Full-text prior-work audit; construct and label protocol; split/case-bank freeze | Novelty and non-circularity gate pass |\n| 2 | Candidate A no-training mechanism audit; baseline retrievals; hard-negative generator | Reproducible discordant similar/inapplicable pairs |\n| 3 | Contamination benchmark; context/adaptation baselines; oracle study | Oracle headroom demonstrated |\n| 4 | Rule and learned verifier; downstream integration; main multi-seed runs | Primary endpoint complete at matched FPR |\n| 5 | Ablations, robustness, second-data/simulator validation, failure analysis | Major alternative explanations tested |\n| 6 | Statistical synthesis, reproducibility rerun, figures/tables, claim audit | Clean-room rerun and claim-evidence table pass |\n\nWorkload is substantial but technically plausible if G0 and oracle-headroom gates pass in the first three weeks. Failure at either gate should stop implementation rather than produce a weak thesis."
+      },
+      {
+        "id": "section_13",
+        "type": "markdown",
+        "body": "## 12. Scientific judgment\n\n| Candidate | Judgment | Scientific rationale |\n|---|---|---|\n| A as simple F0/F1 comparison | **KILL** | Insufficient novelty and mechanism; existing evidence is preliminary only |\n| A as mechanism-level control-information study | **MODIFY** | Defensible only if stable variable/lag/fault structure survives statistics and alternative explanations |\n| B as covariate-aware retrieval | **KILL** | Methodologically equivalent to strong context-aware retrieval/CBR precedents |\n| B as independently evaluated post-retrieval applicability verification | **MODIFY / CONDITIONAL GO** | Strong potential if non-circular labels, discordant pairs, oracle headroom, and incremental value are demonstrated |\n| Emergent combined direction C | **MODIFY — HIGHEST POTENTIAL** | One coherent question; A becomes evidence and ablation within B. Still depends on B's construct and novelty gates |\n\n### Recommendation\n\nDo not choose A because it is easier. Do not choose B because it sounds more novel. Prioritize a one-week G0 scientific gate for the emergent combined question, followed immediately by an oracle-applicability study. If either non-circular ground truth or oracle downstream headroom fails, kill B/C and evaluate A only as a mechanism-level thesis. No topic is locked."
+      },
+      {
+        "id": "section_14",
+        "type": "markdown",
+        "body": "## Sources to verify at full-text level before topic approval\n\n- Hsu et al. 2023: https://arxiv.org/abs/2309.02274\n- Jiang et al. 2022/2023: https://doi.org/10.1109/TCYB.2022.3163301\n- Continuous test-time adaptation: https://arxiv.org/abs/2406.06607\n- TimeRAG: https://arxiv.org/abs/2412.16643\n- RAF: https://arxiv.org/abs/2411.08249\n- RATFM: https://arxiv.org/abs/2506.02081\n- Forecast2Anomaly: https://arxiv.org/abs/2511.03149\n- CRAG: https://arxiv.org/abs/2401.15884\n- ASTUTE RAG: https://aclanthology.org/2025.acl-long.1476/\n- Karray et al. 2013: https://doi.org/10.1016/j.engappai.2013.05.001"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-18T12:00:00+09:00",
+    "status": "ready",
+    "datasets": {
+      "physical_seed42_relative_change": [
+        {
+          "metric": "AUROC",
+          "relative_change_pct": 9.17,
+          "f0": 0.75077,
+          "f1": 0.819648,
+          "interpretation": "higher is better"
+        },
+        {
+          "metric": "AUPRC",
+          "relative_change_pct": 3.53,
+          "f0": 0.899502,
+          "f1": 0.931234,
+          "interpretation": "higher is better"
+        },
+        {
+          "metric": "Detected-run ratio",
+          "relative_change_pct": 4.96,
+          "f0": 0.648214,
+          "f1": 0.680357,
+          "interpretation": "higher is better"
+        },
+        {
+          "metric": "Detection-delay reduction",
+          "relative_change_pct": 52.6,
+          "f0": 51.865,
+          "f1": 24.583,
+          "interpretation": "reduction; detected runs only"
+        }
+      ]
+    },
+    "accessIssues": []
+  },
+  "sources": [
+    {
+      "id": "physical_seed42_results",
+      "query": {
+        "engine": "file",
+        "description": "Reviewed Seed-42 F0/F1 aggregate results from the PhysicalAI reference project.",
+        "language": "csv",
+        "tables_used": [
+          "PhysicalAI_mini/artifacts/tables/reinartz_f0_f1_results.csv"
+        ],
+        "executed_at": "2026-08-18T12:00:00+09:00",
+        "metric_definitions": {
+          "relative_change_pct": "100*(F1-F0)/F0; for delay, 100*(F0-F1)/F0"
+        }
+      }
+    },
+    {
+      "id": "research_gate_synthesis",
+      "query": {
+        "engine": "document",
+        "description": "Evidence-bounded synthesis of project artifacts and inspected primary publication records.",
+        "language": "markdown",
+        "tables_used": [
+          "Thesis-Orchestrator/outputs/methodology/RIGOROUS_RESEARCH_GATE.md"
+        ],
+        "executed_at": "2026-08-18T12:00:00+09:00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "G0 Scientific Gate Report",
+    "description": "RAG4CTS-aware novelty and oracle-headroom gate for thesis Candidates B/C.",
+    "generatedAt": "2026-08-18T16:30:00+09:00",
+    "filters": [],
+    "cards": [],
+    "charts": [
+      {
+        "id": "pair_frequency",
+        "title": "Sensor-similar pairs failing the control-consistency proxy",
+        "subtitle": "Top-5 sensor-nearest cases; percentages of query-case pairs in validation-normal and selected test windows.",
+        "type": "bar",
+        "dataset": "pair_frequency",
+        "source": {
+          "query": {
+            "engine": "duckdb",
+            "language": "sql",
+            "sql": "SELECT * FROM read_json_auto('Thesis-Orchestrator/outputs/methodology/g0/g0_oracle_proxy_results.json')",
+            "description": "Reads the deterministic G0 pair-frequency results.",
+            "tables_used": [
+              "Thesis-Orchestrator/outputs/methodology/g0/g0_oracle_proxy_results.json"
+            ],
+            "filters": {
+              "experiment_id": "G0-ORACLE-PROXY-001"
+            },
+            "executed_at": "2026-08-18T16:30:00+09:00"
+          }
+        },
+        "valueFormat": "number",
+        "palette": {
+          "kind": "single-root",
+          "root": "blue"
+        },
+        "encodings": {
+          "x": {
+            "field": "population",
+            "type": "nominal",
+            "label": "Population"
+          },
+          "y": {
+            "field": "proxy_inapplicable_pct",
+            "type": "quantitative",
+            "label": "Proxy-inapplicable (%)"
+          },
+          "tooltip": [
+            {
+              "field": "n_queries",
+              "type": "quantitative",
+              "label": "Queries"
+            },
+            {
+              "field": "interpretation",
+              "type": "nominal",
+              "label": "Interpretation"
+            }
+          ]
+        }
+      },
+      {
+        "id": "oracle_headroom",
+        "title": "Oracle-proxy change versus sensor-only retrieval",
+        "subtitle": "Percentage-point change; positive values would indicate headroom. Detection-delay reduction was 0 samples.",
+        "type": "bar",
+        "dataset": "oracle_headroom",
+        "source": {
+          "query": {
+            "engine": "duckdb",
+            "language": "sql",
+            "sql": "SELECT * FROM read_json_auto('Thesis-Orchestrator/outputs/methodology/g0/g0_oracle_proxy_results.json')",
+            "description": "Reads G0 oracle-proxy downstream differences and converts rate differences to percentage points.",
+            "tables_used": [
+              "Thesis-Orchestrator/outputs/methodology/g0/g0_oracle_proxy_results.json"
+            ],
+            "filters": {
+              "experiment_id": "G0-ORACLE-PROXY-001"
+            },
+            "executed_at": "2026-08-18T16:30:00+09:00"
+          }
+        },
+        "valueFormat": "number",
+        "palette": {
+          "kind": "single-root",
+          "root": "orange"
+        },
+        "encodings": {
+          "x": {
+            "field": "metric",
+            "type": "nominal",
+            "label": "Metric"
+          },
+          "y": {
+            "field": "change_pp",
+            "type": "quantitative",
+            "label": "Change (percentage points)"
+          },
+          "tooltip": [
+            {
+              "field": "raw_change",
+              "type": "quantitative",
+              "label": "Raw change"
+            },
+            {
+              "field": "decision",
+              "type": "nominal",
+              "label": "Gate decision"
+            }
+          ]
+        }
+      }
+    ],
+    "tables": [],
+    "sources": [
+      {
+        "id": "g0_report",
+        "label": "G0 scientific gate synthesis",
+        "path": "Thesis-Orchestrator/outputs/methodology/G0_SCIENTIFIC_GATE_REPORT.md"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "g0_section_00",
+        "type": "markdown",
+        "body": "# G0 Scientific Gate Report\n\n> **Status: WAITING_FOR_USER_APPROVAL**  \n> Topic lock: `null`  \n> Research-question lock: `null`  \n> Gate executed: 2026-08-18"
+      },
+      {
+        "id": "g0_section_01",
+        "type": "markdown",
+        "body": "## Technical decision\n\n**Candidate B/C is KILLED for the current Reinartz-based formulation.** This is a scientific, not scheduling, decision. Two independent gate failures occurred:\n\n1. The available Reinartz distribution cannot support the proposed full applicability variable objectively: operating mode, XMV12, verified fault-mechanism mapping, and known future control are unavailable.\n2. A non-circular, observable past-XMV consistency proxy produced no downstream oracle headroom over sensor-only retrieval: AUROC `-0.0051`, AUPRC `-0.00003`, detected-run ratio `+0.0000`, and detected-run median delay reduction `0`.\n\nThe proxy is narrower than the intended applicability construct and must not be presented as a universal disproof of post-retrieval verification. It is sufficient to reject Candidate B/C **on the current dataset and operationalization**, because the required gold variable cannot be completed and the strongest executable proxy provides no headroom.\n\nCandidate C is therefore **not re-proposed**. Candidate A remains `MODIFY` as a possible mechanism-level research direction; it is not locked."
+      },
+      {
+        "id": "g0_section_02",
+        "type": "markdown",
+        "body": "## Evidence classification\n\n### Confirmed evidence\n\n- RAG4CTS explicitly states that visually similar target histories can be invalid references when driving covariates differ.\n- RAG4CTS implements regime-aware raw historical storage, history-decay and known-future-control weighting, mutual-information covariate weighting, weighted shape retrieval, weighted state-precision retrieval, and dynamic context selection.\n- Reinartz lacks operating mode, XMV12, verified mechanism labels, and known future controls.\n- The G0 proxy experiment used 5,376 training-bank cases, 1,344 validation queries, and 1,680 test queries from 120 held-out runs.\n- Among sensor-nearest top-5 cases, 35.74% of validation-normal cases and 78.63% of selected test cases violated the fixed past-XMV consistency proxy.\n- Oracle proxy filtering did not improve AUROC, AUPRC, detected-run ratio, or median detected-run delay over sensor-only retrieval.\n\n### Interpretation\n\n- Discordant sensor/control pairs exist, but their existence is not novel after RAG4CTS.\n- The very high test discordance partly reflects fault-induced control-response distribution shift; it is not evidence of mechanism-level transfer invalidity.\n- Joint sensor+control retrieval improved ranking metrics more than post-filtering, which is consistent with RAG4CTS's premise that control alignment belongs inside a strong retriever.\n- Candidate B's proposed verifier currently collapses into a control-consistency filter rather than establishing an additional applicability variable.\n\n### Unverified hypotheses\n\n- A separately evaluated verifier might still add value on a dataset with independently known regimes, mechanisms, future controls, and case-transfer outcomes.\n- Candidate A's variable/lag findings might support a different mechanism-level thesis after preregistration and statistical validation.\n- Neither hypothesis is a current thesis claim."
+      },
+      {
+        "id": "pair_frequency_block",
+        "type": "chart",
+        "chartId": "pair_frequency"
+      },
+      {
+        "id": "oracle_headroom_block",
+        "type": "chart",
+        "chartId": "oracle_headroom"
+      },
+      {
+        "id": "g0_section_03",
+        "type": "markdown",
+        "body": "## 1. RAG4CTS algorithm/equation-level comparison\n\nRAG4CTS defines a hierarchical raw-regime knowledge base\n\n```text\nB = {(M_i, X_i)} for i=1..N                                      Eq. (1)\n```\n\nwhere `M_i` is a physical metadata path and `X_i` is a complete raw operational regime. This already covers physics-informed regime organization.\n\nIts point-weight matrix uses observable history, known future covariates, and masked unknown targets:\n\n```text\nW_point[t,v] = lambda^(L_hist-t)   for historical points\n               1                   for future driving covariates\n               0                   for unknown future targets        Eq. (2)\n```\n\nCovariates are weighted by mutual information with the target:\n\n```text\nI(X_v;Y) = sum p(x,y) log[p(x,y)/(p(x)p(y))]                         Eq. (3)\nw_cov[v] = I(X_v;Y) / max_k I(X_k;Y)                                Eq. (4)\nW = W_point elementwise-multiplied by w_cov                          Eq. (5)\n```\n\nRetrieval then applies weighted cosine shape alignment and weighted Matrix Profile/state distance:\n\n```text\nS_shape(Q,C_i;W)                                                     Eq. (6)\nD_mp(Q,C_i;W) = sqrt(sum_t sum_v W[t,v](Q[t,v]-C_i[t,v])^2)          Eq. (7)\nC_final = Top-K ordered by D_mp                                     Eq. (8)\n```\n\nFinally, it chooses context length using the known future of the top-1 retrieved case and applies that configuration to the user query:\n\n```text\nk* = argmin_k Loss(F(Concat(retrieved contexts, top-1 case)),Y_top1) Eq. (9)\nYhat = F(Concat(selected historical contexts, user query))           Eq. (10)\n```\n\n### Consequence for novelty\n\nThe following are **not available novelty claims**:\n\n- control-aware retrieval;\n- covariate-aware retrieval;\n- regime-aware retrieval;\n- physics-informed historical regime retrieval;\n- future-control alignment;\n- the observation that visual similarity can return invalid references.\n\nThe only remaining candidate distinction was a separately evaluated **post-retrieval** applicability variable with independent labels and downstream incremental value. G0 did not establish it."
+      },
+      {
+        "id": "g0_section_04",
+        "type": "markdown",
+        "body": "## 2. High-overlap comparison matrix\n\n| Work | Verified mechanism | Overlap with proposed B/C | Residual possible distinction | Status |\n|---|---|---|---|---|\n| RAG4CTS, Liang et al. 2026 | Eq. 1–10: physical hierarchy, future-control and MI covariate weighting, weighted two-stage retrieval, agentic context selection | Directly covers control/regime/physics-aware retrieval and invalid visual matches | Only an independently labeled post-retrieval verifier | Full text inspected |\n| TS-RAG, 2025 | Embedding retriever returns context/future pairs; Adaptive Retrieval Mixer learns integration weights | Covers learned retrieval and adaptive evidence integration | Separate applicability supervision/abstention | Full text inspected |\n| RAF, 2024/2025 | Retrieves related historical examples for frozen/fine-tuned TSFMs | Covers retrieval-augmented forecasting and mechanistic retrieval analysis | Industrial transfer-validity labels | Algorithm-level record inspected; equation audit incomplete |\n| RATFM, 2025 | Retrieved normal-domain examples condition forecast-based anomaly detection; moving-average score smoothing | Direct anomaly-detection overlap; documents failures when similar inputs have different futures | Explicit industrial applicability label and contamination test | Full text inspected |\n| Adaptation-guided industrial CBR, Karray et al. 2013 | Similarity and adaptation are separate retrieval measures | Conceptually anticipates `similarity != applicability` | Temporal sensor-control-mechanism operationalization | Publisher abstract inspected; lawful full equation audit incomplete |\n| Hsu et al. 2023 | Input-output predictors condition expected sensor values on operating conditions | Strong overlap with Candidate A residual logic | Fault-variable-lag mechanism inference | Full text/primary record previously audited |\n| Chen 2016 | Input-conditioned static and dynamic residuals | Direct overlap with Candidate A `e_t` | Two-predictor difference does not itself establish identification | Full text previously audited in PhysicalAI |\n\n**Gate result:** the required full-text matrix is substantially complete for the highest recent retrieval threats, especially RAG4CTS, TS-RAG, and RATFM. It remains incomplete for adaptation-guided CBR equations and some older residual papers. Missing coverage increases, rather than reduces, novelty risk."
+      },
+      {
+        "id": "g0_section_05",
+        "type": "markdown",
+        "body": "## 3. Non-circular applicability definition audit\n\nThe intended definition was:\n\n```text\nA*(q,c) = P(regime compatibility,\n            control-response compatibility,\n            temporal-lag compatibility,\n            variable-support compatibility,\n            mechanism-transfer compatibility,\n            provenance acceptability)\n```\n\nTo be non-circular, `A*` cannot depend on whether the downstream detector happened to predict correctly. It must be determined from information available independently of the evaluated model.\n\n### Dataset audit\n\n| Required variable | Reinartz availability | Consequence |\n|---|---|---|\n| Past XMEAS | Available | Sensor similarity observable |\n| Past XMV | 11 variables available | Past control consistency observable, incomplete |\n| XMV12 | Missing | Control representation incomplete |\n| Operating mode/regime | Missing | Regime compatibility not labelable |\n| Verified fault mechanism | Missing | Mechanism-transfer compatibility not labelable |\n| Known future control | Not available in the online setup | Cannot reproduce RAG4CTS Eq. 2 alignment |\n| Independent case-transfer outcome | Missing | Full applicability cannot be adjudicated |\n\n**Gate result: FAIL.** Only a past-XMV consistency proxy is objectively executable. Calling it full applicability would be construct overclaiming."
+      },
+      {
+        "id": "g0_section_06",
+        "type": "markdown",
+        "body": "## 4. Observable proxy and pair construction\n\nThe executed proxy used only past information:\n\n```text\nSensor representation  = mean + last value + window slope of 41 XMEAS\nControl representation = mean + last value + window slope of 11 XMV\n```\n\nThe case bank used normal windows from training runs only. Query runs were held out. No query could retrieve itself. A sensor-nearest pair was proxy-applicable when its squared standardized control-summary distance was below a fixed threshold derived from 20,000 training-bank pairs. Neither downstream error, test labels, future observations, nor fault identity entered this rule.\n\nThis construction is computationally reproducible but semantically limited: it measures control consistency, not mechanism-level transfer validity."
+      },
+      {
+        "id": "g0_section_07",
+        "type": "markdown",
+        "body": "## 5. Discordant-pair existence and frequency\n\n| Population | Sensor top-5 proxy-inapplicable | Shortlist proxy-applicable |\n|---|---:|---:|\n| Validation normal queries | 35.74% | 57.80% |\n| Selected test queries | 78.63% | 18.99% |\n\n**Confirmed:** high sensor similarity does not guarantee past-XMV consistency in this dataset.\n\n**Not confirmed:** these pairs are invalid evidence in the stronger mechanism-transfer sense. RAG4CTS already predicts this kind of control mismatch and addresses it within retrieval."
+      },
+      {
+        "id": "g0_section_08",
+        "type": "markdown",
+        "body": "## 6. Labeling reproducibility\n\n- Computational reproduction: deterministic code, fixed seed 42, fixed threshold, fixed split and case bank.\n- Human/inter-annotator reproduction: **not evaluable**, because the dataset lacks regime and mechanism metadata required by the intended label protocol.\n- Construct validity: **not established**. Exact code reproducibility does not convert a proxy into scientific ground truth.\n\n**Gate result: FAIL.**"
+      },
+      {
+        "id": "g0_section_09",
+        "type": "markdown",
+        "body": "## 7. Oracle proxy downstream headroom\n\nAll thresholds were calibrated at the validation-normal 99th percentile. Test metrics cover six previously emphasized faults (4, 7, 19, 24, 25, 26), 120 runs, and early windows through sample 700.\n\n| Method | AUROC | AUPRC | Test pre-fault FPR | Detected-run ratio | Median delay among detected |\n|---|---:|---:|---:|---:|---:|\n| Sensor-only retrieval | 0.5823 | 0.8397 | 0.0111 | 0.0083 | 70 samples |\n| Joint sensor+control retrieval | 0.6198 | 0.8581 | 0.0222 | 0.0333 | 35 samples |\n| Oracle proxy post-filter | 0.5772 | 0.8397 | 0.0139 | 0.0083 | 70 samples |\n\nOracle-proxy change versus sensor-only:\n\n```text\nAUROC                    -0.00512\nAUPRC                    -0.00003\nDetected-run ratio       +0.00000\nMedian delay reduction    0 samples\n```\n\nThe post-filter provides no headroom. Joint control-aware retrieval performs better on ranking metrics, though its held-out test FPR is higher despite validation calibration and its absolute detected-run ratio remains very low. This is preliminary diagnostic evidence, not a production baseline claim.\n\n**Gate result: FAIL.** Under the user's preregistered decision rule, Candidate B/C must be killed when oracle applicability produces no meaningful detection or delay headroom."
+      },
+      {
+        "id": "g0_section_10",
+        "type": "markdown",
+        "body": "## 8. Scientific judgment\n\n| Candidate | Judgment | Evidence-based reason |\n|---|---|---|\n| A: simple feature comparison | KILL | No sufficient contribution |\n| A: mechanism-level control-information analysis | MODIFY / NOT LOCKED | Remains possible but requires preregistered variable/lag/fault statistics and failure analysis |\n| B: control/regime/covariate-aware retrieval | KILL | Directly overlapped by RAG4CTS |\n| B: post-retrieval applicability verifier on Reinartz | KILL | Full objective labels unavailable; executable oracle proxy has no headroom |\n| C: Applicability-Verified Historical Evidence | KILL FOR CURRENT FORMULATION | Depends on B's failed construct and oracle gates |"
+      },
+      {
+        "id": "g0_section_11",
+        "type": "markdown",
+        "body": "## 9. Reproducibility artifacts\n\n- Experiment: `experiments/g0_oracle_applicability.py`\n- JSON result: `outputs/methodology/g0/g0_oracle_proxy_results.json`\n- Metrics CSV: `outputs/methodology/g0/g0_oracle_proxy_metrics.csv`\n- PhysicalAI source data: read-only Reinartz memmap, split manifest, and documented scaler provenance\n- Random seed: 42\n- Reference projects modified: no"
+      },
+      {
+        "id": "g0_section_12",
+        "type": "markdown",
+        "body": "## 10. Next decision requiring approval\n\nNo topic is locked. The next scientifically defensible choice is whether to:\n\n1. authorize a revised Candidate A mechanism-level gate; or\n2. source a different dataset with objective regimes, mechanisms, and known future controls before reconsidering post-retrieval applicability under a materially different formulation; or\n3. stop both directions and reopen topic selection.\n\nThe system terminates at `WAITING_FOR_USER_APPROVAL`."
+      },
+      {
+        "id": "g0_section_13",
+        "type": "markdown",
+        "body": "## Primary sources\n\n- RAG4CTS: https://arxiv.org/pdf/2603.04951\n- TS-RAG: https://proceedings.neurips.cc/paper_files/paper/2025/file/eed25c037bc08afcbefab6f7a6b700e0-Paper-Conference.pdf\n- RAF: https://arxiv.org/abs/2411.08249\n- RATFM: https://arxiv.org/abs/2506.02081\n- Adaptation-guided industrial CBR: https://doi.org/10.1016/j.engappai.2013.05.001\n- Residual comparison: https://arxiv.org/abs/2309.02274"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-18T16:30:00+09:00",
+    "status": "ready",
+    "datasets": {
+      "pair_frequency": [
+        {
+          "population": "Validation normal",
+          "proxy_inapplicable_pct": 35.744,
+          "n_queries": 1344,
+          "interpretation": "normal-query discordance"
+        },
+        {
+          "population": "Selected test",
+          "proxy_inapplicable_pct": 78.631,
+          "n_queries": 1680,
+          "interpretation": "includes fault-induced control shift"
+        }
+      ],
+      "oracle_headroom": [
+        {
+          "metric": "AUROC",
+          "change_pp": -0.512,
+          "raw_change": -0.00511995,
+          "decision": "no headroom"
+        },
+        {
+          "metric": "AUPRC",
+          "change_pp": -0.0026,
+          "raw_change": -2.64e-05,
+          "decision": "no headroom"
+        },
+        {
+          "metric": "Detected-run ratio",
+          "change_pp": 0.0,
+          "raw_change": 0.0,
+          "decision": "no headroom"
+        }
+      ]
+    },
+    "accessIssues": []
+  },
+  "sources": [
+    {
+      "id": "g0_report",
+      "query": {
+        "engine": "document",
+        "language": "markdown",
+        "description": "Evidence/hypothesis-separated G0 synthesis with primary-paper links and reproducibility artifacts.",
+        "tables_used": [
+          "Thesis-Orchestrator/outputs/methodology/G0_SCIENTIFIC_GATE_REPORT.md"
+        ],
+        "executed_at": "2026-08-18T16:30:00+09:00"
+      }
+    }
+  ]
+}

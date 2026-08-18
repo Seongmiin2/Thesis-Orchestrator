@@ -1,0 +1,100 @@
+id: mission_001_topic_validation
+name: MASTER THESIS TOPIC VALIDATION
+status: PROPOSED
+candidates:
+  - id: A
+    title: Control-Aware Predictive Anomaly Detection
+    strengths:
+      - Reuses completed leakage-controlled F0/F1 infrastructure and verified artifacts.
+      - Has repeat directional evidence across three model seeds and one capacity control.
+      - Fits a master's scope if claims stay incremental and non-causal.
+    weaknesses:
+      - Normal prediction gain is inconsistent and detection gains are fault-specific.
+      - Current mathematical distinction gate is inconclusive and F0/F1 experiments are closed.
+    confirmed_evidence:
+      - F1 improved pooled AUROC, AUPRC and delay at Seed 42 with similar pre-fault FPR.
+      - Directional detection improvement repeated for seeds 42–44.
+      - A one-run capacity-matched F0-C did not reproduce F1 performance.
+    open_questions:
+      - Which XMV/fault mechanisms explain benefit without implying causal control effects?
+      - Does a preregistered run-level mechanism test falsify the observed association?
+    novelty_risks:
+      - Input-conditioned prediction residuals have strong prior-art overlap.
+      - Adding XMV to a GRU is not methodological novelty by itself.
+    literature_questions:
+      - Do verified prior methods explicitly compare sensor-only and sensor-plus-input predictors?
+      - What non-causal claims are defensible for closed-loop manipulated-variable histories?
+    required_experiments:
+      - Complete the preregistered no-training all-fault mechanism diagnostic.
+      - Complete equation-level comparison with the highest-overlap lawful full texts.
+    reviewer_risks:
+      - causal overclaiming
+      - fault selection and pooled-delay bias
+      - novelty overlap
+    verdict: MODIFY
+    methodology:
+      Research Question: Does past XMV history add reproducible early-warning information beyond XMEAS history at controlled false alarms, and for which fault mechanisms?
+      Hypothesis: Fault-specific early-warning gains associated with XMV history disappear when preregistered mechanism criteria are not met.
+      Independent Variable: Input context (XMEAS only versus XMEAS plus past XMV), fault mechanism
+      Dependent Variable: AUROC, AUPRC, run detection ratio, delay, pre-fault FPR
+      Dataset: Reinartz TEP with run-safe splits
+      Baseline: F0 and capacity-matched F0-C
+      Ablation: fault/XMV groups and lag criteria; no new model before novelty gate
+      Metrics: pooled and per-fault metrics with uncertainty
+      Required Experiment: preregistered no-training all-fault diagnostic
+      Expected Interpretation: support is association- and fault-specific
+      Alternative Explanation: controller response proxy, capacity, aligned onset, or dataset artifact
+  - id: B
+    title: FAVE-TS / Applicability-Aware Retrieval for Industrial Time Series
+    strengths:
+      - Transfers FAVE's explicit applicability distinction to a high-value Physical AI setting.
+      - Offers richer methodological space for schemas, arbitration, conflict types and ablations.
+    weaknesses:
+      - No industrial applicability benchmark or experiment exists yet.
+      - Requires a defensible retrieval task and gold applicability labels.
+    confirmed_evidence:
+      - FAVE-RAG implements valid/invalid/contested evidence and conflict detection in telecom math.
+      - PhysicalAI artifacts show strongly fault-specific benefit from XMV context.
+    open_questions:
+      - Can applicability be operationalized independently of downstream prediction correctness?
+      - Is this distinct from conditional similarity, case-based reasoning and regime-aware retrieval?
+    novelty_risks:
+      - FAVE-TS may be only a domain rename without a new formal criterion or benchmark.
+      - Regime-aware and context-aware time-series retrieval may already cover the core idea.
+    literature_questions:
+      - Which time-series retrieval methods condition similarity on operating regime or controls?
+      - How do case-based diagnosis systems label contraindicated or inapplicable historical cases?
+    required_experiments:
+      - Literature novelty review using verified sources.
+      - Define valid, invalid and contested historical references with annotator protocol.
+      - Compare similarity-only retrieval with applicability-aware arbitration on downstream diagnosis.
+      - Ablate control regime, operating context, sensor-action relationship and fault mechanism.
+    reviewer_risks:
+      - circular labels
+      - synthetic or cherry-picked invalid references
+      - weak baselines and insufficient dataset diversity
+      - no downstream value beyond conflict classification
+    verdict: MODIFY
+    methodology:
+      Research Question: Does explicit applicability arbitration improve industrial time-series diagnosis when retrieved windows are similar but contextually incompatible?
+      Hypothesis: Under controlled inapplicable-reference injection, applicability-aware arbitration reduces performance degradation relative to similarity-only retrieval.
+      Independent Variable: Retriever/arbitrator and invalid-reference ratio/type
+      Dependent Variable: diagnosis accuracy, robustness drop, poisoning rate, conflict F1, false alarms and delay
+      Dataset: bounded Reinartz-derived benchmark plus an independent validation dataset if feasible
+      Baseline: no retrieval, similarity-only retrieval, regime-conditioned retrieval, factuality/conflict filter
+      Ablation: control regime, operating context, sensor-action relation and fault mechanism checks
+      Metrics: downstream metrics plus arbitration precision/recall/F1
+      Required Experiment: gold-labeled applicability benchmark and controlled mixed-context evaluation
+      Expected Interpretation: arbitration helps only when applicability labels are reliable and invalid references are realistic
+      Alternative Explanation: gains arise from regime classification or metadata filtering rather than a general FAVE method
+comparison:
+  - "Safer topic: Candidate A, because it reuses verified experiments, but only after narrowing the claim and clearing the novelty gate."
+  - "Stronger methodological potential: Candidate B, because it admits explicit validity schemas and arbitration, but it begins with much less evidence."
+  - "Best use of current work: A uses PhysicalAI most directly; B combines concepts from both projects."
+  - "Higher novelty risk: B, because domain transfer may collapse into existing regime-aware retrieval or metadata filtering."
+  - "Master's realism: A is currently more realistic; B should remain a staged feasibility hypothesis until literature and benchmark gates pass."
+recommendation: >-
+  Do not lock either topic. Provisionally prioritize a narrowed Candidate A as the lower-risk thesis path,
+  while running a small, time-boxed literature-and-benchmark feasibility gate for Candidate B. Promote B only if
+  applicability can be defined non-circularly, prior-work overlap is manageable, and a controlled benchmark can be built.
+

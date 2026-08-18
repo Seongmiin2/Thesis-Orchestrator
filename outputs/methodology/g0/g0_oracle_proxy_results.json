@@ -1,0 +1,67 @@
+{
+  "experiment_id": "G0-ORACLE-PROXY-001",
+  "status": "PROXY_ONLY_NOT_GOLD_APPLICABILITY",
+  "observable_variables": [
+    "past XMEAS level/last/slope",
+    "past XMV level/last/slope"
+  ],
+  "excluded_unavailable_variables": [
+    "operating mode",
+    "XMV12",
+    "verified fault mechanism",
+    "known future control"
+  ],
+  "applicability_proxy": "past-XMV summary distance below a train-derived fixed first-quartile threshold",
+  "non_circularity": "No downstream error, future observation, fault label, or test result enters the proxy label.",
+  "samples": {
+    "bank": 5376,
+    "validation_queries": 1344,
+    "test_queries": 1680,
+    "test_runs": 120
+  },
+  "control_distance_threshold": 38.03937911987305,
+  "validation_pair_stats": {
+    "shortlist_applicable_fraction": 0.5780357142857143,
+    "top5_sensor_inapplicable_fraction": 0.3574404761904762
+  },
+  "test_pair_stats": {
+    "shortlist_applicable_fraction": 0.18991666666666668,
+    "top5_sensor_inapplicable_fraction": 0.7863095238095238
+  },
+  "metrics": [
+    {
+      "method": "sensor",
+      "auroc": 0.5823295454545454,
+      "auprc": 0.8397425383803262,
+      "prefault_fpr": 0.011111111111111112,
+      "detected_run_ratio": 0.008333333333333333,
+      "median_detection_delay_detected": 70.0,
+      "threshold": 2.3773117065429688
+    },
+    {
+      "method": "joint",
+      "auroc": 0.6197558922558922,
+      "auprc": 0.8581118077044245,
+      "prefault_fpr": 0.022222222222222223,
+      "detected_run_ratio": 0.03333333333333333,
+      "median_detection_delay_detected": 35.0,
+      "threshold": 2.260852098464966
+    },
+    {
+      "method": "oracle_proxy",
+      "auroc": 0.577209595959596,
+      "auprc": 0.8397161307365264,
+      "prefault_fpr": 0.013888888888888888,
+      "detected_run_ratio": 0.008333333333333333,
+      "median_detection_delay_detected": 70.0,
+      "threshold": 2.3272411823272705
+    }
+  ],
+  "oracle_proxy_headroom_vs_sensor": {
+    "delta_auroc": -0.005119949494949427,
+    "delta_auprc": -2.640764379979732e-05,
+    "delta_detected_run_ratio": 0.0,
+    "delay_reduction_detected": 0.0
+  },
+  "scientific_limit": "This experiment tests observable control-consistency filtering, which RAG4CTS already substantially covers. It cannot establish mechanism-level applicability or novelty."
+}

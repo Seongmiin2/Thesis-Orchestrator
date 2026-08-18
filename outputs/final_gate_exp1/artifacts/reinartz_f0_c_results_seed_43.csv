@@ -1,0 +1,2 @@
+variant,seed,split_seed,epochs,input_dim,hidden_dim,parameters,mae_z,rmse_z,auroc,auprc,detected_run_ratio,detection_delay,prefault_sample_fpr,prefault_run_alarm_rate,threshold,elapsed_seconds
+F0-C,43,42,30,41,68,25473,0.5830192565917969,0.7951846122741699,0.7598205071361108,0.9042280768744921,0.6910714285714286,80.60206718346254,0.009844559585492229,0.005357142857142857,0.8871942758560181,1027.6938879999798

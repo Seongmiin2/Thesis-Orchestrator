@@ -1,0 +1,42 @@
+id: mission_002_rigorous_research_gate
+name: RIGOROUS SCIENTIFIC THESIS GATE
+status: PROPOSED
+priority_order:
+  - scientific contribution and defensibility
+  - novelty against verified recent prior work
+  - objective and evaluable ground truth
+  - rigorous validation and reproducibility
+  - four-to-six-week intensive feasibility
+human_gate:
+  lock_topic: false
+  terminal_status: WAITING_FOR_USER_APPROVAL
+candidates:
+  - id: A
+    title: Mechanism-Level Control-Information Analysis for Early Fault Detection
+    prohibited_shortcut: A simple XMEAS versus XMEAS-plus-XMV comparison is not a contribution.
+    scientific_question: Why, when, and through which variables and lags does control history change residual-based fault detection at a controlled false-alarm rate?
+    judgment: MODIFY
+    kill_if:
+      - effects vanish under multi-seed, capacity, and run-level uncertainty controls
+      - no reproducible fault-mechanism or variable-lag structure is found
+      - the result reduces to generic feature addition or controller-response leakage
+  - id: B
+    title: Post-Retrieval Applicability Verification for Industrial Time-Series Evidence
+    prohibited_shortcut: Covariate-aware or regime-aware similarity alone is not applicability verification.
+    scientific_question: Can a separately evaluated applicability verifier reject sensor-similar but transfer-invalid historical cases and improve early fault detection under controlled contamination?
+    judgment: MODIFY_CONDITIONAL_GO
+    kill_if:
+      - applicability labels require the downstream answer or model error and are therefore circular
+      - verifier gains disappear against regime-, control-, and adaptation-aware retrieval baselines
+      - no realistic hard-negative construction or independent annotation is possible
+      - downstream detection and delay do not improve at matched false-alarm rate
+  - id: C
+    title: Applicability-Verified Historical Evidence for Control-Aware Early Fault Detection
+    status: EMERGENT_HYPOTHESIS_NOT_LOCKED
+    scientific_question: Does explicit verification of sensor-control-mechanism compatibility make retrieved historical evidence robustly useful for earlier industrial fault detection?
+    role_of_candidate_a: Supplies preliminary heterogeneity evidence, control-variable/lag factors, and ablations; it is not a separate thesis topic.
+    judgment: MODIFY_HIGHEST_POTENTIAL
+    kill_if:
+      - Candidate B's independent applicability construct fails its gate
+      - the combined system cannot be expressed and evaluated as one causal-neutral research question
+
