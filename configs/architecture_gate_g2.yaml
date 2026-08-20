@@ -1,0 +1,18 @@
+device: cuda
+seed: 42
+window: 20
+horizon: 1
+epochs: 15
+batch_size: 256
+learning_rate: 0.001
+threshold_percentile: 99.0
+alarm_consecutive: 3
+validation_runs_per_fault: 16
+num_workers: 0
+hidden_dim: 32
+layers: 2
+paths:
+  cache: C:/Users/FORYOUCOM/Desktop/master_degree/PhysicalAI_mini/data/processed/reinartz_f0_f1
+  artifacts: C:/Users/FORYOUCOM/Desktop/master_degree/Thesis-Orchestrator/outputs/architecture_gate_g2
+  checkpoints: C:/Users/FORYOUCOM/Desktop/master_degree/Thesis-Orchestrator/outputs/architecture_gate_g2/checkpoints
+  logs: C:/Users/FORYOUCOM/Desktop/master_degree/Thesis-Orchestrator/outputs/architecture_gate_g2/logs

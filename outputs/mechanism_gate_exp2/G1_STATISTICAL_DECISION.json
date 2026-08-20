@@ -1,0 +1,15 @@
+{
+  "stable_gain_faults_before_multiplicity": [
+    4,
+    7,
+    19,
+    24,
+    25,
+    26
+  ],
+  "globally_fdr_significant_cells": 0,
+  "within_fault_fdr_significant_cells": 0,
+  "fpr_cells_ci_outside_tolerance": 0,
+  "fpr_cells_ci_fully_inside_tolerance": 414,
+  "note": "With five seeds, an exact two-sided sign-flip test has minimum attainable p=0.0625; seed-direction stability and hierarchical run uncertainty must be reported rather than misrepresented as p<0.05 evidence."
+}

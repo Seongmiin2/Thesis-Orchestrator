@@ -1,0 +1,30 @@
+{
+  "status": "COMPLETE",
+  "device": "cuda",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "conditions": [
+    "original",
+    "permute_time",
+    "keep_last_1",
+    "keep_last_5",
+    "keep_last_10",
+    "occlude_XMV_01",
+    "occlude_XMV_02",
+    "occlude_XMV_03",
+    "occlude_XMV_04",
+    "occlude_XMV_05",
+    "occlude_XMV_06",
+    "occlude_XMV_07",
+    "occlude_XMV_08",
+    "occlude_XMV_09",
+    "occlude_XMV_10",
+    "occlude_XMV_11"
+  ],
+  "max_runs": null
+}

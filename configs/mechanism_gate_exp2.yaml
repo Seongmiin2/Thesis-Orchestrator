@@ -1,0 +1,23 @@
+device: cuda
+seeds: [42, 43, 44, 45, 46]
+window: 20
+batch_size: 4096
+threshold_percentile: 99.0
+alarm_consecutive: 3
+evaluation_sample_start: 400
+evaluation_sample_end: 900
+fault_onset: 600
+gain_faults: [3, 4, 7, 19, 24, 25, 26]
+perturbations:
+  - original
+  - permute_time
+  - keep_last_1
+  - keep_last_5
+  - keep_last_10
+  - occlude_each_xmv
+paths:
+  cache: ../PhysicalAI_mini/data/processed/reinartz_f0_f1
+  split: outputs/final_gate_exp1/artifacts/reinartz_split_manifest.csv
+  checkpoints_42_44: ../PhysicalAI_mini/checkpoints
+  checkpoints_45_46: outputs/final_gate_exp1/checkpoints
+  output: outputs/mechanism_gate_exp2
