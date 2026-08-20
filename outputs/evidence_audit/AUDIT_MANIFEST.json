@@ -1,0 +1,46 @@
+{
+  "status": "COMPLETE",
+  "assessment": "READY_TO_EXTEND",
+  "gain_sets": {
+    "tcn": [
+      4,
+      7,
+      19,
+      23,
+      24,
+      25,
+      26
+    ],
+    "transformer": [
+      4,
+      7,
+      19,
+      23,
+      24,
+      25,
+      26
+    ]
+  },
+  "conditional_material_cells": 7,
+  "zero_fpr_exceptions": 9,
+  "conditional_fpr_exceptions": 0,
+  "split": {
+    "rows": 2800,
+    "unique_run_index": 2800,
+    "unique_run_id": 2800,
+    "split_counts": {
+      "train": 1792,
+      "test": 560,
+      "validation": 448
+    },
+    "max_splits_per_run": 1,
+    "faults": 28,
+    "per_fault_counts_identical": true,
+    "per_fault_counts": {
+      "test": 20,
+      "train": 64,
+      "validation": 16
+    }
+  },
+  "issues": []
+}

@@ -1,5 +1,26 @@
 # Project Handover
 
+## Current execution status — 2026-08-21
+
+- **CONFIRMED FACT:** The Control-History Utility Mapping (CHUM) evidence package is complete, but the final thesis topic and research question remain unlocked pending explicit human and supervisor approval.
+- **CONFIRMED FACT:** TEP architecture-conditional G3 passed with channel consensus for primary faults 4, 19, and 25 across TCN and Transformer. The full run contains 340 tasks, 9,520 fault rows, and 190,400 run rows.
+- **CONFIRMED FACT:** Integrated Gradients agreed with the CHUM top channel in 7 of 8 primary architecture-fault cells.
+- **CONFIRMED FACT:** Corrected HAI 21.03 v2 produced external support: F1 exceeded F0 and capacity-matched F0-C on global AUROC, AUPRC, and eTaF1 in all three seeds at comparable FPR.
+- **CONFIRMED FACT:** HAI conditional CHUM retained 12/28 quality-gated active controls and accepted five directly targeted event-channel cells; conditional and zero replacement each had zero FPR exceptions under the locked tolerance.
+- **CONFIRMED FACT:** The original HAI result directory is quarantined as `INVALIDATED_COLUMN_ORDER_BUG`. Only `hai_external_validation_v2` and `hai_conditional_chum` may be cited.
+- **CONFIRMED FACT:** The final evidence validator independently recomputed 18 completeness, duplication, effect, FPR, and decision checks from raw result tables; all passed.
+- **INTERPRETATION:** The defensible contribution is an architecture-robust empirical protocol for event- and channel-specific conditional predictive information, not a causal controller or root-cause claim.
+- **NEXT ACTION:** Obtain approval for the final title and claim wording, then draft the thesis from the validated evidence package. Optional robustness work is one additional TEP seed plus imputer block-length/draw sensitivity; optional generality work requires an external setting without directly attacked controls.
+
+Primary handoff artifacts:
+
+- `outputs/architecture_chum_g3/ARCHITECTURE_CONDITIONAL_CHUM_G3_REPORT.md`
+- `outputs/integrated_gradients_baseline/INTEGRATED_GRADIENTS_BASELINE_REPORT.md`
+- `outputs/hai_external_validation_v2/HAI_EXTERNAL_VALIDATION_REPORT.md`
+- `outputs/hai_conditional_chum/HAI_CONDITIONAL_CHUM_REPORT.md`
+- `outputs/final_evidence_validation/FINAL_EVIDENCE_VALIDATION.md`
+- `outputs/professor_report_v2/PROFESSOR_RESEARCH_REPORT_KO.html`
+
 This handover distinguishes `CONFIRMED FACT`, `INTERPRETATION`, and `HYPOTHESIS`. The source projects were inspected read-only on 2026-08-18.
 
 ## A. PhysicalAI_mini

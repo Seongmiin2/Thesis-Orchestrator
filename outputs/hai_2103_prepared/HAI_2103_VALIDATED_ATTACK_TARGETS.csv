@@ -1,0 +1,51 @@
+global_event,id,target_points,target_class,source_pages,source_note,file,event_index,start_time,end_time,duration_seconds,target_roles
+1,A101,P1_B2016,control_only,36-38,,test1.csv.gz,1,2020-07-07 15:35:11,2020-07-07 15:38:22,192,SP
+2,A102,P1_B3005,control_only,36-38,,test1.csv.gz,2,2020-07-07 17:28:11,2020-07-07 17:29:48,98,SP
+3,A103,P1_LCV01D,control_only,36-38,,test1.csv.gz,3,2020-07-07 18:59:11,2020-07-07 19:02:20,190,CO
+4,A104,P2_CO_rpm,control_only,36-38,P2_SCO in manual mapped to 21.03 alias P2_CO_rpm,test1.csv.gz,4,2020-07-07 20:21:06,2020-07-07 20:22:05,60,CO
+5,A105,P2_ASD,control_only,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD,test1.csv.gz,5,2020-07-07 21:03:21,2020-07-07 21:04:49,89,SP
+6,A201,P2_VTR02,control_only,36-38,,test2.csv.gz,1,2020-07-09 15:47:00,2020-07-09 15:48:22,83,SP
+7,A202,P1_B2016;P1_PIT01,mixed_control_sensor,36-38,,test2.csv.gz,2,2020-07-09 17:38:00,2020-07-09 17:45:01,422,SP;PV
+8,A203,P1_LCV01D,control_only,36-38,,test2.csv.gz,3,2020-07-09 18:59:06,2020-07-09 18:59:22,17,CO
+9,A204,P1_B3005;P1_FT03,mixed_control_sensor,36-38,,test2.csv.gz,4,2020-07-09 20:10:00,2020-07-09 20:14:18,259,SP;PV
+10,A205,P1_B2016,control_only,36-38,,test2.csv.gz,5,2020-07-09 21:15:00,2020-07-09 21:17:02,123,SP
+11,A206,P1_FCV03D;P1_FT03,mixed_control_sensor,36-38,,test2.csv.gz,6,2020-07-09 23:02:00,2020-07-09 23:06:15,256,CO;PV
+12,A207,P2_VTR01,control_only,36-38,,test2.csv.gz,7,2020-07-10 01:08:00,2020-07-10 01:09:07,68,SP
+13,A208,P1_B3004;P1_LIT01,mixed_control_sensor,36-38,,test2.csv.gz,8,2020-07-10 01:33:01,2020-07-10 01:37:21,261,SP;PV
+14,A209,P1_B3004,control_only,36-38,,test2.csv.gz,9,2020-07-10 03:03:11,2020-07-10 03:06:29,199,SP
+15,A210,P1_PCV01D;P1_PIT01,mixed_control_sensor,36-38,,test2.csv.gz,10,2020-07-10 05:29:00,2020-07-10 05:36:00,421,CO;PV
+16,A211,P2_ASD,control_only,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD,test2.csv.gz,11,2020-07-10 07:51:06,2020-07-10 07:51:50,45,SP
+17,A212,P2_ASD;P2_SIT01,mixed_control_sensor,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD,test2.csv.gz,12,2020-07-10 09:13:01,2020-07-10 09:15:32,152,SP;PV
+18,A213,P1_LCV01D;P1_LIT01,mixed_control_sensor,36-38,,test2.csv.gz,13,2020-07-10 10:49:03,2020-07-10 10:53:16,254,CO;PV
+19,A214,P1_PCV01D,control_only,36-38,,test2.csv.gz,14,2020-07-10 12:51:11,2020-07-10 12:53:42,152,CO
+20,A215,P2_CO_rpm;P2_SIT01,mixed_control_sensor,36-38,P2_SCO in manual mapped to 21.03 alias P2_CO_rpm,test2.csv.gz,15,2020-07-10 15:11:04,2020-07-10 15:13:34,151,CO;PV
+21,A216,P1_FCV03D,control_only,36-38,,test2.csv.gz,16,2020-07-10 15:40:06,2020-07-10 15:41:10,65,CO
+22,A217,P2_RTR,control_only,36-38,,test2.csv.gz,17,2020-07-10 16:22:04,2020-07-10 16:25:07,184,SP
+23,A218,P1_FCV03D,control_only,36-38,,test2.csv.gz,18,2020-07-10 18:21:13,2020-07-10 18:22:51,99,CO
+24,A219,P3_LCP01D,control_only,36-38,,test2.csv.gz,19,2020-07-10 21:25:03,2020-07-10 21:27:01,119,CO
+25,A220,P3_LCV01D,control_only,36-38,P2_LCV01D in manual corrected by P3-LC scenario and recorded point inventory,test2.csv.gz,20,2020-07-10 22:56:03,2020-07-10 22:58:01,119,CO
+26,A301,P1_LCV01D;P1_B3005,control_only,36-38,,test3.csv.gz,1,2020-07-13 13:51:06,2020-07-13 13:53:17,132,CO;SP
+27,A302,P1_B2016;P1_PIT01;P1_B3005,mixed_control_sensor,36-38,,test3.csv.gz,2,2020-07-13 15:21:00,2020-07-13 15:28:00,421,SP;PV;SP
+28,A303,P1_PCV01D;P1_LCV01D,control_only,36-38,,test3.csv.gz,3,2020-07-13 18:11:08,2020-07-13 18:14:16,189,CO;CO
+29,A304,P2_ASD;P2_VTR01,control_only,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD,test3.csv.gz,4,2020-07-13 20:53:02,2020-07-13 20:54:47,106,SP;SP
+30,A305,P2_CO_rpm;P2_VTR02,control_only,36-38,P2_SCO in manual mapped to 21.03 alias P2_CO_rpm,test3.csv.gz,5,2020-07-13 21:23:00,2020-07-13 21:24:23,84,CO;SP
+31,A306,P1_B2016;P2_ASD,control_only,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD,test3.csv.gz,6,2020-07-13 23:55:11,2020-07-13 23:59:08,238,SP;SP
+32,A307,P1_FCV03D;P2_VTR01,control_only,36-38,,test3.csv.gz,7,2020-07-14 01:51:02,2020-07-14 01:52:51,110,CO;SP
+33,A308,P1_LCV01D;P1_LIT01;P2_ASD,mixed_control_sensor,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD,test3.csv.gz,8,2020-07-14 03:53:01,2020-07-14 03:57:15,255,CO;PV;SP
+34,A401,P1_PCV01D;P1_B3004;P1_LIT01,mixed_control_sensor,36-38,,test4.csv.gz,1,2020-07-28 12:43:03,2020-07-28 12:47:16,254,CO;SP;PV
+35,A402,P1_B3005;P1_FT03;P3_LCV01D,mixed_control_sensor,36-38,P2_LCV01D in manual corrected by P3-LC scenario and recorded point inventory,test4.csv.gz,2,2020-07-28 13:45:00,2020-07-28 13:49:21,262,SP;PV;CO
+36,A403,P1_B3004;P1_LIT01;P3_LCV01D,mixed_control_sensor,36-38,P2_LCV01D in manual corrected by P3-LC scenario and recorded point inventory,test4.csv.gz,3,2020-07-28 15:57:01,2020-07-28 16:01:23,263,SP;PV;CO
+37,A404,P2_CO_rpm;P2_SIT01;P1_LCV01D;P1_LIT01,mixed_control_sensor,36-38,P2_SCO in manual mapped to 21.03 alias P2_CO_rpm,test4.csv.gz,4,2020-07-28 17:45:02,2020-07-28 17:49:19,258,CO;PV;CO;PV
+38,A405,P2_ASD;P3_LCV01D,control_only,36-38,Two documented 21.03 aliases normalized,test4.csv.gz,5,2020-07-28 20:47:01,2020-07-28 20:49:00,120,SP;CO
+39,A501,P1_PCV01D;P2_VTR02,control_only,36-38,,test5.csv.gz,1,2020-07-30 11:16:00,2020-07-30 11:18:51,172,CO;SP
+40,A502,P1_FCV03D;P1_FT03;P2_CO_rpm,mixed_control_sensor,36-38,P2_SCO in manual mapped to 21.03 alias P2_CO_rpm,test5.csv.gz,2,2020-07-30 13:30:03,2020-07-30 13:34:20,258,CO;PV;CO
+41,A503,P1_B3004;P1_LIT01;P2_CO_rpm,mixed_control_sensor,36-38,P2_SCO in manual mapped to 21.03 alias P2_CO_rpm,test5.csv.gz,3,2020-07-30 16:05:08,2020-07-30 16:09:23,256,SP;PV;CO
+42,A504,P1_FCV03D;P3_LCV01D,control_only,36-38,P2_LCV01D in manual corrected by P3-LC scenario and recorded point inventory,test5.csv.gz,4,2020-07-30 17:45:00,2020-07-30 17:46:59,120,CO;CO
+43,A505,P1_B3004;P2_ASD,control_only,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD,test5.csv.gz,5,2020-07-30 18:38:09,2020-07-30 18:41:31,203,SP;SP
+44,A506,P2_CO_rpm;P2_SIT01;P3_LCV01D,mixed_control_sensor,36-38,Two documented 21.03 aliases normalized,test5.csv.gz,6,2020-07-30 20:42:03,2020-07-30 20:44:35,153,CO;PV;CO
+45,A507,P2_ASD;P2_VTR01,control_only,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD,test5.csv.gz,7,2020-07-30 23:13:05,2020-07-30 23:14:23,79,SP;SP
+46,A508,P1_FCV03D;P1_LCV01D,control_only,36-38,,test5.csv.gz,8,2020-07-31 01:15:06,2020-07-31 01:15:56,51,CO;CO
+47,A509,P1_B2016;P1_PCV01D,control_only,36-38,,test5.csv.gz,9,2020-07-31 02:01:11,2020-07-31 02:05:11,241,SP;CO
+48,A510,P1_B3004;P1_LCV01D;P1_LIT01,mixed_control_sensor,36-38,,test5.csv.gz,10,2020-07-31 09:54:01,2020-07-31 09:58:22,262,SP;CO;PV
+49,A511,P2_RTR;P3_LCV01D,control_only,36-38,P2_LCV01D in manual corrected by P3-LC scenario and recorded point inventory,test5.csv.gz,11,2020-07-31 10:40:00,2020-07-31 10:41:59,120,SP;CO
+50,A512,P1_B3005;P1_FCV03D;P1_FT03,mixed_control_sensor,36-38,,test5.csv.gz,12,2020-07-31 11:20:59,2020-07-31 11:25:20,262,SP;CO;PV

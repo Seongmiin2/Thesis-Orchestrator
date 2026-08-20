@@ -1,0 +1,27 @@
+source: ../HAI/hai-21.03
+prepared: outputs/hai_2103_prepared
+roles_manifest: outputs/hai_2103_prepared/HAI_2103_ROLE_MANIFEST.json
+attack_targets: outputs/hai_2103_prepared/HAI_2103_VALIDATED_ATTACK_TARGETS.csv
+attack_target_manifest: outputs/hai_2103_prepared/HAI_2103_ATTACK_TARGET_MANIFEST.json
+output: outputs/hai_external_validation_v2
+etapr_repository: ../eTaPR
+
+seeds: [42, 43, 44]
+variants: [F0, F1, F0-C]
+window: 30
+train_fraction: 0.8
+train_stride: 10
+hidden_dim: 48
+layers: 2
+batch_size: 1024
+epochs: 8
+patience: 2
+learning_rate: 0.001
+weight_decay: 0.00001
+gradient_clip: 1.0
+threshold_percentile: 99.5
+alarm_consecutive: 3
+etapr_theta_p: 0.7
+etapr_theta_r: 0.1
+etapr_delta: 0.0
+device: cuda

@@ -1,0 +1,7 @@
+variant,target_class,seeds,events,detected_ratio_mean,detected_ratio_sd,censored_delay_mean
+F0,control_only,3,31,1.0,0.0,0.0
+F0,mixed_control_sensor,3,19,1.0,0.0,0.0
+F0-C,control_only,3,31,1.0,0.0,0.0
+F0-C,mixed_control_sensor,3,19,1.0,0.0,0.0
+F1,control_only,3,31,1.0,0.0,0.0
+F1,mixed_control_sensor,3,19,1.0,0.0,0.0

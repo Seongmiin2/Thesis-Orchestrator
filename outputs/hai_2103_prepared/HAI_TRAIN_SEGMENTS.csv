@@ -1,0 +1,4 @@
+file,segment_index,start_row,end_row,rows
+train1.csv.gz,1,1,172799,172799
+train2.csv.gz,1,0,226800,226801
+train3.csv.gz,1,0,478800,478801

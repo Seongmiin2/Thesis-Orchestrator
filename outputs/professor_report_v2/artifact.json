@@ -1,0 +1,1245 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "제어 이력의 조건부 정보 효용: 석사논문 연구 결과",
+    "description": "지도교수 검토를 위한 CHUM 기술 보고서: 연구 질문, 실험 설계, 결과, 검산, 한계, 다음 단계",
+    "generatedAt": "2026-08-21T03:20:41+09:00",
+    "cards": [
+      {
+        "id": "card-g3",
+        "description": "잠근 primary fault 4개 중 두 새 아키텍처에서 동일 채널 합의를 보인 fault 수",
+        "dataset": "card-g3",
+        "sourceId": "src-g3",
+        "metrics": [
+          {
+            "label": "Architecture-consensus faults",
+            "field": "value",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "card-ig",
+        "description": "primary architecture-fault 셀에서 IG와 CHUM의 1위 채널 일치",
+        "dataset": "card-ig",
+        "sourceId": "src-ig",
+        "metrics": [
+          {
+            "label": "IG top-1 agreement",
+            "field": "value",
+            "format": "number",
+            "unit": "/ 8"
+          }
+        ]
+      },
+      {
+        "id": "card-hai",
+        "description": "HAI 전역 공격 AUROC의 F1-F0 3-seed 평균 차이",
+        "dataset": "card-hai",
+        "sourceId": "src-hai",
+        "metrics": [
+          {
+            "label": "HAI mean ΔAUROC",
+            "field": "value",
+            "format": "number",
+            "signed": true
+          }
+        ]
+      },
+      {
+        "id": "card-hai-conditional",
+        "description": "직접 표적·대치 품질·3/3 seed·FPR 기준을 모두 통과한 HAI event-channel 셀",
+        "dataset": "card-hai-conditional",
+        "sourceId": "src-hai-conditional",
+        "metrics": [
+          {
+            "label": "Stable targeted HAI cells",
+            "field": "value",
+            "format": "number"
+          }
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "id": "chart-g3",
+        "title": "Accepted TEP conditional-utility cells",
+        "subtitle": "조건부 XMV 대치 후 평균 AUROC 감소, architecture별 5 seeds",
+        "intent": "comparison",
+        "question": "동일 fault-channel 효용이 TCN과 Transformer에서 반복되는가?",
+        "rationale": "Grouped bars expose architecture agreement for each accepted cell.",
+        "type": "bar",
+        "dataset": "g3-cells",
+        "sourceId": "src-g3",
+        "encodings": {
+          "x": {
+            "field": "fault_channel",
+            "type": "nominal",
+            "label": "Fault / channel"
+          },
+          "y": {
+            "field": "mean_delta_auroc",
+            "type": "quantitative",
+            "label": "Mean ΔAUROC",
+            "format": "number"
+          },
+          "color": {
+            "field": "architecture_label",
+            "type": "nominal",
+            "label": "Architecture"
+          },
+          "tooltip": [
+            {
+              "field": "positive_auroc_seeds",
+              "type": "quantitative",
+              "label": "Positive seeds"
+            },
+            {
+              "field": "max_abs_pre_fpr_shift",
+              "type": "quantitative",
+              "label": "Max |ΔFPR|"
+            }
+          ]
+        },
+        "settings": {
+          "groupMode": "grouped",
+          "showValues": true
+        },
+        "layout": "full"
+      },
+      {
+        "id": "chart-hai",
+        "title": "HAI global attack performance",
+        "subtitle": "F0, capacity-matched F0-C, F1의 3-seed 평균",
+        "intent": "comparison",
+        "question": "제어 이력 추가 효과가 모델 용량 증가를 넘어서는가?",
+        "rationale": "Grouped bars compare the three same-scale performance metrics across variants.",
+        "type": "bar",
+        "dataset": "hai-chart",
+        "sourceId": "src-hai",
+        "encodings": {
+          "x": {
+            "field": "variant",
+            "type": "nominal",
+            "label": "Variant"
+          },
+          "y": {
+            "field": "score",
+            "type": "quantitative",
+            "label": "Score",
+            "format": "number"
+          },
+          "color": {
+            "field": "metric",
+            "type": "nominal",
+            "label": "Metric"
+          }
+        },
+        "settings": {
+          "groupMode": "grouped",
+          "showValues": true
+        },
+        "layout": "full"
+      },
+      {
+        "id": "chart-hai-conditional",
+        "title": "Stable targeted HAI event-channel cells",
+        "subtitle": "조건부 대치 후 threshold-normalized event score 감소, 3 seeds",
+        "intent": "ranking",
+        "question": "어떤 직접 공격 control 채널의 관측 이력이 anomaly score에 반복적으로 기여했는가?",
+        "rationale": "A ranked bar chart shows the magnitude of accepted targeted cells without implying a time trend.",
+        "type": "bar",
+        "dataset": "hai-conditional-stable",
+        "sourceId": "src-hai-conditional",
+        "encodings": {
+          "x": {
+            "field": "event_channel",
+            "type": "nominal",
+            "label": "Attack / control"
+          },
+          "y": {
+            "field": "mean_delta_normalized_score",
+            "type": "quantitative",
+            "label": "Mean normalized-score loss",
+            "format": "number"
+          },
+          "tooltip": [
+            {
+              "field": "positive_seeds",
+              "type": "quantitative",
+              "label": "Positive seeds"
+            },
+            {
+              "field": "max_abs_fpr_shift",
+              "type": "quantitative",
+              "label": "Max |ΔFPR|"
+            }
+          ]
+        },
+        "settings": {
+          "showValues": true
+        },
+        "layout": "full"
+      }
+    ],
+    "tables": [
+      {
+        "id": "table-g3",
+        "title": "Accepted G3 cells",
+        "subtitle": "두 새 아키텍처에서 합의하고 모든 안정성 게이트를 통과한 primary 셀",
+        "dataset": "g3-cells",
+        "sourceId": "src-g3",
+        "defaultSort": {
+          "field": "mean_delta_auroc",
+          "direction": "desc"
+        },
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "fault_channel",
+            "label": "Fault / XMV",
+            "type": "text"
+          },
+          {
+            "field": "architecture_label",
+            "label": "Architecture",
+            "type": "text"
+          },
+          {
+            "field": "mean_delta_auroc",
+            "label": "Mean ΔAUROC",
+            "format": "number",
+            "movement": true
+          },
+          {
+            "field": "run_delta_auroc_ci_low",
+            "label": "Run CI low",
+            "format": "number"
+          },
+          {
+            "field": "run_delta_auroc_ci_high",
+            "label": "Run CI high",
+            "format": "number"
+          },
+          {
+            "field": "max_abs_pre_fpr_shift",
+            "label": "Max |ΔFPR|",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "table-ig",
+        "title": "IG-CHUM rank agreement",
+        "subtitle": "primary와 negative/exploratory fault 그룹 비교",
+        "dataset": "ig-summary",
+        "sourceId": "src-ig",
+        "defaultSort": {
+          "field": "top1_rate",
+          "direction": "desc"
+        },
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "fault_group",
+            "label": "Fault group",
+            "type": "text"
+          },
+          {
+            "field": "cells",
+            "label": "Cells",
+            "format": "number"
+          },
+          {
+            "field": "median_spearman",
+            "label": "Median Spearman",
+            "format": "number"
+          },
+          {
+            "field": "top1_agreements",
+            "label": "Top-1 agreements",
+            "format": "number"
+          },
+          {
+            "field": "top1_rate",
+            "label": "Top-1 rate",
+            "format": "percent"
+          },
+          {
+            "field": "mean_top3_overlap",
+            "label": "Mean top-3 overlap",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "table-hai",
+        "title": "HAI variant metrics",
+        "subtitle": "global attack label, 3 seeds; 동일 sensor targets와 validation calibration",
+        "dataset": "hai-global",
+        "sourceId": "src-hai",
+        "defaultSort": {
+          "field": "auroc_mean",
+          "direction": "desc"
+        },
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "variant",
+            "label": "Variant",
+            "type": "text"
+          },
+          {
+            "field": "parameters",
+            "label": "Parameters",
+            "format": "number"
+          },
+          {
+            "field": "auroc_mean",
+            "label": "AUROC",
+            "format": "number"
+          },
+          {
+            "field": "auprc_mean",
+            "label": "AUPRC",
+            "format": "number"
+          },
+          {
+            "field": "etaf1_mean",
+            "label": "eTaF1",
+            "format": "number"
+          },
+          {
+            "field": "fpr_mean",
+            "label": "FPR",
+            "format": "number"
+          },
+          {
+            "field": "detected_mean",
+            "label": "Event detected",
+            "format": "percent"
+          },
+          {
+            "field": "delay_mean",
+            "label": "Delay (s)",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "table-hai-conditional",
+        "title": "Stable targeted HAI event-channel cells",
+        "subtitle": "직접 표적, 품질 대치기, 3/3 seed, score materiality, FPR 기준 통과 셀",
+        "dataset": "hai-conditional-stable",
+        "sourceId": "src-hai-conditional",
+        "defaultSort": {
+          "field": "mean_delta_normalized_score",
+          "direction": "desc"
+        },
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "event_channel",
+            "label": "Attack / control",
+            "type": "text"
+          },
+          {
+            "field": "target_class",
+            "label": "Target class",
+            "type": "text"
+          },
+          {
+            "field": "mean_delta_normalized_score",
+            "label": "Mean score loss",
+            "format": "number",
+            "movement": true
+          },
+          {
+            "field": "min_delta_normalized_score",
+            "label": "Minimum seed loss",
+            "format": "number"
+          },
+          {
+            "field": "positive_seeds",
+            "label": "Positive seeds",
+            "format": "number"
+          },
+          {
+            "field": "mean_detection_drop",
+            "label": "Mean detection drop",
+            "format": "number",
+            "movement": true
+          },
+          {
+            "field": "mean_alarm_delay_increase",
+            "label": "Mean delay Δ",
+            "format": "number",
+            "movement": true
+          },
+          {
+            "field": "max_abs_fpr_shift",
+            "label": "Max |ΔFPR|",
+            "format": "number"
+          }
+        ]
+      },
+      {
+        "id": "table-quality",
+        "title": "HAI imputer quality-gated controls",
+        "subtitle": "held-out normal validation에서 모든 사전 분포·시계열 기준을 통과한 12 controls",
+        "dataset": "hai-imputer-quality",
+        "sourceId": "src-hai-imputer",
+        "defaultSort": {
+          "field": "r2",
+          "direction": "desc"
+        },
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "feature",
+            "label": "Control",
+            "type": "text"
+          },
+          {
+            "field": "r2",
+            "label": "LOO R²",
+            "format": "number"
+          },
+          {
+            "field": "sampled_sd_ratio",
+            "label": "SD ratio",
+            "format": "number"
+          },
+          {
+            "field": "sampled_mean_shift_sd",
+            "label": "Mean shift (SD)",
+            "format": "number"
+          },
+          {
+            "field": "lag1_error",
+            "label": "Lag-1 error",
+            "format": "number"
+          },
+          {
+            "field": "outside_train_range_fraction",
+            "label": "Outside range",
+            "format": "percent"
+          }
+        ]
+      },
+      {
+        "id": "table-validation",
+        "title": "Independent evidence checks",
+        "subtitle": "보고서 수치를 raw result tables에서 재계산한 최종 검사",
+        "dataset": "validation-checks",
+        "sourceId": "src-validation",
+        "defaultSort": {
+          "field": "check",
+          "direction": "asc"
+        },
+        "density": "dense",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "check",
+            "label": "Check",
+            "type": "text"
+          },
+          {
+            "field": "status",
+            "label": "Status",
+            "type": "text"
+          },
+          {
+            "field": "evidence",
+            "label": "Evidence",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "src-g3",
+        "label": "Architecture Conditional CHUM G3",
+        "path": "outputs/architecture_chum_g3/G3_CELL_SUMMARY.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('outputs/architecture_chum_g3/G3_CELL_SUMMARY.csv') WHERE mode = 'loo_sample' AND stable_material = true",
+          "description": "아키텍처별 조건부 채널 효용 요약",
+          "tables_used": [
+            "outputs/architecture_chum_g3/G3_CELL_SUMMARY.csv"
+          ]
+        }
+      },
+      {
+        "id": "src-ig",
+        "label": "Integrated Gradients agreement",
+        "path": "outputs/integrated_gradients_baseline/IG_CHUM_CLASS_SUMMARY.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('outputs/integrated_gradients_baseline/IG_CHUM_CLASS_SUMMARY.csv')",
+          "description": "IG와 CHUM 채널 순위 합의 요약",
+          "tables_used": [
+            "outputs/integrated_gradients_baseline/IG_CHUM_CLASS_SUMMARY.csv"
+          ]
+        }
+      },
+      {
+        "id": "src-hai",
+        "label": "Corrected HAI external validation v2",
+        "path": "outputs/hai_external_validation_v2/HAI_EXTERNAL_AGGREGATE.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('outputs/hai_external_validation_v2/HAI_EXTERNAL_AGGREGATE.csv') WHERE label = 'attack'",
+          "description": "HAI 전역 공격 라벨의 모델 변형별 3-seed 평균",
+          "tables_used": [
+            "outputs/hai_external_validation_v2/HAI_EXTERNAL_AGGREGATE.csv"
+          ]
+        }
+      },
+      {
+        "id": "src-hai-conditional",
+        "label": "HAI conditional event-channel summary",
+        "path": "outputs/hai_conditional_chum/HAI_CONDITIONAL_TARGETED_SUMMARY.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('outputs/hai_conditional_chum/HAI_CONDITIONAL_TARGETED_SUMMARY.csv') WHERE mode = 'loo_sample' AND stable_targeted_cell = true",
+          "description": "사전등록 기준을 통과한 HAI 직접 표적 event-channel 셀",
+          "tables_used": [
+            "outputs/hai_conditional_chum/HAI_CONDITIONAL_TARGETED_SUMMARY.csv"
+          ]
+        }
+      },
+      {
+        "id": "src-hai-imputer",
+        "label": "HAI conditional imputer quality",
+        "path": "outputs/hai_conditional_chum/HAI_IMPUTER_QUALITY.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('outputs/hai_conditional_chum/HAI_IMPUTER_QUALITY.csv') WHERE reliable = true",
+          "description": "HAI 조건부 대치 품질 게이트 통과 채널",
+          "tables_used": [
+            "outputs/hai_conditional_chum/HAI_IMPUTER_QUALITY.csv"
+          ]
+        }
+      },
+      {
+        "id": "src-validation",
+        "label": "Final evidence validation",
+        "path": "outputs/final_evidence_validation/FINAL_EVIDENCE_CHECKS.csv",
+        "query": {
+          "engine": "duckdb",
+          "language": "sql",
+          "sql": "SELECT * FROM read_csv_auto('outputs/final_evidence_validation/FINAL_EVIDENCE_CHECKS.csv')",
+          "description": "raw CSV에서 독립 재계산한 최종 증거 검사",
+          "tables_used": [
+            "outputs/final_evidence_validation/FINAL_EVIDENCE_CHECKS.csv"
+          ]
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# 제어 이력의 조건부 정보 효용: 석사논문 연구 결과",
+        "layout": "full"
+      },
+      {
+        "id": "summary",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 기술 요약\n\n**현재 결과는 ‘새로운 대형 모델’보다 신뢰 가능한 AI 실험 프로토콜을 석사논문의 핵심 기여로 지지한다.** TEP에서는 잠근 primary fault 4개 중 3개가 TCN과 Transformer의 동일 채널 합의를 통과했고, Integrated Gradients는 primary 셀 8개 중 7개에서 CHUM과 같은 1위 채널을 선택했다. HAI v2에서는 F1이 F0보다 전역 AUROC가 +0.0187 높았으며, 조건부 후속 검증은 외부 채널 수준 재현을 지지했다.\n\n해석 범위는 architecture-robust, event-specific conditional information utility이다. 물리적 인과성, root cause, 또는 모든 산업 시스템으로의 보편적 전이는 주장하지 않는다."
+      },
+      {
+        "id": "headline-metrics",
+        "type": "metric-strip",
+        "cardIds": [
+          "card-g3",
+          "card-ig",
+          "card-hai",
+          "card-hai-conditional"
+        ],
+        "layout": "full"
+      },
+      {
+        "id": "g3-finding",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src-g3",
+        "body": "## 동일 TEP 채널 효용이 두 새 아키텍처에서 반복됐다\n\nFault 4/XMV10, fault 19/XMV7·8, fault 25/XMV2는 TCN과 Transformer 모두에서 양의 AUROC loss, 5/5 seed 방향 일치, 제한된 pre-fault FPR 이동, 양의 run-bootstrap 하한을 만족했다. 따라서 효과를 GRU 한 구조의 우연으로만 설명하기 어렵다."
+      },
+      {
+        "id": "g3-chart",
+        "type": "chart",
+        "chartId": "chart-g3",
+        "layout": "full"
+      },
+      {
+        "id": "g3-table",
+        "type": "table",
+        "tableId": "table-g3",
+        "layout": "full"
+      },
+      {
+        "id": "ig-finding",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src-ig",
+        "body": "## 표준 gradient attribution은 primary fault에서 같은 채널 구조를 부분적으로 확인했다\n\nIG와 CHUM은 추정 대상이 다르지만 primary 셀 8개 중 7개에서 1위 채널이 일치했다. Negative/exploratory fault에서의 낮은 순위 상관은 이 합의가 모든 fault에 자동으로 나타나는 현상이 아님을 보여준다."
+      },
+      {
+        "id": "ig-table",
+        "type": "table",
+        "tableId": "table-ig",
+        "layout": "full"
+      },
+      {
+        "id": "hai-finding",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src-hai",
+        "body": "## HAI v2는 작지만 일관된 capacity-controlled transfer를 보였다\n\n동일한 29개 sensor targets를 예측할 때 28개 control-history inputs를 추가한 F1은 F0보다 전역 AUROC가 +0.0187 높았다. F1과 파라미터 수 차이가 0.26%인 F0-C도 F1의 AUROC·AUPRC·eTaF1을 재현하지 못했다. 세 seed가 모두 같은 방향이었다."
+      },
+      {
+        "id": "hai-chart",
+        "type": "chart",
+        "chartId": "chart-hai",
+        "layout": "full"
+      },
+      {
+        "id": "hai-table",
+        "type": "table",
+        "tableId": "table-hai",
+        "layout": "full"
+      },
+      {
+        "id": "conditional-finding",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src-hai-conditional",
+        "body": "## HAI 조건부 후속 검증은 외부 채널 수준 재현을 지지했다\n\n정상 validation 품질 게이트를 통과한 12개 control만 primary 결론에 사용했다. 직접 공격 대상, normalized event-score 감소 0.05 이상, 3/3 seed 양의 방향, 최대 |ΔFPR| 0.005 이하를 동시에 만족한 셀은 5개였다. 사전등록 최소 기준은 3개였다."
+      },
+      {
+        "id": "conditional-chart",
+        "type": "chart",
+        "chartId": "chart-hai-conditional",
+        "layout": "full"
+      },
+      {
+        "id": "conditional-table",
+        "type": "table",
+        "tableId": "table-hai-conditional",
+        "layout": "full"
+      },
+      {
+        "id": "quality-finding",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src-hai-imputer",
+        "body": "## HAI 대치 결론은 12개 품질 통과 control로 제한했다\n\nLeave-one-channel-out predictor는 목표 control의 직전값을 제외했고, 20-step 정상 잔차 블록으로 분산과 자기상관을 복원했다. R², 분산비, 평균 이동, lag-1 오차, 훈련 범위 이탈률을 모두 통과하지 못한 채널은 탐색 표에는 남기되 primary 판정에서는 제외했다."
+      },
+      {
+        "id": "quality-table",
+        "type": "table",
+        "tableId": "table-quality",
+        "layout": "full"
+      },
+      {
+        "id": "scope",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 비교 기준과 측정 단위\n\n- **F0:** sensor/process-measurement history only.\n- **F1:** 같은 sensor target을 예측하면서 control/action history를 추가.\n- **F0-C:** F0 입력을 유지하고 hidden width만 늘린 capacity control.\n- **CHUM effect:** 관측 control history를 정상 조건부 표본으로 바꿨을 때 감소한 탐지 성능 또는 event score.\n- **안정성 단위:** TEP는 5 training seeds와 fault별 matched runs, HAI는 3 training seeds와 50 attacks.\n- **Threshold:** perturbation 조건별 정상 validation score의 고정 99.5 percentile; test label은 calibration에 사용하지 않음."
+      },
+      {
+        "id": "method",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 실험 설계는 대안 설명을 단계별로 통제했다\n\n1. F0/F1/F0-C로 control 정보와 단순 모델 용량 증가를 분리했다.\n2. GRU, TCN, compact Transformer에서 동일 split과 alarm rule을 사용했다.\n3. Zero occlusion의 분포 이탈을 확인한 뒤 정상 train-only 조건부 대치와 별도 validation calibration을 사용했다.\n4. Seed 방향, 효과크기, FPR, imputer 품질, run/event grain을 동시에 검사했다.\n5. IG와 HAI로 attribution 방법 및 데이터셋 실패 모드를 달리한 삼각 검증을 수행했다."
+      },
+      {
+        "id": "validation",
+        "type": "markdown",
+        "layout": "full",
+        "sourceId": "src-validation",
+        "body": "## 최종 숫자는 raw result tables에서 독립 재계산했다\n\n최종 validator는 task·event·run 행 수와 복합키 중복을 검사하고, G3 accepted cells, HAI v2 모델 대비, HAI 조건부 판정과 FPR 예외를 원자료에서 다시 계산한다. 열 순서가 잘못된 HAI v1은 명시적으로 격리되어 어떤 최종 계산에도 포함되지 않는다."
+      },
+      {
+        "id": "validation-table",
+        "type": "table",
+        "tableId": "table-validation",
+        "layout": "full"
+      },
+      {
+        "id": "limitations",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 결론의 경계와 남은 불확실성\n\n- TEP seed 5개에서 two-sided exact sign-flip test의 최소 p-value는 0.0625이므로 effect size, 방향 일치, run-level CI가 주 근거다.\n- HAI는 3 seeds뿐이며 bootstrap interval은 descriptive sensitivity summary다.\n- HAI 50개 attack은 모두 적어도 하나의 control point를 직접 조작하므로 unattacked-control transfer를 검증하지 못한다.\n- 조건부 표본은 관측분포 기반 attribution baseline이지 물리적 intervention이 아니다.\n- CHUM은 현재 새 estimator 이론보다 엄격히 통제된 empirical protocol에 가깝다."
+      },
+      {
+        "id": "recommendations",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 다음 단계\n\n1. 최종 제목과 연구질문은 지도교수 승인 후 잠근다.\n2. 논문 본문은 `capacity control → architecture replication → conditional perturbation → attribution triangulation → external transfer`의 검증 사슬로 구성한다.\n3. 가능하면 TEP seed를 1개 이상 추가하고 imputer block length·draw 수 sensitivity를 수행한다.\n4. control을 직접 공격하지 않는 외부 데이터가 확보되면 가장 중요한 일반화 한계를 보완한다.\n5. 인과 제어, root cause, 산업 안전 보장 표현은 사용하지 않는다."
+      },
+      {
+        "id": "questions",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## 추가 연구 질문\n\n- 채널 효용이 실제 controller topology 또는 물리적 연결성과 어느 정도 일치하는가?\n- 더 유연한 sequence imputer에서도 accepted cells가 유지되는가?\n- control-target이 없는 외부 이상에서도 conditional utility가 반복되는가?\n- CHUM 효과를 conditional mutual information과 연결할 수 있는가?"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-21T03:20:41+09:00",
+    "status": "ready",
+    "datasets": {
+      "card-g3": [
+        {
+          "value": 3
+        }
+      ],
+      "card-ig": [
+        {
+          "value": 7
+        }
+      ],
+      "card-hai": [
+        {
+          "value": 0.018745409745426045
+        }
+      ],
+      "card-hai-conditional": [
+        {
+          "value": 5
+        }
+      ],
+      "g3-cells": [
+        {
+          "fault_channel": "Fault 19 / XMV7",
+          "architecture_label": "TCN",
+          "mean_delta_auroc": 0.135469863,
+          "mean_delta_auprc": 0.0924891184,
+          "positive_auroc_seeds": 5,
+          "max_abs_pre_fpr_shift": 0.00075,
+          "run_delta_auroc_ci_low": 0.1269553613,
+          "run_delta_auroc_ci_high": 0.1438956063
+        },
+        {
+          "fault_channel": "Fault 19 / XMV7",
+          "architecture_label": "Transformer",
+          "mean_delta_auroc": 0.1236563372,
+          "mean_delta_auprc": 0.0852742333,
+          "positive_auroc_seeds": 5,
+          "max_abs_pre_fpr_shift": 0.00075,
+          "run_delta_auroc_ci_low": 0.1135250332,
+          "run_delta_auroc_ci_high": 0.133368044
+        },
+        {
+          "fault_channel": "Fault 19 / XMV8",
+          "architecture_label": "TCN",
+          "mean_delta_auroc": 0.0554896013,
+          "mean_delta_auprc": 0.0335125807,
+          "positive_auroc_seeds": 5,
+          "max_abs_pre_fpr_shift": 0.0005,
+          "run_delta_auroc_ci_low": 0.0505318812,
+          "run_delta_auroc_ci_high": 0.0604330814
+        },
+        {
+          "fault_channel": "Fault 19 / XMV8",
+          "architecture_label": "Transformer",
+          "mean_delta_auroc": 0.0530555357,
+          "mean_delta_auprc": 0.0319834064,
+          "positive_auroc_seeds": 5,
+          "max_abs_pre_fpr_shift": 0.0005,
+          "run_delta_auroc_ci_low": 0.0466735008,
+          "run_delta_auroc_ci_high": 0.0601700914
+        },
+        {
+          "fault_channel": "Fault 25 / XMV2",
+          "architecture_label": "TCN",
+          "mean_delta_auroc": 0.2899378364,
+          "mean_delta_auprc": 0.2358046338,
+          "positive_auroc_seeds": 5,
+          "max_abs_pre_fpr_shift": 0.0005,
+          "run_delta_auroc_ci_low": 0.284972691,
+          "run_delta_auroc_ci_high": 0.2945803281
+        },
+        {
+          "fault_channel": "Fault 25 / XMV2",
+          "architecture_label": "Transformer",
+          "mean_delta_auroc": 0.2636760756,
+          "mean_delta_auprc": 0.196138228,
+          "positive_auroc_seeds": 5,
+          "max_abs_pre_fpr_shift": 0.00125,
+          "run_delta_auroc_ci_low": 0.2547268625,
+          "run_delta_auroc_ci_high": 0.2731959904
+        },
+        {
+          "fault_channel": "Fault 4 / XMV10",
+          "architecture_label": "TCN",
+          "mean_delta_auroc": 0.1652848422,
+          "mean_delta_auprc": 0.1211450912,
+          "positive_auroc_seeds": 5,
+          "max_abs_pre_fpr_shift": 0.00025,
+          "run_delta_auroc_ci_low": 0.1241405274,
+          "run_delta_auroc_ci_high": 0.2054025498
+        },
+        {
+          "fault_channel": "Fault 4 / XMV10",
+          "architecture_label": "Transformer",
+          "mean_delta_auroc": 0.1055024086,
+          "mean_delta_auprc": 0.0881655307,
+          "positive_auroc_seeds": 5,
+          "max_abs_pre_fpr_shift": 0.00075,
+          "run_delta_auroc_ci_low": 0.0881871761,
+          "run_delta_auroc_ci_high": 0.1199316777
+        }
+      ],
+      "ig-summary": [
+        {
+          "fault_group": "Negative / exploratory",
+          "cells": 8,
+          "median_spearman": 0.100456621,
+          "top1_agreements": 1,
+          "top1_rate": 0.125,
+          "mean_top3_overlap": 1.25
+        },
+        {
+          "fault_group": "Locked primary",
+          "cells": 8,
+          "median_spearman": 0.5433789954,
+          "top1_agreements": 7,
+          "top1_rate": 0.875,
+          "mean_top3_overlap": 1.75
+        }
+      ],
+      "hai-chart": [
+        {
+          "variant": "F0",
+          "metric": "AUROC",
+          "score": 0.8330554812
+        },
+        {
+          "variant": "F0-C",
+          "metric": "AUROC",
+          "score": 0.8300572795
+        },
+        {
+          "variant": "F1",
+          "metric": "AUROC",
+          "score": 0.8518008909
+        },
+        {
+          "variant": "F0",
+          "metric": "AUPRC",
+          "score": 0.474263547
+        },
+        {
+          "variant": "F0-C",
+          "metric": "AUPRC",
+          "score": 0.4662666089
+        },
+        {
+          "variant": "F1",
+          "metric": "AUPRC",
+          "score": 0.5048713222
+        },
+        {
+          "variant": "F0",
+          "metric": "eTaF1",
+          "score": 0.589504036
+        },
+        {
+          "variant": "F0-C",
+          "metric": "eTaF1",
+          "score": 0.580748748
+        },
+        {
+          "variant": "F1",
+          "metric": "eTaF1",
+          "score": 0.6162257132
+        }
+      ],
+      "hai-global": [
+        {
+          "variant": "F0",
+          "parameters": 26909.0,
+          "auroc_mean": 0.8330554812,
+          "auprc_mean": 0.474263547,
+          "etaf1_mean": 0.589504036,
+          "fpr_mean": 0.0026672911,
+          "detected_mean": 0.82,
+          "delay_mean": 47.48
+        },
+        {
+          "variant": "F0-C",
+          "parameters": 31021.0,
+          "auroc_mean": 0.8300572795,
+          "auprc_mean": 0.4662666089,
+          "etaf1_mean": 0.580748748,
+          "fpr_mean": 0.0026401431,
+          "detected_mean": 0.8133333333,
+          "delay_mean": 49.18
+        },
+        {
+          "variant": "F1",
+          "parameters": 30941.0,
+          "auroc_mean": 0.8518008909,
+          "auprc_mean": 0.5048713222,
+          "etaf1_mean": 0.6162257132,
+          "fpr_mean": 0.0027037712,
+          "detected_mean": 0.84,
+          "delay_mean": 43.74
+        }
+      ],
+      "hai-conditional-stable": [
+        {
+          "event_channel": "A305 / P2_CO_rpm",
+          "global_event": 30,
+          "target_class": "control_only",
+          "mean_delta_normalized_score": 0.2145708844,
+          "min_delta_normalized_score": 0.1663195705,
+          "positive_seeds": 3,
+          "mean_detection_drop": 0.0,
+          "mean_alarm_delay_increase": 0.0,
+          "max_abs_fpr_shift": 2.54513e-05
+        },
+        {
+          "event_channel": "A203 / P1_LCV01D",
+          "global_event": 8,
+          "target_class": "control_only",
+          "mean_delta_normalized_score": 0.1891903938,
+          "min_delta_normalized_score": 0.1519408116,
+          "positive_seeds": 3,
+          "mean_detection_drop": 0.0,
+          "mean_alarm_delay_increase": 0.0,
+          "max_abs_fpr_shift": 7.6354e-06
+        },
+        {
+          "event_channel": "A506 / P2_CO_rpm",
+          "global_event": 44,
+          "target_class": "mixed_control_sensor",
+          "mean_delta_normalized_score": 0.1077743928,
+          "min_delta_normalized_score": 0.0827241566,
+          "positive_seeds": 3,
+          "mean_detection_drop": 0.0,
+          "mean_alarm_delay_increase": 0.0,
+          "max_abs_fpr_shift": 2.54513e-05
+        },
+        {
+          "event_channel": "A215 / P2_CO_rpm",
+          "global_event": 20,
+          "target_class": "mixed_control_sensor",
+          "mean_delta_normalized_score": 0.0907039649,
+          "min_delta_normalized_score": 0.0451501369,
+          "positive_seeds": 3,
+          "mean_detection_drop": 0.6666666667,
+          "mean_alarm_delay_increase": 100.6666666667,
+          "max_abs_fpr_shift": 2.54513e-05
+        },
+        {
+          "event_channel": "A216 / P1_FCV03D",
+          "global_event": 21,
+          "target_class": "control_only",
+          "mean_delta_normalized_score": 0.0588121027,
+          "min_delta_normalized_score": 0.0502670273,
+          "positive_seeds": 3,
+          "mean_detection_drop": 0.0,
+          "mean_alarm_delay_increase": 0.0,
+          "max_abs_fpr_shift": 7.6354e-06
+        }
+      ],
+      "hai-imputer-quality": [
+        {
+          "feature": "P1_B4002",
+          "r2": 0.9999888539,
+          "sampled_sd_ratio": 1.0000543594,
+          "sampled_mean_shift_sd": 1.08409e-05,
+          "lag1_error": 1.472e-06,
+          "outside_train_range_fraction": 0.0
+        },
+        {
+          "feature": "P4_ST_GOV",
+          "r2": 0.99991256,
+          "sampled_sd_ratio": 1.000063777,
+          "sampled_mean_shift_sd": 0.000132089,
+          "lag1_error": 7.15213e-05,
+          "outside_train_range_fraction": 0.0
+        },
+        {
+          "feature": "P1_B4022",
+          "r2": 0.9997904301,
+          "sampled_sd_ratio": 0.9999478459,
+          "sampled_mean_shift_sd": 0.0001101368,
+          "lag1_error": 0.0001311379,
+          "outside_train_range_fraction": 0.0
+        },
+        {
+          "feature": "P1_B2004",
+          "r2": 0.9995825887,
+          "sampled_sd_ratio": 1.0001634359,
+          "sampled_mean_shift_sd": 0.0001930668,
+          "lag1_error": 8.75501e-05,
+          "outside_train_range_fraction": 0.0008026002
+        },
+        {
+          "feature": "P4_LD",
+          "r2": 0.9994738102,
+          "sampled_sd_ratio": 1.0000413656,
+          "sampled_mean_shift_sd": 5.63648e-05,
+          "lag1_error": 0.0006011663,
+          "outside_train_range_fraction": 2.27688e-05
+        },
+        {
+          "feature": "P1_B2016",
+          "r2": 0.9994724393,
+          "sampled_sd_ratio": 1.0001420975,
+          "sampled_mean_shift_sd": 0.0001359691,
+          "lag1_error": 0.0003390719,
+          "outside_train_range_fraction": 0.0
+        },
+        {
+          "feature": "P4_ST_LD",
+          "r2": 0.9987241626,
+          "sampled_sd_ratio": 0.9998711944,
+          "sampled_mean_shift_sd": 0.0002762212,
+          "lag1_error": 0.0013984247,
+          "outside_train_range_fraction": 5.6922e-06
+        },
+        {
+          "feature": "P1_FCV03Z",
+          "r2": 0.9964489341,
+          "sampled_sd_ratio": 0.9979329705,
+          "sampled_mean_shift_sd": 0.0015474265,
+          "lag1_error": 0.0002691589,
+          "outside_train_range_fraction": 0.0015141252
+        },
+        {
+          "feature": "P1_FCV03D",
+          "r2": 0.9962738156,
+          "sampled_sd_ratio": 0.999976933,
+          "sampled_mean_shift_sd": 0.0015584771,
+          "lag1_error": 0.0003192744,
+          "outside_train_range_fraction": 0.0002447646
+        },
+        {
+          "feature": "P1_LCV01Z",
+          "r2": 0.9893500805,
+          "sampled_sd_ratio": 1.008176446,
+          "sampled_mean_shift_sd": 0.0032791021,
+          "lag1_error": 0.0011665246,
+          "outside_train_range_fraction": 0.0003301476
+        },
+        {
+          "feature": "P1_LCV01D",
+          "r2": 0.9868400693,
+          "sampled_sd_ratio": 1.0017751455,
+          "sampled_mean_shift_sd": 0.0017730437,
+          "lag1_error": 0.0017188308,
+          "outside_train_range_fraction": 0.00028461
+        },
+        {
+          "feature": "P2_CO_rpm",
+          "r2": 0.5352101922,
+          "sampled_sd_ratio": 0.9941854477,
+          "sampled_mean_shift_sd": 0.02978916,
+          "lag1_error": 0.0218566696,
+          "outside_train_range_fraction": 2.27688e-05
+        }
+      ],
+      "validation-checks": [
+        {
+          "check": "G3 task completeness",
+          "status": "PASS",
+          "evidence": "340 tasks; 9,520 fault rows and 190,400 run rows; no key duplicates"
+        },
+        {
+          "check": "G3 locked decision",
+          "status": "PASS",
+          "evidence": "consensus primary faults=[4, 19, 25]; required=3"
+        },
+        {
+          "check": "G3 raw recomputation tcn/F4/XMV10",
+          "status": "PASS",
+          "evidence": "{\"architecture\": \"tcn\", \"fault_id\": 4, \"channel\": 10, \"mean_delta_auroc\": 0.165284842192691, \"mean_delta_auprc\": 0.12114509119914889, \"positive_seeds\": 5, \"max_abs_fpr_shift\": 0.0002500000000000002, \"run_ci_low\": 0.1241405274086378}"
+        },
+        {
+          "check": "G3 raw recomputation transformer/F4/XMV10",
+          "status": "PASS",
+          "evidence": "{\"architecture\": \"transformer\", \"fault_id\": 4, \"channel\": 10, \"mean_delta_auroc\": 0.10550240863787375, \"mean_delta_auprc\": 0.08816553069045707, \"positive_seeds\": 5, \"max_abs_fpr_shift\": 0.0007499999999999989, \"run_ci_low\": 0.0881871760797342}"
+        },
+        {
+          "check": "G3 raw recomputation tcn/F19/XMV7",
+          "status": "PASS",
+          "evidence": "{\"architecture\": \"tcn\", \"fault_id\": 19, \"channel\": 7, \"mean_delta_auroc\": 0.13546986295681063, \"mean_delta_auprc\": 0.09248911838907656, \"positive_seeds\": 5, \"max_abs_fpr_shift\": 0.0007500000000000007, \"run_ci_low\": 0.126955361295681}"
+        },
+        {
+          "check": "G3 raw recomputation transformer/F19/XMV7",
+          "status": "PASS",
+          "evidence": "{\"architecture\": \"transformer\", \"fault_id\": 19, \"channel\": 7, \"mean_delta_auroc\": 0.12365633720930236, \"mean_delta_auprc\": 0.08527423326104129, \"positive_seeds\": 5, \"max_abs_fpr_shift\": 0.0007500000000000007, \"run_ci_low\": 0.1135250332225913}"
+        },
+        {
+          "check": "G3 raw recomputation tcn/F19/XMV8",
+          "status": "PASS",
+          "evidence": "{\"architecture\": \"tcn\", \"fault_id\": 19, \"channel\": 8, \"mean_delta_auroc\": 0.05548960132890361, \"mean_delta_auprc\": 0.03351258074923298, \"positive_seeds\": 5, \"max_abs_fpr_shift\": 0.0005000000000000004, \"run_ci_low\": 0.0505318812292358}"
+        },
+        {
+          "check": "G3 raw recomputation transformer/F19/XMV8",
+          "status": "PASS",
+          "evidence": "{\"architecture\": \"transformer\", \"fault_id\": 19, \"channel\": 8, \"mean_delta_auroc\": 0.05305553571428576, \"mean_delta_auprc\": 0.031983406379951895, \"positive_seeds\": 5, \"max_abs_fpr_shift\": 0.0004999999999999987, \"run_ci_low\": 0.0466735008305647}"
+        },
+        {
+          "check": "G3 raw recomputation tcn/F25/XMV2",
+          "status": "PASS",
+          "evidence": "{\"architecture\": \"tcn\", \"fault_id\": 25, \"channel\": 2, \"mean_delta_auroc\": 0.2899378363787376, \"mean_delta_auprc\": 0.2358046337981372, \"positive_seeds\": 5, \"max_abs_fpr_shift\": 0.0005000000000000004, \"run_ci_low\": 0.2849726910299004}"
+        },
+        {
+          "check": "G3 raw recomputation transformer/F25/XMV2",
+          "status": "PASS",
+          "evidence": "{\"architecture\": \"transformer\", \"fault_id\": 25, \"channel\": 2, \"mean_delta_auroc\": 0.26367607558139533, \"mean_delta_auprc\": 0.19613822798311048, \"positive_seeds\": 5, \"max_abs_fpr_shift\": 0.0012500000000000011, \"run_ci_low\": 0.2547268625415282}"
+        },
+        {
+          "check": "Integrated Gradients completeness and agreement",
+          "status": "PASS",
+          "evidence": "880 rows; primary top-1 agreement=7/8"
+        },
+        {
+          "check": "HAI data gates",
+          "status": "PASS",
+          "evidence": "43,202 overlaps removed; F0=29, added controls=28; 50 target-mapped events"
+        },
+        {
+          "check": "HAI invalid run quarantine",
+          "status": "PASS",
+          "evidence": "INVALIDATED_COLUMN_ORDER_BUG"
+        },
+        {
+          "check": "HAI v2 task completeness",
+          "status": "PASS",
+          "evidence": "9 models; 36 label metrics; 450 event rows; no key duplicates"
+        },
+        {
+          "check": "HAI v2 external support recomputation",
+          "status": "PASS",
+          "evidence": "[{\"contrast\":\"F1-F0\",\"mean_delta_auroc\":0.018745,\"positive_seeds_auroc\":3,\"mean_delta_auprc\":0.030608,\"positive_seeds_auprc\":3,\"mean_delta_etaf1\":0.026722,\"positive_seeds_etaf1\":3,\"mean_fpr_increase\":0.000036},{\"contrast\":\"F1-F0-C\",\"mean_delta_auroc\":0.021744,\"positive_seeds_auroc\":3,\"mean_delta_auprc\":0.038605,\"positive_seeds_auprc\":3,\"mean_delta_etaf1\":0.035477,\"positive_seeds_etaf1\":3,\"mean_fpr_increase\":0.000064}]"
+        },
+        {
+          "check": "HAI conditional imputer quality gate",
+          "status": "PASS",
+          "evidence": "12/28 channels passed all locked imputer-quality criteria"
+        },
+        {
+          "check": "HAI conditional task completeness",
+          "status": "PASS",
+          "evidence": "171 tasks; 8,550 event rows; no composite-key duplicates"
+        },
+        {
+          "check": "HAI conditional decision recomputation",
+          "status": "PASS",
+          "evidence": "{\"decision\": \"EXTERNAL_CHANNEL_SUPPORT\", \"stable_targeted_cells\": 5, \"fpr_exceptions\": {\"loo_sample\": 0, \"zero\": 0}}"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "src-g3",
+      "label": "Architecture Conditional CHUM G3",
+      "path": "outputs/architecture_chum_g3/G3_CELL_SUMMARY.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('outputs/architecture_chum_g3/G3_CELL_SUMMARY.csv') WHERE mode = 'loo_sample' AND stable_material = true",
+        "description": "아키텍처별 조건부 채널 효용 요약",
+        "tables_used": [
+          "outputs/architecture_chum_g3/G3_CELL_SUMMARY.csv"
+        ]
+      }
+    },
+    {
+      "id": "src-ig",
+      "label": "Integrated Gradients agreement",
+      "path": "outputs/integrated_gradients_baseline/IG_CHUM_CLASS_SUMMARY.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('outputs/integrated_gradients_baseline/IG_CHUM_CLASS_SUMMARY.csv')",
+        "description": "IG와 CHUM 채널 순위 합의 요약",
+        "tables_used": [
+          "outputs/integrated_gradients_baseline/IG_CHUM_CLASS_SUMMARY.csv"
+        ]
+      }
+    },
+    {
+      "id": "src-hai",
+      "label": "Corrected HAI external validation v2",
+      "path": "outputs/hai_external_validation_v2/HAI_EXTERNAL_AGGREGATE.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('outputs/hai_external_validation_v2/HAI_EXTERNAL_AGGREGATE.csv') WHERE label = 'attack'",
+        "description": "HAI 전역 공격 라벨의 모델 변형별 3-seed 평균",
+        "tables_used": [
+          "outputs/hai_external_validation_v2/HAI_EXTERNAL_AGGREGATE.csv"
+        ]
+      }
+    },
+    {
+      "id": "src-hai-conditional",
+      "label": "HAI conditional event-channel summary",
+      "path": "outputs/hai_conditional_chum/HAI_CONDITIONAL_TARGETED_SUMMARY.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('outputs/hai_conditional_chum/HAI_CONDITIONAL_TARGETED_SUMMARY.csv') WHERE mode = 'loo_sample' AND stable_targeted_cell = true",
+        "description": "사전등록 기준을 통과한 HAI 직접 표적 event-channel 셀",
+        "tables_used": [
+          "outputs/hai_conditional_chum/HAI_CONDITIONAL_TARGETED_SUMMARY.csv"
+        ]
+      }
+    },
+    {
+      "id": "src-hai-imputer",
+      "label": "HAI conditional imputer quality",
+      "path": "outputs/hai_conditional_chum/HAI_IMPUTER_QUALITY.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('outputs/hai_conditional_chum/HAI_IMPUTER_QUALITY.csv') WHERE reliable = true",
+        "description": "HAI 조건부 대치 품질 게이트 통과 채널",
+        "tables_used": [
+          "outputs/hai_conditional_chum/HAI_IMPUTER_QUALITY.csv"
+        ]
+      }
+    },
+    {
+      "id": "src-validation",
+      "label": "Final evidence validation",
+      "path": "outputs/final_evidence_validation/FINAL_EVIDENCE_CHECKS.csv",
+      "query": {
+        "engine": "duckdb",
+        "language": "sql",
+        "sql": "SELECT * FROM read_csv_auto('outputs/final_evidence_validation/FINAL_EVIDENCE_CHECKS.csv')",
+        "description": "raw CSV에서 독립 재계산한 최종 증거 검사",
+        "tables_used": [
+          "outputs/final_evidence_validation/FINAL_EVIDENCE_CHECKS.csv"
+        ]
+      }
+    }
+  ]
+}

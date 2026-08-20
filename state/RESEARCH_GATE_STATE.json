@@ -1,25 +1,24 @@
 {
-  "stage": "RIGOROUS_SCIENTIFIC_GATE",
+  "stage": "CHUM_EVIDENCE_PACKAGE_COMPLETE",
   "status": "WAITING_FOR_USER_APPROVAL",
   "locked_topic": null,
   "locked_research_question": null,
   "active_quality_policy": "RESEARCH_QUALITY_OVERRIDE",
-  "last_mission": "mission_002_rigorous_research_gate",
-  "recommended_gate": "One-week G0 construct/novelty gate followed by oracle-applicability study",
+  "last_mission": "chum_g3_hai_external_validation_completed",
+  "recommended_gate": "Obtain explicit human and supervisor approval for the final title and claim wording, then begin manuscript drafting",
   "candidate_judgments": {
     "A_simple_feature_comparison": "KILL",
     "A_mechanism_level": "MODIFY",
     "B_covariate_aware_retrieval": "KILL",
     "B_post_retrieval_applicability": "MODIFY_CONDITIONAL_GO",
-    "C_emergent_combined_direction": "MODIFY_HIGHEST_POTENTIAL_NOT_LOCKED"
+    "C_emergent_combined_direction": "KILL_CURRENT_FORMULATION_NOT_REPROPOSED",
+    "CHUM_control_history_utility": "EVIDENCE_PACKAGE_COMPLETE_NOT_LOCKED"
   },
   "required_experiments": [
-    "G0 full-text novelty and non-circular applicability-construct gate",
-    "Candidate A fault-variable-lag mechanism audit",
-    "Similarity-matched applicable/inapplicable case pilot with agreement audit",
-    "Oracle applicability downstream-headroom experiment",
-    "Contamination benchmark with strong retrieval and adaptation baselines",
-    "Multi-seed, ablation, robustness, and run-level statistical validation"
+    "Human and supervisor approval of the final title, research question, and claim wording",
+    "Manuscript synthesis from the validated G3, IG, HAI v2, and HAI conditional evidence package",
+    "Optional extra TEP seed and imputer block-length or draw-count sensitivity",
+    "Optional external validation without directly attacked control targets"
   ],
   "pending_human_approval": true
 }

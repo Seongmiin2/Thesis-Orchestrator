@@ -1,0 +1,28 @@
+{
+  "status": "COMPLETE",
+  "decision": "PASS",
+  "primary_mode": "loo_sample",
+  "consensus_cells": 4,
+  "consensus_primary_faults": [
+    4,
+    19,
+    25
+  ],
+  "required_primary_faults": 3,
+  "bootstrap_repeats": 2000,
+  "architectures": [
+    "gru",
+    "tcn",
+    "transformer"
+  ],
+  "reliable_imputer_channels": [
+    1,
+    2,
+    3,
+    6,
+    7,
+    8,
+    10,
+    11
+  ]
+}

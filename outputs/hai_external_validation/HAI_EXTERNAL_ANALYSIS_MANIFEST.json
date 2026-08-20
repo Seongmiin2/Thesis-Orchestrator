@@ -1,0 +1,7 @@
+{
+  "status": "INVALIDATED_COLUMN_ORDER_BUG",
+  "decision": "EXTERNAL_NONCONFIRMATION",
+  "bootstrap_repeats": 10000,
+  "fpr_tolerance": 0.005,
+  "parameter_gap_fraction": 0.002585566077373065
+}

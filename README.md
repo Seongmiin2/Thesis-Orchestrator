@@ -39,6 +39,38 @@ pytest -q
 
 The report is written to `outputs/reviews/mission_001_topic_validation.md`. The state must end in `WAITING_FOR_USER_APPROVAL`, with both lock fields set to `null`.
 
+## Research experiments
+
+The frozen TEP/CHUM experiments use a separate optional environment because PyTorch is not required by the mock-first orchestrator itself.
+
+```powershell
+python -m venv ..\.venv-research
+..\.venv-research\Scripts\python.exe -m pip install -e ".[research]"
+..\.venv-research\Scripts\python.exe experiments\audit_conditional_imputer.py
+..\.venv-research\Scripts\python.exe experiments\run_architecture_chum_g3.py
+..\.venv-research\Scripts\python.exe experiments\analyze_architecture_chum_g3.py
+..\.venv-research\Scripts\python.exe experiments\run_integrated_gradients_baseline.py
+..\.venv-research\Scripts\python.exe experiments\analyze_integrated_gradients_baseline.py
+..\.venv-research\Scripts\python.exe experiments\prepare_hai_2103.py
+..\.venv-research\Scripts\python.exe experiments\validate_hai_2103_roles.py
+..\.venv-research\Scripts\python.exe experiments\validate_hai_2103_attack_targets.py
+..\.venv-research\Scripts\python.exe experiments\run_hai_external_validation.py
+..\.venv-research\Scripts\python.exe experiments\analyze_hai_external_validation.py
+..\.venv-research\Scripts\python.exe experiments\audit_hai_conditional_imputer.py
+..\.venv-research\Scripts\python.exe experiments\run_hai_conditional_chum.py
+..\.venv-research\Scripts\python.exe experiments\analyze_hai_conditional_chum.py
+..\.venv-research\Scripts\python.exe experiments\validate_final_evidence.py
+..\.venv-research\Scripts\python.exe experiments\build_professor_report_v2.py
+```
+
+`run_architecture_chum_g3.py` writes resumable partial CSVs after every architecture/seed/condition task. Its analysis command refuses to run until every task in `configs/architecture_chum_g3.yaml` is complete.
+
+HAI commands expect the official `icsdataset/hai` repository at `../HAI` and the official `saurf4ng/eTaPR` repository at `../eTaPR`. The invalid first HAI run remains quarantined under `outputs/hai_external_validation/`; usable external evidence comes from `outputs/hai_external_validation_v2/` and `outputs/hai_conditional_chum/`.
+
+The UTF-8 professor-facing Markdown, canonical report artifact, and packaged portable HTML are written under `outputs/professor_report_v2/`. The saved `artifact.json` remains the reproducible report source when the Data Analytics portable-report builder is unavailable.
+
+The HAI conditional follow-up is locked in `outputs/methodology/HAI_CONDITIONAL_CHUM_PREREGISTRATION.md`. Its runner reuses only the corrected v2 F1 checkpoints, recalibrates each perturbation on validation-normal data, and writes resumable partial CSVs after every seed/mode/channel task.
+
 ## Evidence rules
 
 - `CONFIRMED_FACT`: traceable to inspected code, documentation, CSV, or logs.

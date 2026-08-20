@@ -1,32 +1,33 @@
 {
-  "stage": "G0_SCIENTIFIC_GATE_COMPLETE",
+  "stage": "CHUM_EVIDENCE_PACKAGE_COMPLETE",
   "status": "WAITING_FOR_USER_APPROVAL",
   "locked_topic": null,
   "locked_research_question": null,
   "candidate_topics": [
-    "Control-Aware Predictive Anomaly Detection",
-    "FAVE-TS / Applicability-Aware Retrieval for Industrial Time Series"
+    "Control-History Utility Mapping (CHUM) for Industrial Time-Series Anomaly Detection"
   ],
   "confirmed_findings": [
-    "PhysicalAI F1 improved pooled fault-detection metrics across seeds 42-44, but effects were fault-specific and normal prediction improvement was inconsistent.",
-    "FAVE-RAG's real 10-item pilot detected many invalid evidence items but did not establish a robustness advantage over Vanilla RAG."
+    "TEP G3 completed 340 tasks and passed the locked architecture-consensus gate: primary faults 4, 19, and 25 retained channel-level conditional utility in both TCN and Transformer.",
+    "Integrated Gradients selected the same top channel as CHUM in 7 of 8 primary architecture-fault cells, while agreement was materially weaker in negative or exploratory faults.",
+    "Corrected HAI 21.03 v2 external validation showed F1 above both F0 and capacity-matched F0-C in AUROC, AUPRC, and eTaF1 for all three seeds at comparable false-positive rates.",
+    "HAI conditional CHUM passed its preregistered external channel gate: 12 of 28 active controls passed imputer quality, and 5 directly targeted event-channel cells were stable with zero conditional FPR exceptions.",
+    "The first HAI run is invalidated and quarantined because training and test feature orders differed; no final claim uses it."
   ],
   "open_hypotheses": [
-    "Historical windows that are similar but differ in operating/control context may be inapplicable references for current industrial diagnosis."
+    "Control-history utility will remain stable under additional TEP seeds and imputer block-length or draw-count sensitivity checks.",
+    "Event-specific control-history utility will transfer to an external dataset where control channels are not directly attacked."
   ],
   "rejected_hypotheses": [],
   "required_experiments": [
-    "G0 full-text novelty and non-circular applicability-construct gate",
-    "Candidate A fault-variable-lag mechanism audit",
-    "Similarity-matched applicable/inapplicable case pilot with agreement audit",
-    "Oracle applicability downstream-headroom experiment",
-    "Contamination benchmark with strong retrieval and adaptation baselines",
-    "Multi-seed, ablation, robustness, and run-level statistical validation"
+    "Human and supervisor approval of the final thesis title, research question, and claim wording",
+    "Manuscript synthesis from the validated G3, IG, HAI v2, and HAI conditional evidence package",
+    "Optional extra TEP seed and imputer block-length or draw-count sensitivity",
+    "Optional external validation without directly attacked control targets"
   ],
   "pending_human_approval": true,
-  "last_mission": "mission_002_g0_executed",
+  "last_mission": "chum_g3_hai_external_validation_completed",
   "active_quality_policy": "RESEARCH_QUALITY_OVERRIDE",
-  "recommended_gate": "G0 complete; await user choice among A mechanism gate, richer-dataset reformulation, or topic reset",
+  "recommended_gate": "Evidence package complete; await explicit human approval before locking the final title and thesis claim, then begin manuscript drafting",
   "candidate_judgments": {
     "A_simple_feature_comparison": "KILL",
     "A_mechanism_level": "MODIFY",
@@ -47,5 +48,13 @@
     "discordant_pairs": "CONFIRMED_FOR_CONTROL_PROXY",
     "labeling_reproducibility": "FAIL_SEMANTIC_GROUND_TRUTH",
     "oracle_downstream_headroom": "FAIL"
+  },
+  "chum_gate_results": {
+    "tep_architecture_conditional_g3": "PASS",
+    "integrated_gradients_triangulation": "PASS",
+    "hai_data_role_and_target_audit": "PASS_WITH_SCOPE_LIMITATION",
+    "hai_external_validation_v2": "EXTERNAL_SUPPORT",
+    "hai_conditional_channel_validation": "EXTERNAL_CHANNEL_SUPPORT",
+    "final_raw_evidence_validation": "PASS_18_CHECKS"
   }
 }

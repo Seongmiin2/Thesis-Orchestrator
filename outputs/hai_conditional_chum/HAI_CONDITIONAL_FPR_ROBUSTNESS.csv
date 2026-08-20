@@ -1,0 +1,3 @@
+mode,seed_channel_cells,fpr_exceptions,max_abs_fpr_shift
+loo_sample,36,0,2.545125067449994e-05
+zero,36,0,8.144400215829998e-05

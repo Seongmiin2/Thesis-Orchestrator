@@ -1,0 +1,43 @@
+{
+  "status": "COMPLETE_FULL_CONFIG",
+  "config": "C:\\Users\\Master\\Desktop\\master_degree\\Thesis-Orchestrator\\configs\\architecture_chum_g3.yaml",
+  "config_sha256": "6844e7ca0e715bf2c6d84dadb42b962bfbd0c35e02a8701e39fa8c9d6d98a71b",
+  "architectures": [
+    "tcn",
+    "transformer"
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "modes": [
+    "conditional",
+    "loo_sample",
+    "zero"
+  ],
+  "channels": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "device": "cuda",
+  "fault_rows": 9520,
+  "run_rows": 190400,
+  "requested_tasks": 340,
+  "completed_requested_tasks": 340,
+  "full_config_tasks": 340,
+  "completed_full_config_tasks": 340,
+  "expected_fault_rows_per_task": 28,
+  "expected_run_rows_per_task": 560
+}

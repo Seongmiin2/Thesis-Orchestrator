@@ -1,0 +1,4 @@
+file,source_rows,excluded_rows,retained_rows,keep_mask
+train1.csv.gz,216001,43202,172799,train_keep_masks\train1.csv.gz.keep.npy
+train2.csv.gz,226801,0,226801,train_keep_masks\train2.csv.gz.keep.npy
+train3.csv.gz,478801,0,478801,train_keep_masks\train3.csv.gz.keep.npy

@@ -1,0 +1,51 @@
+global_event,id,target_points,target_class,source_pages,source_note
+1,A101,P1_B2016,control_only,36-38,
+2,A102,P1_B3005,control_only,36-38,
+3,A103,P1_LCV01D,control_only,36-38,
+4,A104,P2_CO_rpm,control_only,36-38,P2_SCO in manual mapped to 21.03 alias P2_CO_rpm
+5,A105,P2_ASD,control_only,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD
+6,A201,P2_VTR02,control_only,36-38,
+7,A202,P1_B2016;P1_PIT01,mixed_control_sensor,36-38,
+8,A203,P1_LCV01D,control_only,36-38,
+9,A204,P1_B3005;P1_FT03,mixed_control_sensor,36-38,
+10,A205,P1_B2016,control_only,36-38,
+11,A206,P1_FCV03D;P1_FT03,mixed_control_sensor,36-38,
+12,A207,P2_VTR01,control_only,36-38,
+13,A208,P1_B3004;P1_LIT01,mixed_control_sensor,36-38,
+14,A209,P1_B3004,control_only,36-38,
+15,A210,P1_PCV01D;P1_PIT01,mixed_control_sensor,36-38,
+16,A211,P2_ASD,control_only,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD
+17,A212,P2_ASD;P2_SIT01,mixed_control_sensor,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD
+18,A213,P1_LCV01D;P1_LIT01,mixed_control_sensor,36-38,
+19,A214,P1_PCV01D,control_only,36-38,
+20,A215,P2_CO_rpm;P2_SIT01,mixed_control_sensor,36-38,P2_SCO in manual mapped to 21.03 alias P2_CO_rpm
+21,A216,P1_FCV03D,control_only,36-38,
+22,A217,P2_RTR,control_only,36-38,
+23,A218,P1_FCV03D,control_only,36-38,
+24,A219,P3_LCP01D,control_only,36-38,
+25,A220,P3_LCV01D,control_only,36-38,P2_LCV01D in manual corrected by P3-LC scenario and recorded point inventory
+26,A301,P1_LCV01D;P1_B3005,control_only,36-38,
+27,A302,P1_B2016;P1_PIT01;P1_B3005,mixed_control_sensor,36-38,
+28,A303,P1_PCV01D;P1_LCV01D,control_only,36-38,
+29,A304,P2_ASD;P2_VTR01,control_only,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD
+30,A305,P2_CO_rpm;P2_VTR02,control_only,36-38,P2_SCO in manual mapped to 21.03 alias P2_CO_rpm
+31,A306,P1_B2016;P2_ASD,control_only,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD
+32,A307,P1_FCV03D;P2_VTR01,control_only,36-38,
+33,A308,P1_LCV01D;P1_LIT01;P2_ASD,mixed_control_sensor,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD
+34,A401,P1_PCV01D;P1_B3004;P1_LIT01,mixed_control_sensor,36-38,
+35,A402,P1_B3005;P1_FT03;P3_LCV01D,mixed_control_sensor,36-38,P2_LCV01D in manual corrected by P3-LC scenario and recorded point inventory
+36,A403,P1_B3004;P1_LIT01;P3_LCV01D,mixed_control_sensor,36-38,P2_LCV01D in manual corrected by P3-LC scenario and recorded point inventory
+37,A404,P2_CO_rpm;P2_SIT01;P1_LCV01D;P1_LIT01,mixed_control_sensor,36-38,P2_SCO in manual mapped to 21.03 alias P2_CO_rpm
+38,A405,P2_ASD;P3_LCV01D,control_only,36-38,Two documented 21.03 aliases normalized
+39,A501,P1_PCV01D;P2_VTR02,control_only,36-38,
+40,A502,P1_FCV03D;P1_FT03;P2_CO_rpm,mixed_control_sensor,36-38,P2_SCO in manual mapped to 21.03 alias P2_CO_rpm
+41,A503,P1_B3004;P1_LIT01;P2_CO_rpm,mixed_control_sensor,36-38,P2_SCO in manual mapped to 21.03 alias P2_CO_rpm
+42,A504,P1_FCV03D;P3_LCV01D,control_only,36-38,P2_LCV01D in manual corrected by P3-LC scenario and recorded point inventory
+43,A505,P1_B3004;P2_ASD,control_only,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD
+44,A506,P2_CO_rpm;P2_SIT01;P3_LCV01D,mixed_control_sensor,36-38,Two documented 21.03 aliases normalized
+45,A507,P2_ASD;P2_VTR01,control_only,36-38,P2_AutoSD in manual mapped to 21.03 alias P2_ASD
+46,A508,P1_FCV03D;P1_LCV01D,control_only,36-38,
+47,A509,P1_B2016;P1_PCV01D,control_only,36-38,
+48,A510,P1_B3004;P1_LCV01D;P1_LIT01,mixed_control_sensor,36-38,
+49,A511,P2_RTR;P3_LCV01D,control_only,36-38,P2_LCV01D in manual corrected by P3-LC scenario and recorded point inventory
+50,A512,P1_B3005;P1_FCV03D;P1_FT03,mixed_control_sensor,36-38,

@@ -1,0 +1,35 @@
+source: ../HAI/hai-21.03
+prepared: outputs/hai_2103_prepared
+roles_manifest: outputs/hai_2103_prepared/HAI_2103_ROLE_MANIFEST.json
+attack_targets: outputs/hai_2103_prepared/HAI_2103_VALIDATED_ATTACK_TARGETS.csv
+external_output: outputs/hai_external_validation_v2
+output: outputs/hai_conditional_chum
+etapr_repository: ../eTaPR
+
+seeds: [42, 43, 44]
+modes: [loo_sample, zero]
+channels: all
+window: 30
+train_fraction: 0.8
+batch_size: 1024
+threshold_percentile: 99.5
+alarm_consecutive: 3
+conditional_sample_draws: 3
+residual_block_length: 20
+ridge: 0.01
+device: cuda
+
+imputer_quality:
+  minimum_reliable_channels: 5
+  minimum_r2: 0.25
+  minimum_sampled_sd_ratio: 0.80
+  maximum_sampled_sd_ratio: 1.20
+  maximum_absolute_mean_shift_sd: 0.10
+  maximum_lag1_error: 0.20
+  maximum_outside_train_range_fraction: 0.01
+
+decision:
+  minimum_targeted_stable_cells: 3
+  minimum_normalized_event_score_delta: 0.05
+  required_positive_seeds: 3
+  maximum_absolute_fpr_shift: 0.005

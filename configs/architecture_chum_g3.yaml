@@ -1,0 +1,24 @@
+device: cuda
+architectures: [tcn, transformer]
+seeds: [42, 43, 44, 45, 46]
+window: 20
+batch_size: 2048
+run_batch_size: 8
+threshold_percentile: 99.0
+alarm_consecutive: 3
+evaluation_sample_start: 400
+evaluation_sample_end: 900
+fault_onset: 600
+modes: [conditional, loo_sample, zero]
+channels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+conditional_sample_draws: 3
+residual_block_length: 20
+paths:
+  cache: ../PhysicalAI_mini/data/processed/reinartz_f0_f1
+  split: outputs/final_gate_exp1/artifacts/reinartz_split_manifest.csv
+  scaler: outputs/final_gate_exp1/artifacts/reinartz_scaler_parameters.csv
+  checkpoints: outputs/architecture_gate_g2_full/checkpoints
+  imputer_weights: outputs/conditional_chum_g1/normal_xmv_imputer_weights.npy
+  loo_imputer_weights: outputs/architecture_chum_g3/normal_xmv_loo_imputer_weights.npy
+  loo_residual_bank: outputs/architecture_chum_g3/normal_xmv_loo_residual_bank.npy
+  output: outputs/architecture_chum_g3

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "checks": 18,
+  "g3_decision": "PASS",
+  "hai_decision": "EXTERNAL_SUPPORT",
+  "hai_conditional_decision": "EXTERNAL_CHANNEL_SUPPORT",
+  "ig_primary_top1_agreements": 7
+}

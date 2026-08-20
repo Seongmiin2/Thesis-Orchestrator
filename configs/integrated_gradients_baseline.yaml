@@ -1,0 +1,15 @@
+device: cuda
+architectures: [tcn, transformer]
+seeds: [42, 43, 44, 45, 46]
+faults: [1, 4, 11, 19, 23, 25, 26, 27]
+target_samples: [620, 680, 740, 800, 860]
+window: 20
+integration_steps: 32
+internal_batch_size: 512
+paths:
+  cache: ../PhysicalAI_mini/data/processed/reinartz_f0_f1
+  split: outputs/final_gate_exp1/artifacts/reinartz_split_manifest.csv
+  scaler: outputs/final_gate_exp1/artifacts/reinartz_scaler_parameters.csv
+  checkpoints: outputs/architecture_gate_g2_full/checkpoints
+  output: outputs/integrated_gradients_baseline
+  g3: outputs/architecture_chum_g3

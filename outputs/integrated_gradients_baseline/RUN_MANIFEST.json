@@ -1,0 +1,36 @@
+{
+  "status": "COMPLETE",
+  "architectures": [
+    "tcn",
+    "transformer"
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "faults": [
+    1,
+    4,
+    11,
+    19,
+    23,
+    25,
+    26,
+    27
+  ],
+  "target_samples": [
+    620,
+    680,
+    740,
+    800,
+    860
+  ],
+  "integration_steps": 32,
+  "baseline": "zero in training-standardized space (normal mean)",
+  "tasks": 80,
+  "expected_tasks": 80,
+  "rows": 880
+}
