@@ -1,9 +1,0 @@
-architecture,mode,cells,fpr_exceptions
-gru,conditional,1540,0
-gru,zero,1540,9
-tcn,conditional,1540,0
-tcn,loo_sample,1540,0
-tcn,zero,1540,0
-transformer,conditional,1540,0
-transformer,loo_sample,1540,0
-transformer,zero,1540,14

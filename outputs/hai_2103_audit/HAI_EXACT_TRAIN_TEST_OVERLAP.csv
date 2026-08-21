@@ -1,3 +1,0 @@
-train_file,test_file,matching_train_rows,matching_test_rows
-train1.csv.gz,test2.csv.gz,1,1
-train1.csv.gz,test3.csv.gz,43201,43201

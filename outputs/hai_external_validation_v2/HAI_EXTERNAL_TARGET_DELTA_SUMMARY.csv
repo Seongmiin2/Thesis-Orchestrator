@@ -1,5 +1,0 @@
-target_class,contrast,seeds,mean_delta_detected_ratio,positive_seeds_detected_ratio,mean_delta_censored_delay,positive_seeds_delay
-control_only,F1-F0,3,0.0,0,0.3870967741935469,3
-control_only,F1-F0-C,3,0.0,0,0.37634408602150415,3
-mixed_control_sensor,F1-F0,3,0.05263157894736836,3,9.210526315789474,3
-mixed_control_sensor,F1-F0-C,3,0.07017543859649118,3,13.701754385964913,3

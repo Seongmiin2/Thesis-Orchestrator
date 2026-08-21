@@ -1,6 +1,0 @@
-channel,feature,global_event,attack_id,reliable_imputer,targeted_channel,seeds,mean_delta_normalized_mean_event_score,positive_seeds_event_score,max_abs_fpr_shift
-13,P1_FCV03D,21,A216,True,True,3,0.05881210271466366,3,7.635375202299979e-06
-15,P1_LCV01D,8,A203,True,True,3,0.1891903938220744,3,7.635375202399725e-06
-20,P2_CO_rpm,20,A215,True,True,3,0.0907039649270529,3,2.545125067449994e-05
-20,P2_CO_rpm,30,A305,True,True,3,0.21457088444062103,3,2.545125067449994e-05
-20,P2_CO_rpm,44,A506,True,True,3,0.10777439280586987,3,2.545125067449994e-05

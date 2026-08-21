@@ -1,4 +1,4 @@
-# Project Handover
+﻿# Project Handover
 
 ## Current execution status — 2026-08-21
 
@@ -14,12 +14,10 @@
 
 Primary handoff artifacts:
 
-- `outputs/architecture_chum_g3/ARCHITECTURE_CONDITIONAL_CHUM_G3_REPORT.md`
-- `outputs/integrated_gradients_baseline/INTEGRATED_GRADIENTS_BASELINE_REPORT.md`
-- `outputs/hai_external_validation_v2/HAI_EXTERNAL_VALIDATION_REPORT.md`
-- `outputs/hai_conditional_chum/HAI_CONDITIONAL_CHUM_REPORT.md`
-- `outputs/final_evidence_validation/FINAL_EVIDENCE_VALIDATION.md`
-- `outputs/professor_report_v2/PROFESSOR_RESEARCH_REPORT_KO.html`
+- `outputs/PROFESSOR_BRIEF_KO.md`
+- `outputs/EVIDENCE_AND_REPRODUCTION_INDEX.md`
+
+The former raw CSV, checkpoint, log, HTML, manifest, and intermediate report artifacts were consolidated and removed from the working tree. They remain recoverable from Git commit `bc6166f`.
 
 This handover distinguishes `CONFIRMED FACT`, `INTERPRETATION`, and `HYPOTHESIS`. The source projects were inspected read-only on 2026-08-18.
 
@@ -72,4 +70,3 @@ This handover distinguishes `CONFIRMED FACT`, `INTERPRETATION`, and `HYPOTHESIS`
 - **HYPOTHESIS:** `Relevance != Validity` may transfer to industrial time series as `Similarity != Applicability`.
 - **HYPOTHESIS:** A retrieved historical window could be close in sensor space yet unsuitable because its control regime, operating context, sensor–action relationship or fault mechanism differs.
 - This bridge is not a confirmed research direction. It needs literature validation, a formal applicability definition, controlled invalid-reference construction, and downstream evaluation before it can support a thesis claim.
-

@@ -1,8 +1,0 @@
-{
-  "status": "COMPLETE",
-  "primary_mode": "loo_sample",
-  "architecture_fault_cells": 16,
-  "primary_cells": 8,
-  "primary_top1_agreements": 7,
-  "primary_median_spearman": 0.54337899543379
-}

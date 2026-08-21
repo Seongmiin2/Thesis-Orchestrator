@@ -1,3 +1,0 @@
-fault_class,cells,median_spearman,mean_spearman,top1_agreements,mean_top3_overlap
-negative_or_exploratory,8,0.10045662100456622,0.2089041095890411,1,1.25
-primary,8,0.54337899543379,0.5079908675799087,7,1.75

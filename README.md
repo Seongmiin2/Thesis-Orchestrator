@@ -1,4 +1,4 @@
-# Thesis Orchestrator
+﻿# Thesis Orchestrator
 
 A small, mock-first research orchestration MVP for evaluating two master's-thesis directions grounded in the read-only `PhysicalAI_mini` and `FAVE-RAG` projects.
 
@@ -37,7 +37,7 @@ python main.py
 pytest -q
 ```
 
-The report is written to `outputs/reviews/mission_001_topic_validation.md`. The state must end in `WAITING_FOR_USER_APPROVAL`, with both lock fields set to `null`.
+Generated experiment artifacts are intentionally not retained in the current tree. The professor-facing report is `outputs/PROFESSOR_BRIEF_KO.md`, and provenance/reproduction guidance is in `outputs/EVIDENCE_AND_REPRODUCTION_INDEX.md`. The state must end in `WAITING_FOR_USER_APPROVAL`, with both lock fields set to `null`.
 
 ## Research experiments
 
@@ -65,11 +65,11 @@ python -m venv ..\.venv-research
 
 `run_architecture_chum_g3.py` writes resumable partial CSVs after every architecture/seed/condition task. Its analysis command refuses to run until every task in `configs/architecture_chum_g3.yaml` is complete.
 
-HAI commands expect the official `icsdataset/hai` repository at `../HAI` and the official `saurf4ng/eTaPR` repository at `../eTaPR`. The invalid first HAI run remains quarantined under `outputs/hai_external_validation/`; usable external evidence comes from `outputs/hai_external_validation_v2/` and `outputs/hai_conditional_chum/`.
+HAI commands expect the official `icsdataset/hai` repository at `../HAI` and the official `saurf4ng/eTaPR` repository at `../eTaPR`. The first HAI run was invalidated by a feature-column-order bug and must not be cited. Only the corrected v2 and conditional-CHUM evidence summarized in the retained report is usable.
 
-The UTF-8 professor-facing Markdown, canonical report artifact, and packaged portable HTML are written under `outputs/professor_report_v2/`. The saved `artifact.json` remains the reproducible report source when the Data Analytics portable-report builder is unavailable.
+The current tree retains exactly two curated output documents: `outputs/PROFESSOR_BRIEF_KO.md` and `outputs/EVIDENCE_AND_REPRODUCTION_INDEX.md`. Removed raw artifacts remain recoverable from Git commit `bc6166f`.
 
-The HAI conditional follow-up is locked in `outputs/methodology/HAI_CONDITIONAL_CHUM_PREREGISTRATION.md`. Its runner reuses only the corrected v2 F1 checkpoints, recalibrates each perturbation on validation-normal data, and writes resumable partial CSVs after every seed/mode/channel task.
+The HAI conditional runner must reuse only corrected v2 F1 checkpoints, recalibrate each perturbation on validation-normal data, and write resumable partial CSVs after every seed/mode/channel task. The locked protocol and accepted evidence are summarized in the retained report and reproduction index.
 
 ## Evidence rules
 
@@ -86,4 +86,3 @@ The HAI conditional follow-up is locked in `outputs/methodology/HAI_CONDITIONAL_
 ## Human approval gate
 
 Explicit approval is required before changing the thesis topic, research question, main hypothesis, contribution, experiment-retirement decision, research direction, or paper claim. Mission 001 only recommends; it never locks.
-
